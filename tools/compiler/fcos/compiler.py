@@ -14,14 +14,15 @@ from .parser import Parser
 from .semantic import SemanticAnalyzer
 from .types import CompilationStatus
 from .validator import Validator
+from .version import VERSION
 
 
 class Compiler:
     """
     FCOS Reference Compiler.
-    """
 
-    VERSION = "1.0.0"
+    Coordinates the complete FCOS compilation pipeline.
+    """
 
     def __init__(self) -> None:
         self.parser = Parser()
@@ -34,8 +35,11 @@ class Compiler:
         self,
         repository: Path,
     ) -> CompilationResult:
+        """
+        Compile an FCOS repository.
+        """
 
-        start = time.perf_counter()
+        start_time = time.perf_counter()
 
         specification_files = discover_specifications(
             repository,
@@ -53,33 +57,37 @@ class Compiler:
             semantic_model,
         )
 
-        bundle = self.generator.generate(
+        execution_bundle = self.generator.generate(
             optimized_model,
         )
 
-        validation = self.validator.validate(
-            bundle,
+        validation_report = self.validator.validate(
+            execution_bundle,
         )
 
-        duration = time.perf_counter() - start
+        duration = time.perf_counter() - start_time
 
         metrics = CompilationMetrics(
             files_parsed=len(specification_files),
-            documents_parsed=len(optimized_model.documents),
-            artifacts_generated=len(bundle.artifacts),
+            documents_parsed=len(
+                optimized_model.documents,
+            ),
+            artifacts_generated=len(
+                execution_bundle.artifacts,
+            ),
             warnings=sum(
                 1
-                for diagnostic in validation.diagnostics
+                for diagnostic in validation_report.diagnostics
                 if diagnostic.severity.name == "WARNING"
             ),
             errors=sum(
                 1
-                for diagnostic in validation.diagnostics
+                for diagnostic in validation_report.diagnostics
                 if diagnostic.severity.name == "ERROR"
             ),
             fatal_errors=sum(
                 1
-                for diagnostic in validation.diagnostics
+                for diagnostic in validation_report.diagnostics
                 if diagnostic.severity.name == "FATAL"
             ),
             compilation_duration=duration,
@@ -93,12 +101,12 @@ class Compiler:
 
         return CompilationResult(
             compilation_identifier="compile",
-            compiler_version=self.VERSION,
+            compiler_version=VERSION,
             repository_identifier=str(repository),
             compilation_status=status.value,
-            execution_bundle=bundle,
-            validation_report=validation,
-            diagnostics=validation.diagnostics,
+            execution_bundle=execution_bundle,
+            validation_report=validation_report,
+            diagnostics=validation_report.diagnostics,
             metrics=metrics,
             duration=duration,
         )

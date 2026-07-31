@@ -1,7 +1,9 @@
 """
-Frontier Creative Operating System (FCOS)
+Frontier Creative Operating System.
 
-Reference Compiler Implementation.
+Reference Compiler.
 """
 
-__version__ = "0.1.0"
+from .version import VERSION
+
+__version__ = VERSION
