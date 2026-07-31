@@ -1,0 +1,93 @@
+{
+  "manifestVersion": "1.0.0",
+  "bundleName": "FCOS Execution Bundle",
+  "bundleVersion": "1.0.0",
+  "status": "stable",
+  "compiler": {
+    "name": "Frontier Creative Operating System Compiler",
+    "version": "1.0.0"
+  },
+  "generatedArtifacts": [
+    {
+      "id": "claude-bootstrap",
+      "path": "build/bootstrap/claude_bootstrap.md",
+      "type": "bootstrap",
+      "target": [
+        "Claude"
+      ]
+    },
+    {
+      "id": "master-prompt",
+      "path": "build/prompts/master_prompt.md",
+      "type": "master",
+      "target": [
+        "Claude",
+        "GPT",
+        "Gemini"
+      ]
+    },
+    {
+      "id": "review-prompt",
+      "path": "build/prompts/review_prompt.md",
+      "type": "review",
+      "target": [
+        "Claude",
+        "GPT",
+        "Gemini"
+      ]
+    },
+    {
+      "id": "refactor-prompt",
+      "path": "build/prompts/refactor_prompt.md",
+      "type": "refactor",
+      "target": [
+        "Claude",
+        "GPT",
+        "Gemini"
+      ]
+    },
+    {
+      "id": "iteration-prompt",
+      "path": "build/prompts/iteration_prompt.md",
+      "type": "iteration",
+      "target": [
+        "Claude",
+        "GPT",
+        "Gemini"
+      ]
+    },
+    {
+      "id": "repository-playbook",
+      "path": "build/playbooks/repository_playbook.md",
+      "type": "playbook"
+    }
+  ],
+  "workflow": [
+    "bootstrap",
+    "master",
+    "implementation",
+    "review",
+    "refactor",
+    "iteration",
+    "validation",
+    "release"
+  ],
+  "qualityGates": [
+    "architecture",
+    "maintainability",
+    "accessibility",
+    "performance",
+    "consistency",
+    "documentation",
+    "testing"
+  ],
+  "supportedTargets": [
+    "Claude",
+    "GPT",
+    "Gemini"
+  ],
+  "release": {
+    "type": "Execution Bundle",
+    "ready": true
+  }
+}
