@@ -7,7 +7,7 @@
 3. **Record** — an Architecture Decision Record: Proposed → Accepted / Rejected → Superseded.
 4. **Implementation** — GitHub issues and pull requests referencing the governing artifacts.
 
-No decision is binding until recorded as an ADR. A decision that is not recorded is treated as not made.
+No architectural or governance decision is binding until recorded as an ADR. An architectural or governance decision that is not recorded is treated as not made. Routine engineering decisions do not require an ADR.
 
 ## Quality gates
 

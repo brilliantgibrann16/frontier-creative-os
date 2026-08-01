@@ -1,7 +1,8 @@
 # Frontier Creative OS Constitution
 
-Version: 1.0 (proposed)
-Tracking: [Issue #8](https://github.com/brilliantgibrann16/frontier-creative-os/issues/8)
+Status: Proposed
+Version: 0.1.0
+Tracking: [Issue #8](https://github.com/brilliantgibrann16/frontier-creative-os/issues/8) · [PR #9](https://github.com/brilliantgibrann16/frontier-creative-os/pull/9)
 
 This constitution defines the mission, values, principles, and governing policies of the Frontier Creative OS project. It takes effect when approved by the Maintainer and merged into `main`. Until merged, it is a proposal under review.
 
@@ -20,4 +21,4 @@ This constitution defines the mission, values, principles, and governing policie
 
 ## Amendments
 
-This constitution is amended only through the project's decision lifecycle: an RFC proposing the change, an Architecture Decision Record documenting the outcome, and a pull request approved by the Maintainer. Ratified articles are amended, never silently edited.
+This constitution is amended only through the project's decision lifecycle: an RFC proposing the change, an Architecture Decision Record documenting the outcome, and a pull request approved by the Maintainer and merged into `main`. An amendment takes effect only after merge. Ratified articles are amended, never silently edited.
