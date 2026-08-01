@@ -1,7 +1,7 @@
 # Frontier Creative OS Constitution
 
-Status: Proposed
-Version: 0.1.0
+Status: Ratified
+Version: 1.0.0
 Tracking: [Issue #8](https://github.com/brilliantgibrann16/frontier-creative-os/issues/8) · [PR #9](https://github.com/brilliantgibrann16/frontier-creative-os/pull/9)
 
 This constitution defines the mission, values, principles, and governing policies of the Frontier Creative OS project. It takes effect when approved by the Maintainer and merged into `main`. Until merged, it is a proposal under review.
