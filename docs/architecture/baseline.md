@@ -1,7 +1,7 @@
 # Frontier Creative OS — Architecture Baseline
 
-**Status:** Proposed
-**Version:** 0.1.0 (becomes Architecture Baseline v1, version 1.0.0, upon adoption recorded as an ADR)
+**Status:** Ratified — adoption recorded as ADR-0002 (2026-08-02)
+**Version:** 1.0.0 (Architecture Baseline v1, per the adoption terms of ADR-0002)
 **Subordinate to:** Constitution v1 (1.0.0)
 **Companions:** `blueprint.md` (descriptive), `doctrine.md` (explanatory) — both subordinate to this document
 
@@ -289,4 +289,4 @@ decision, never silent.
 **Open decisions this Baseline deliberately does not preempt:** D-01
 (language identity), D-03 (identifier/namespace scheme; must be
 namespace-capable), D-13 (`specs/fcos/` disposition), D-14 (AI artifact
-classes). See `blueprint.md`, "Future Unknowns."
+classes). See `blueprint.md`, "Future Unknowns".
