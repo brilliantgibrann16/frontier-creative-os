@@ -1,6 +1,6 @@
 # Frontier Creative OS — Universal Engineering Doctrine
 
-**Status:** Proposed
+**Status:** Ratified — adoption recorded as ADR-0002 (2026-08-02)
 **Artifact class:** Doctrine — explanatory; defines WHY. Binds nothing by
 itself; tagged CONSTRAINTS take effect only upon adoption recorded as an
 ADR.
