@@ -1,6 +1,6 @@
 # Frontier Creative OS — Master System Blueprint
 
-**Status:** Proposed
+**Status:** Ratified — adoption recorded as ADR-0002 (2026-08-02)
 **Artifact class:** Blueprint — descriptive reference; carries no normative
 authority. Where this document and `baseline.md` diverge, the Baseline
 wins.
