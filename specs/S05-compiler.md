@@ -15,8 +15,8 @@ report are unmet.
 - Realize ratified specifications exactly; divergence is a compiler
   defect by definition (L-2, INV-3).
 - Emit diagnostics that report and never rule (Blueprint §6).
-- Optimize only within spec-observable equivalence (L-3; RFC-0029’s
-  envelope — see WP29 prompt).
+- Optimize only within spec-observable equivalence (L-3; optimization
+  envelope per the WP29 prompt).
 - Forbidden: defining behavior; private semantic contracts with the
   runtime (L-11, INV-11).
 
