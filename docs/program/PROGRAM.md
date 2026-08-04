@@ -572,6 +572,7 @@ never to be filled by invention.
 | B-08 | Specifications S01–S16 are In Review, not ratified; nothing may build against them as binding | first WP of every implementation program | Blueprint §7 lifecycle; PR #13 |
 | B-09 | Memory routing (M-A/B/C) and Context Engine definition (L-12) undecided | no programs exist for these candidates | RFC-0014, RFC-0015; ADR-0004 |
 | B-10 | No ratified quantitative performance requirement exists anywhere | all performance budgets and performance testing | PR #13 blocked-section census |
+| B-11 | `specs/fcos/` is not an empty scaffold — it holds ~40 substantive legacy specification documents; their disposal (delete / archive / adopt) is an undecided Maintainer question. Discovered during Wave 0 (PR #16); detailed in WAVE_0_VERIFICATION.md | P00.1 | ADR-0005 (governs the specification home, not legacy-content disposal); PR #16 verification record |
 
 ## 7. Change process
 
