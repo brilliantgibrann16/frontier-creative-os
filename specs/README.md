@@ -28,6 +28,25 @@ Engineering Doctrine · ADR-0001..0003 · the RFC set (RFC-0001..0017).
    recording ADR is required; flagged in the PR. The empty `specs/fcos/`
    scaffold is left untouched pending that ADR.
 
+### Post-disposition note (2026-08-06)
+
+The assumptions above are the submission-time record (2026-08-02) and
+are retained unedited. As of `main` today:
+
+- **Assumption 1 is discharged.** The consolidated acceptance ADR
+  exists: **ADR-0004** disposed RFC-0002..0017 (RFC-0001 remains Open,
+  D-01). Updating the `TODO(blocked-by: acceptance ADR for RFC-XXXX)`
+  markers inside specification bodies is specification work performed
+  with the corpus itself (per ADR-0004's consequences), not part of
+  this note.
+- **Assumption 3 is discharged.** The recording ADR exists:
+  **ADR-0005** records `/specs` as the corpus home. One factual
+  correction: `specs/fcos/` is not an empty scaffold — it holds
+  pre-corpus legacy content (see `specs/fcos/core/`); its disposal is
+  the Maintainer-owned blocker B-11 (`docs/program/PROGRAM.md` §6) and
+  the tree is excluded from the mechanical checkers.
+- Assumption 2 stands: D-01 remains unrecorded.
+
 ## Conventions
 
 - **Blocked sections:**
