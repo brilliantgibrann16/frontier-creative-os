@@ -74,3 +74,49 @@ component re-passes them); G-1…G-6 are one-time project gates.
 This report is point-in-time. Re-issue after each roadmap step, or at
 minimum after Step 9 and after Step 10, so the verdict tracks the gate
 table rather than memory.
+
+---
+
+## Re-issue — 2026-08-06 (repository audit)
+
+**Trigger:** the Standing review clause above. Roadmap Steps 1–9 were
+executed by ADR-0004 (RFC set disposition) and ADR-0005 (specification
+home), both merged to `main`; no re-issue was produced at that time.
+This section supplies it. The 2026-08-02 text above is the
+point-in-time record and is retained unedited.
+
+**Verdict as of `main` (commit `e300f506`): still NOT READY — 5 of 8
+readiness gates are met.** G-5 (language identity, D-01) is the sole
+controlling unmet gate; G-7 and G-8 follow from it.
+
+| # | Gate | Status 2026-08-06 | Evidence on `main` |
+| --- | --- | --- | --- |
+| G-1 | Review legitimacy | ✓ MET | RFC-0010 accepted (G-D + cooling rule); J.4 blocker removed — ADR-0004 |
+| G-2 | Identifier scheme frozen | ✓ MET | RFC-0002 accepted (N-B + N-C) — ADR-0004; clause-ID adoption inside specification bodies pends with the corpus itself |
+| G-3 | Single specification home | ✓ MET | `/specs` recorded by ADR-0005 (amending RFC-0003 T-A) |
+| G-4 | CI exists | ✓ MET (mechanical half) | `.github/workflows/ci.yml` — tests + link/ID checks per RFC-0011 E-A; required-checks enforcement in repository settings remains a Maintainer console task (WBS P01.5) |
+| G-5 | Language identity decided | ✗ NOT MET | RFC-0001 open; D-01 undecided; no acceptance ADR — controlling gate |
+| G-6 | Compatibility posture declared | ✓ MET (interim) | RFC-0005 interim pre-1.0 instability rule and RFC-0009 V-D — ADR-0004 |
+| G-7 | Ratified specification exists | ✗ NOT MET | `/specs` corpus is In Review; nothing ratified (downstream of G-5) |
+| G-8 | Conformance judge frame | ◐ HALF MET | Frame half: RFC-0004 L-A + C-A accepted (ADR-0004) plus `docs/program/CONFORMANCE_FRAME.md`; suite-skeleton half blocked (WBS P12.2, gated on S13 ratification and B-08) |
+
+Corrections to the 2026-08-02 text, by inspection of `main`:
+
+- The G-4 note “(`.github/workflows/` empty)” no longer holds.
+- Critical-path item 1 is complete: PR #11 and PR #12 are merged, as
+  are the successor PRs #13–#21.
+- The permitted-hygiene list is discharged except branch deletion: no
+  tracked `__pycache__` exists, the prototype writer module is
+  correctly named `writer.py`, and issue templates exist under
+  `.github/ISSUE_TEMPLATE/`. Merged-branch deletion remains a
+  Maintainer console task (WBS P00.4).
+
+Gate-register mapping (this report’s G-1…G-8 against the program gate
+register in `docs/program/PROGRAM.md` §4): G-5 ↔ G-D01 (controlling,
+OPEN) · G-4 ↔ G-CI (workflow merged; enforcement pending P01.5) ·
+G-7 ↔ G-SPEC(x) (open per subsystem) · G-8 ↔ G-CONF (frame met, suite
+open). G-1, G-2, G-3 and G-6 were one-time project gates closed by
+ADR-0004/ADR-0005 and have no standing program-register counterpart.
+
+Next re-issue: after roadmap Step 10 (the RFC-0001 acceptance ADR), per
+the Standing review clause.

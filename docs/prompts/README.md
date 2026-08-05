@@ -45,6 +45,31 @@ executing a prompt acquire authority only through the forward pass
 | WP29 | Optimization | Derived-executable (methodology only) | Baseline L-3 | D-01, ratified specs |
 | WP30 | Final System Audit | Derived-executable | Doctrine §13 | — |
 
+## Disposition update (2026-08-06, after ADR-0004)
+
+The “Blocking decisions” column above is the submission-time record
+(2026-08-01) and is retained unedited. ADR-0004 has since disposed
+several of the cited decisions:
+
+- **U-9** (machine-readable specification format) — resolved: RFC-0008
+  accepted (M-B, prose-authoritative + clause index). No longer blocks
+  WP16.
+- **U-12** (CI platform and gate encoding) — resolved: RFC-0011
+  accepted (E-A); `.github/workflows/ci.yml` encodes the gates. No
+  longer blocks WP25/WP28.
+- **D-04/U-5** (conformance levels) — frame accepted (RFC-0004,
+  L-A + C-A); concrete levels remain future work, so WP26 stays
+  partially blocked on the levels only.
+- **U-8** (package distribution) — deferred with trigger (RFC-0007,
+  N-defer: decided at or after RFC-0001 acceptance); WP28 remains
+  blocked on that trigger.
+- **WP23 scope ruling** — fixed by RFC-0017 (U-A): S9 engineering
+  tooling only; product UI is out of scope absent a future RFC.
+- **New-subsystem routes** (WP18–WP21) — RFC-0013 (Planner) and
+  RFC-0016 (Agent Framework) were **Rejected**; RFC-0014 (Memory) and
+  RFC-0015 (Context Engine) remain **Open**. D-01 remains open and
+  blocking wherever listed.
+
 ## ⚠ WP15 conflict note (flagged for Maintainer)
 
 `WP15_Architecture_Completion_Prompt.md` (Maintainer-authored) enumerates

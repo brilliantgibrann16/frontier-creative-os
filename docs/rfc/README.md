@@ -44,3 +44,12 @@ Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
 though they can be reviewed in parallel. RFC-0002, 0003, 0010, 0011 are
 D-01-independent and decidable immediately.
+
+*Post-disposition note (2026-08-06):* the dependency-order paragraph
+above is the submission-time analysis, retained for the record; it is
+superseded by the disposition column. ADR-0004 disposed RFC-0007
+(deferral with trigger), RFC-0008 (M-B) and RFC-0012 (procedural
+routing) ahead of RFC-0001, and gave RFC-0005 and RFC-0009 interim
+rules; the full compatibility policy (RFC-0005) and the U-14
+resolution (RFC-0012) still land at or after RFC-0001 acceptance,
+exactly as the table records.
