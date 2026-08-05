@@ -119,8 +119,10 @@ unless noted.
 
 - **P12.1** Harness architecture per the accepted RFC-0004 frame (L-A +
   C-A); implementation-independent by construction (INV-16).
-- **P12.2** Fixture validation: harness judges known-conforming and
-  known-violating fixtures correctly.
+- **P12.2** ⛔ Fixture validation (harness judges known-conforming and
+  known-violating fixtures correctly) — Blocked-by: G-SPEC(S13) + B-08
+  (`CONFORMANCE_FRAME.md` §2 records packages P12.2 and beyond as
+  blocked; no ratified clauses exist to judge against).
 - **P12.3** ⛔ Clause-indexed suite — Blocked-by: P03.4 clause index
   (RFC-0008 M-B).
 - **P12.4** ⛔ Official judgments — Blocked-by: S13 ratification
