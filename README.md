@@ -42,7 +42,11 @@ In any normative conflict, higher documents win:
   (prototype). Historical context only; it is not the language compiler and
   never constrains language design.
 - `tests/` — tests for the prototype pipeline
-- `schemas/`, `examples/`, `build/`, `assets/` — scaffolding (empty)
+- `schemas/`, `examples/`, `assets/` — scaffolding (empty)
+- `build/` — retained Phase 0 build-process artifacts (bootstrap prompt,
+  execution manifest, playbook, prompt templates). Historical context
+  only, zero authority; disposition is a pending Maintainer hygiene
+  decision.
 
 ## Contributing
 
