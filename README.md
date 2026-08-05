@@ -50,3 +50,6 @@ All changes go through feature branches and pull requests into a protected
 `main`; direct commits to `main` are not permitted. Conventional Commits
 are used throughout. Work is tracked in GitHub Issues and mirrored in the
 engineering knowledge base.
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the full contributor guide;
+the required PR contents are encoded in the pull request template.
