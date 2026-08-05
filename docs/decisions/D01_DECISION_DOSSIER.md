@@ -233,4 +233,251 @@ Under DEFER, **all eleven** blockers remain, including B-01 and B-02
 | L-A + C-A · INV-16 | Binary conformance judgment + self-certification frame is already ratified; conformance *levels* remain future work post-RFC-0001 | ADR-0004 (RFC-0004 row); CONFORMANCE_FRAME |
 | L-12 | Vocabulary discipline blocks RFC-0015 independently of D-01 | ADR-0004 §Remaining open |
 
-*(Sections 11–18 follow.)*
+## 11. Every admissible option already recorded in repository history
+
+**Identity options** — RFC-0001 §Design Space, order preserved, identity
+column verbatim:
+
+| # | Identity (verbatim) |
+| --- | --- |
+| I-A | Specification/definition language: programs are structured definitions (specs, contracts, artifacts) consumed by tools |
+| I-B | General-purpose programming language |
+| I-C | Domain-specific language for creative-systems orchestration |
+| I-D | Interchange/definition core (I-A) with staged evolution path toward executable semantics |
+| DEFER | Recorded deferral with a review date — named admissible by RFC-0001 §Consequences: "Deferral: legitimate (DP-15) but must be recorded with a review date; all implementation remains blocked (CN-14)" |
+
+No other identity option appears in any repository document; per the
+mission's no-invention rule, none is added here.
+
+**Coupled sub-decision spaces** (recorded; constrained by, not identical
+to, the identity choice):
+
+| Unknown | Recorded space | Source | In force today |
+| --- | --- | --- | --- |
+| U-14 runtime scope | S-A no runtime (S6 retired by Baseline amendment) · S-B validation/evaluation runtime · S-C full execution environment (scheduling, I/O, resource model) | RFC-0012 §Design Space | — (routed into `ADR-0006`) |
+| U-8 packaging | N-yes · N-no · N-defer | RFC-0007 | N-defer accepted; review mandatory (ADR-0004) |
+| U-6 compatibility | P-A strong backward compatibility · P-B editions · P-C semver-style · P-D interim instability window then one of the former | RFC-0005 | P-D window in force (ADR-0004) |
+| U-10 language versioning | V-A monotonic · V-B semver-like · V-C date editions · V-D no language version pre-1.0 | RFC-0009 | V-D in force (ADR-0004) |
+
+## 12. Every recorded consequence for every option
+
+Common to accepting **any** of I-A/I-B/I-C/I-D (RFC-0001 §Consequences,
+verbatim): *"Accepting any alternative unblocks: RFC-0005, 0007, 0008,
+0009, 0012 for decision; S4 specification work; the RFC-count roadmap."*
+(RFC-0002 and RFC-0008 have since been accepted by ADR-0004 and await
+first use; the remaining windows are RFC-0005/0007/0009, with RFC-0012
+routed into the same act.) Common migration facts: no code migration
+exists under any option (RFC-0001 A-2; L-7) and no consumer migration
+exists today (V-D and the P-D window in force; brief §7).
+
+**I-A — definition language**
+- Consequences (RFC-0001, verbatim): "Runtime likely minimal or absent (U-14 small); packaging may reduce to document distribution (U-8 small); conformance = validation semantics"
+- Trade-offs (verbatim): "Smallest surface, fastest to specify; lowest expressive ambition; risk of under-serving future needs"
+- Engineering (brief §4): smallest surface — S04 content + validation-semantics conformance; S05 bounded by validation identity; P05 small or void; distribution possibly repository/release artifacts only
+- Governance (brief §5): with S-A, S6 retirement travels the Baseline §13 amendment path
+- Repository (brief §6): with S-A, S06 → Deprecated with successor pointer
+- Maintenance (brief §8): smallest maintained surface; recorded risk of under-serving future needs
+
+**I-B — general-purpose language**
+- Consequences (verbatim): "Full runtime, stdlib, packaging, versioning all required; RFC volume ≈45–70 (Phase 2 estimate)" — RFC-0012 S-C row: "the Phase 2 45–70 RFC estimate mostly lives here"
+- Trade-offs (verbatim): "Maximal ambition and cost; decades-scale commitment; highest risk under a sole maintainer"
+- Engineering (brief §4): largest — full S06 (S-C), full S07, likely S11 machinery; the RFC roadmap dominates engineering
+- Governance (brief §5): largest standing volume — the roadmap all travels RFC → ADR
+- Maintenance (brief §8): single-maintainer reality (OB-4) echoed in RFC-0012 Q3
+
+**I-C — domain-specific language**
+- Consequences (verbatim): "Runtime scope moderate and domain-shaped; stdlib is domain library; conformance suites domain-specific"
+- Trade-offs (verbatim): "Requires defining the domain precisely first — a sub-decision as hard as D-01 itself"
+- Engineering (brief §4): moderate, domain-shaped S06/S07; a precise domain definition precedes any clause work
+- Governance (brief §5): requires a prior recorded domain-definition decision
+- Maintenance (brief §8): the domain definition becomes a maintained artifact whose drift is identity-scale
+
+**I-D — staged core**
+- Consequences (verbatim): "Defers execution decisions without foreclosing them; versioning scheme must encode capability stages (U-10 interaction)"
+- Trade-offs (verbatim): "Two-phase identity risks permanent limbo; staging discipline must be ratified up front"
+- Engineering (brief §4): I-A-scale engineering now plus staging machinery
+- Governance (brief §5): each stage transition is a future decision event
+- Migration (brief §7): future migration between capability stages is a designed-in obligation
+
+**DEFER**
+- Consequences (RFC-0001 §Consequences): review date mandatory (DP-15); all implementation remains blocked (CN-14)
+- Engineering (brief §4): zero new engineering — Wave 0 standing lanes remain the only executable work
+- Governance (brief §5): a recorded deferral with review date; G-D01 stays open; no other governance change is admissible
+- Maintenance (brief §8): "The blocked state itself is maintained: review dates, Wave-0-only activity, and Critical risk R-1 remain open indefinitely"
+
+## 13. Cross-impact matrix
+
+The U-14 column reproduces RFC-0012's coherence table, which is
+**descriptive, not binding** — `ADR-0006` records the actual resolutions
+(RFC-0012 §Design Space; brief §2).
+
+| Option | U-14 coherence | U-8 signal | S04 | S05 | S06 | S07 | S11 | P05 | P10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| I-A | S-A or S-B | "may need only document distribution" (RFC-0007) | Content unblocks | Bounded by validation identity | Retired (S-A, via Baseline §13) or minimal (S-B) | Scoped small | Decided at RFC-0007 review | Void or minimal | Small/likely unneeded — decided at review |
+| I-B | S-C | Full packaging space opens | Content unblocks | Full compiler contract | Full (S-C) | Full stdlib | Decided at RFC-0007 review | Exists (S-C) | Decided at review |
+| I-C | S-C (domain-shaped) | Domain-shaped | Content unblocks after prior domain definition | Domain-shaped | Moderate, domain-shaped | Domain library | Decided at RFC-0007 review | Exists (S-C) | Decided at review |
+| I-D | S-B | Staged | Content unblocks + must encode the stage model | Bounded per stage | Minimal now (S-B) | Per stage | Decided at RFC-0007 review | S-B per coherence | Decided at review |
+| DEFER | — open | — deferred | Blocked | Blocked | Blocked | Blocked | Blocked | — | — |
+
+Recorded cross-couplings between the opened windows:
+- RFC-0009 V-C is "meaningless unless" RFC-0005 P-B is adopted (brief §2, from RFC-0009)
+- The version-declaration syntax is itself D-01-dependent (RFC-0009 Q1)
+- Whether a runtime's diagnostic surface joins the compatibility promise is RFC-0012 Q2 → RFC-0005 Q1
+- I-D forces the U-10 scheme to encode capability stages (RFC-0001 I-D row)
+- "The identity fixes who the consumers are" (RFC-0005 §Consequences) — the compatibility family choice is downstream of every identity branch
+
+## 14. Risk matrix
+
+Only risks already recorded in merged artifacts; ratings appear only
+where the repository records one. Program-level register:
+`docs/program/RISK_REGISTER.md`.
+
+| Scope | Recorded risk | Recorded rating | Source |
+| --- | --- | --- | --- |
+| The undecided state | R-1 identity ambiguity — "any implementation work resolves the unknown by accident" | **Critical** | RFC-0001 §Motivation |
+| I-A | "risk of under-serving future needs" | — | RFC-0001 trade-offs |
+| I-B | "decades-scale commitment; highest risk under a sole maintainer" (OB-4; RFC-0012 Q3) | — | RFC-0001 trade-offs |
+| I-C | Domain definition is "a sub-decision as hard as D-01 itself"; its drift is identity-scale | — | RFC-0001 trade-offs; brief §8 |
+| I-D | "Two-phase identity risks permanent limbo"; standing staging-discipline duty | — | RFC-0001 trade-offs; brief §8 |
+| DEFER | R-1 remains open indefinitely; blocked state itself must be maintained | Critical (R-1 persists) | RFC-0001; brief §8 |
+| Cross-cutting | The RFC-0005 1.0 family eventually chosen (P-A heavy cost on early mistakes / P-B machinery / P-C ecosystem fragmentation) sets the dominant long-run cost profile for whichever identity is selected | — | brief §8 |
+
+## 15. Decision tree
+
+Branch order reproduces RFC-0001's own table order, then DEFER as
+RFC-0001 §Consequences lists it. The tree ranks nothing.
+
+```text
+D-01 (U-1) — Maintainer act (Article 6), recorded as `ADR-0006` (Article 7)
+│
+├─ Accept I-A — definition language
+│    U-14 coherence: S-A or S-B (RFC-0012, descriptive)
+│    ├─ S-A → S6 retirement via Baseline §13 amendment path (RFC-0012 S-A row)
+│    └─ S-B → boundary with S13 conformance tooling "must be drawn precisely" (RFC-0012 S-B row)
+├─ Accept I-B — general-purpose language
+│    U-14 coherence: S-C; ≈45–70 RFC roadmap mostly in S-C (RFC-0012 S-C row)
+├─ Accept I-C — domain-specific language
+│    prior recorded sub-decision: precise domain definition (RFC-0001 I-C row)
+│    U-14 coherence: S-C, domain-shaped
+├─ Accept I-D — staged core
+│    staging discipline ratified up front (RFC-0001 I-D row)
+│    U-14 coherence: S-B; U-10 scheme must encode stages
+│
+│  on every Accept branch, inside the same act:
+│  • resolve U-14 or explicitly re-defer with a review point (RFC-0012 §Consequences)
+│  • answer or explicitly re-defer Q1–Q4 (RFC-0001 §Open Questions)
+│  • conduct or schedule the mandatory RFC-0007 packaging review
+│    (ADR-0004: "at or after RFC-0001 acceptance")
+│  • decision windows open: RFC-0005 full policy, RFC-0009 scheme
+│    (interim P-D and V-D remain in force until superseded)
+│
+└─ DEFER (DP-15)
+     record a review date; all implementation remains blocked (CN-14);
+     R-1 stays open; G-D01 stays open; the tree re-enters at the review date
+```
+
+## 16. Wave 1 activation sequence
+
+1. `ADR-0006` merges into `docs/decisions/` — Maintainer-authored, via
+   feature branch and PR (the single recorded path, CONTRIBUTING.md;
+   Article 7).
+2. PROGRAM.md revision PR: §4 gate table (G-D01) and §6 blocker register
+   (B-01, B-02) updated — "PROGRAM.md is revised by PR because a gate
+   changes state" (PROGRAM.md §7, as quoted in the brief §6).
+3. Knowledge-mirror sync runs (P02.3) — trigger: governance merge
+   (KNOWLEDGE_SYNC_RUNBOOK).
+4. P03 entry discharges. First use of the RFC-0002 clause-ID scheme
+   (N-B + N-C) and the RFC-0008 M-B machine-readable clause index.
+5. Specification production flow begins (S04 §Sequence flows, as quoted
+   in the brief §6): acceptance ADR → spec charter → Draft → In Review →
+   ratification ADR → suite tracing → implementations authorized.
+6. `TODO(blocked-by:)` markers referencing the identity decision
+   discharge progressively as specification work proceeds
+   (`specs/README.md` conventions; ADR-0004 §Consequences).
+7. Per ratified spec: G-SPEC(x) met → P04 begins; P12.2/P12.4 discharge
+   as S13 ratifies and clause IDs exist (B-08); P12.3 follows P03.4
+   (CONFORMANCE_FRAME §2; WBS).
+8. On their own tracks: the mandatory RFC-0007 review decides P10
+   existence; RFC-0005 and RFC-0009 full decisions precede P14.4 and
+   P14.3 respectively.
+9. Throughout: P14.0 additionally requires G-CI — required status checks
+   enabled by Maintainer console action (P01.5) — independent of D-01.
+
+Under DEFER the sequence does not start; the only artifact is the
+deferral record with its review date (DP-15).
+
+## 17. Exact repository state immediately after `ADR-0006` would exist
+
+Relative to `main` = `e300f506`, the merge of the acceptance ADR changes
+**exactly one thing**:
+
+- `docs/decisions/` gains one file (`docs/decisions/ADR-0006.md`),
+  making its contents: ADR-0001..ADR-0005, `ADR-0006`,
+  `D01_DECISION_BRIEF.md`, `D01_DECISION_DOSSIER.md`.
+- In substance (facts recorded inside the ADR): G-D01 is met; B-01
+  closed; B-02 resolved or explicitly re-deferred; the RFC-0005/0007/0009
+  windows are open; P05 and (at the review) P10 existence are determined.
+
+**Everything else is unchanged until its own follow-up PR — nothing
+updates automatically:**
+
+- PROGRAM.md §4 still prints G-D01 as OPEN and §6 still lists B-01/B-02
+  until the §7 revision PR (step 2 above).
+- WORK_BREAKDOWN_STRUCTURE.md ⛔ entry-gate markers stand until revised
+  by PR.
+- Every specification keeps `Status: In Review` and its
+  `TODO(blocked-by:)` markers until specification work discharges them.
+- Individual RFC files keep their submission-time `Status: In Review`
+  headers (ADR-0004 §Consequences: the index plus the ADR are the
+  authoritative disposition record; no bulk rewrite).
+- `docs/rfc/README.md`'s disposition column lacks the new row until
+  updated by PR.
+- The Notion knowledge mirror is stale until the P02.3 sync runs
+  (KNOWLEDGE_SYNC_RUNBOOK trigger: governance merge).
+- CI configuration is unchanged. The derived corpus index
+  (`docs/derived/CORPUS_INDEX.md`) does not yet exist; its first
+  generation is a Maintainer execution act, and because the source corpus
+  includes `docs/decisions/ADR-*.md`, the new ADR enters it on the next
+  regeneration (DOC_DERIVATION_CONVENTIONS: regenerate, never hand-edit).
+
+## 18. Checklist the Maintainer must complete before writing `ADR-0006`
+
+- [ ] Select the identity from the recorded space (I-A / I-B / I-C /
+      I-D) — or record DEFER with an explicit review date (RFC-0001
+      §Design Space; DP-15).
+- [ ] Resolve U-14 within the same act (S-A / S-B / S-C) or explicitly
+      re-defer it with a review point (RFC-0012 §Consequences; ADR-0004
+      routing).
+- [ ] Answer or explicitly re-defer Q1: first-class consumers — humans,
+      tools, AI symmetrically (RFC-0001 Q1; INV-19).
+- [ ] Answer or explicitly re-defer Q2: success criteria at year 1,
+      year 5, year 20 (RFC-0001 Q2).
+- [ ] Record which of U-5/U-6/U-8/U-9/U-10/U-14 are decided inside the
+      ADR and which are explicitly re-deferred (RFC-0001 Q3).
+- [ ] Answer Q4: whether the identity requires renaming — noting A-3:
+      the current name is not evidence (RFC-0001 Q4, A-3).
+- [ ] Conduct the mandatory RFC-0007 packaging review (N-yes / N-no /
+      re-deferral) or schedule it: the disposition permits "at or after
+      RFC-0001 acceptance" (ADR-0004).
+- [ ] If I-C: record the prior domain-definition sub-decision (RFC-0001
+      I-C row).
+- [ ] If I-D: ratify the staging discipline up front (RFC-0001 I-D row).
+- [ ] If S-A (or later N-no): plan the Baseline §13 amendment for S6 (or
+      S11) retirement — supersession with successor pointer, never
+      deletion (RFC-0012; S06/S11 acceptance criteria; Blueprint §7).
+- [ ] Confirm the choice stays within the recorded option space — any
+      new option would resolve the unknown outside the frame (CN-14).
+- [ ] Record that interim rules P-D and V-D remain in force until their
+      full decisions supersede them (ADR-0004).
+- [ ] Author the ADR per Article 7 (decision, context, consequences
+      recorded; ADR-binding) and merge it via the single recorded path
+      (CONTRIBUTING.md).
+- [ ] Queue the follow-ups: PROGRAM.md §4/§6 revision PR (§7 change
+      process); knowledge-mirror sync (P02.3); RFC index disposition row.
+
+---
+
+*This dossier records no preference. Option ordering reproduces
+RFC-0001's own table order. Every statement above cites its repository
+source; nothing here decides, ranks, or disposes any option, blocker, or
+unknown (Article 6, Article 7, INV-8).*
