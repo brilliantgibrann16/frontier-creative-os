@@ -15,6 +15,7 @@
 | `DELIVERY_STRATEGY.md` | Branch, merge, release, testing, and verification strategies |
 | `MILESTONE_TEMPLATE.md` | Mandatory template for every program milestone |
 | `RISK_REGISTER.md` | Program-execution risk register |
+| `DOC_DERIVATION_CONVENTIONS.md` | Documentation derivation conventions: source corpus, mechanical rules, pipeline locations (P13.1) |
 
 ## Program catalog
 
