@@ -10,10 +10,13 @@ Article 7, INV-8).
 merged brief (PR #18, 2026-08-05) into the complete eighteen-section
 record ordered by the Maintainer. Both documents restate the same merged
 sources; neither carries authority; the brief is not superseded.
-**Notation:** the future RFC-0001 acceptance ADR does not yet exist. It
-is written throughout as `ADR-0006` (code-formatted) because the merged
-ID gate (`tools/checks/check_ids.py`, RFC-0011 E-A) requires plain ADR
-identifiers in scanned documents to resolve to existing files.
+**Notation:** the future RFC-0001 acceptance ADR does not yet exist, so
+this dossier refers to it descriptively as **the acceptance ADR**, never
+by number. The merged ID gate (`tools/checks/check_ids.py`, RFC-0011
+E-A) scans raw Markdown text — code formatting included — and requires
+every ADR-numbered identifier in scanned documents to resolve to an
+existing file; the ADR's number is assigned by the Maintainer at
+authoring time as the next in sequence after ADR-0005.
 **Repository state at compilation:** `main` = `e300f506`
 (2026-08-05, merge of PR #21). PRs #10–#21 merged and authoritative; no
 open pull requests; `docs/decisions/` contains ADR-0001..ADR-0005 and
@@ -39,12 +42,12 @@ Risk framing (RFC-0001 §Motivation, verbatim):
 > Risk R-1 (identity ambiguity) is rated Critical: without this decision,
 > any implementation work resolves the unknown by accident (CN-14).
 
-The recording act is a single Maintainer-authored acceptance ADR
-(`ADR-0006`). Per ADR-0004 (RFC-0012 row, verbatim): *"Procedural
-ruling: runtime scope (U-14) is resolved inside the future RFC-0001
-acceptance ADR, not separately."* Per PROGRAM.md §4, G-D01 (the identity
-decision plus its acceptance ADR) is the **OPEN — controlling** gate of
-the entire program.
+The recording act is a single Maintainer-authored acceptance ADR,
+numbered at authoring time. Per ADR-0004 (RFC-0012 row, verbatim):
+*"Procedural ruling: runtime scope (U-14) is resolved inside the future
+RFC-0001 acceptance ADR, not separately."* Per PROGRAM.md §4, G-D01 (the
+identity decision plus its acceptance ADR) is the **OPEN — controlling**
+gate of the entire program.
 
 ## 2. Exact governing artifacts
 
@@ -56,7 +59,7 @@ the entire program.
 | `docs/architecture/` Baseline §8 (category routing), §13 (amendment path) | Routes identity-class decisions; sole path for subsystem retirement |
 | `docs/architecture/` Doctrine §4, §14 — CN-14, DP-15 | No implicit resolution; deferral requires a recorded review date |
 | `docs/rfc/RFC-0001.md` | The decision frame: design space, assumptions A-1..A-3, open questions Q1–Q4, consequences. Carries **no recommendation** by design |
-| `docs/rfc/RFC-0012.md` | U-14 scope space (S-A/S-B/S-C) and its coherence table; routed into `ADR-0006` by ADR-0004 |
+| `docs/rfc/RFC-0012.md` | U-14 scope space (S-A/S-B/S-C) and its coherence table; routed into the acceptance ADR by ADR-0004 |
 | `docs/rfc/RFC-0005.md` · `docs/rfc/RFC-0007.md` · `docs/rfc/RFC-0009.md` | The blocked decision windows D-01 opens (U-6, U-8, U-10) |
 | `docs/decisions/ADR-0004.md` | Dispositions: interim rules P-D (U-6) and V-D (U-10) in force; N-defer (U-8) accepted with decision "at or after RFC-0001 acceptance"; U-14 routing; RFC-0001 recorded as **remaining open** |
 | `docs/decisions/ADR-0005.md` | Spec corpus home `/specs` (with ADR-0003 amendment of taxonomy) |
@@ -78,7 +81,7 @@ remains outstanding; the sole missing input is the Maintainer act.**
 RFC-0001 (frame; no recommendation)      RFC-0012 (U-14 space; routed by ADR-0004)
             \                                /
              ▼   Maintainer decision (Article 6)   ▼
-        `ADR-0006` — records: identity (U-1/D-01) · U-14 resolution or explicit
+        the acceptance ADR — records: identity (U-1/D-01) · U-14 resolution or explicit
         re-deferral · answers/re-deferrals for RFC-0001 Q1–Q4 · the mandatory
         RFC-0007 packaging review outcome or its scheduling
             │
@@ -116,7 +119,7 @@ CONFORMANCE_FRAME §2, discharged only as Wave 1 ratifies specs).
 Per WORK_BREAKDOWN_STRUCTURE.md (post-PR #21 state) and
 DEPENDENCY_GRAPH.md:
 
-| Package | Effect of `ADR-0006` | Source |
+| Package | Effect of the acceptance ADR | Source |
 | --- | --- | --- |
 | P03 Language Definition | Entry gate G-D01 discharged — newly executable at once | WBS P03.0; DEPENDENCY_GRAPH topological order |
 | P04 Compiler | Reachable; still gated on ratified clauses (G-SPEC) | WBS; DEPENDENCY_GRAPH critical path |
@@ -161,9 +164,9 @@ Index rows (verbatim "Specifiability today" values):
 | --- | --- | --- |
 | S04-language-definition.md | Frame only (D-01) | Direct — content sections blocked |
 | S05-compiler.md | Obligations only (D-01, G-7) | Direct — compiler boundary follows identity |
-| S06-runtime.md | Obligations only (U-14) | Direct via U-14 (resolved inside `ADR-0006`) |
+| S06-runtime.md | Obligations only (U-14) | Direct via U-14 (resolved inside the acceptance ADR) |
 | S07-standard-library.md | Obligations only (D-01) | Direct — stdlib scope follows identity |
-| S11-package-manager.md | Existence undecided (U-8) | Via the mandatory RFC-0007 review opened by `ADR-0006` |
+| S11-package-manager.md | Existence undecided (U-8) | Via the mandatory RFC-0007 review opened by the acceptance ADR |
 | S12-testing.md | Architecture full; content blocked | Indirect — test content needs ratified clauses (P03) |
 | S13-verification-conformance.md | Model full; suite blocked | Indirect — suite needs clause IDs (B-08 discharge via P03) |
 
@@ -177,14 +180,14 @@ likewise (S06/S11 acceptance criteria; brief §5–§6).
 Directly gated (Blocked-by names G-D01 or a same-act unknown):
 **P03.0-entry** (G-D01); **P05** existence (U-14); **P10** existence
 (U-8). Transitively gated (blocker discharges only through P03/Wave 1 or
-a window `ADR-0006` opens): **P04**, **P06**, **P07**, **P08**, **P09**
-(entry gates + B-06 contracts); **P12.3** (P03.4); **P13.2** (P03.2
-first-use precondition), **P13.3** (P03); **P14.3** (RFC-0009), **P14.4**
-(RFC-0005). Gated by other authorities and **not** by D-01: P00.1
-(B-11), P00.4/P00.5 and P01.5/P01.6 (Maintainer console), P11.4 (B-10),
-P12.2/P12.4 (G-SPEC(S13)+B-08), P14.0 (G-CI), P15.3 (RFC-0014/0015).
-Source: WORK_BREAKDOWN_STRUCTURE.md rows at `e300f506`;
-DEPENDENCY_GRAPH.md edge list.
+a window the acceptance ADR opens): **P04**, **P06**, **P07**, **P08**,
+**P09** (entry gates + B-06 contracts); **P12.3** (P03.4); **P13.2**
+(P03.2 first-use precondition), **P13.3** (P03); **P14.3** (RFC-0009),
+**P14.4** (RFC-0005). Gated by other authorities and **not** by D-01:
+P00.1 (B-11), P00.4/P00.5 and P01.5/P01.6 (Maintainer console), P11.4
+(B-10), P12.2/P12.4 (G-SPEC(S13)+B-08), P14.0 (G-CI), P15.3
+(RFC-0014/0015). Source: WORK_BREAKDOWN_STRUCTURE.md rows at
+`e300f506`; DEPENDENCY_GRAPH.md edge list.
 
 ## 8. Every blocker that disappears after D-01
 
@@ -193,7 +196,7 @@ Per PROGRAM.md §6 and the brief §10 (which this table restates):
 | Blocker | Closure condition | Note |
 | --- | --- | --- |
 | B-01 — D-01 undecided | Closes on acceptance of **any** identity (I-A/I-B/I-C/I-D) | Survives only under DEFER |
-| B-02 — U-14 runtime unknown | Resolved **in the same act** (void or scoped per the recorded space) | Unless `ADR-0006` explicitly re-defers it with a review point (RFC-0012 §Consequences) — then it survives with a recorded date |
+| B-02 — U-14 runtime unknown | Resolved **in the same act** (void or scoped per the recorded space) | Unless the acceptance ADR explicitly re-defers it with a review point (RFC-0012 §Consequences) — then it survives with a recorded date |
 
 No other blocker in the register closes on D-01 alone.
 
@@ -254,7 +257,7 @@ to, the identity choice):
 
 | Unknown | Recorded space | Source | In force today |
 | --- | --- | --- | --- |
-| U-14 runtime scope | S-A no runtime (S6 retired by Baseline amendment) · S-B validation/evaluation runtime · S-C full execution environment (scheduling, I/O, resource model) | RFC-0012 §Design Space | — (routed into `ADR-0006`) |
+| U-14 runtime scope | S-A no runtime (S6 retired by Baseline amendment) · S-B validation/evaluation runtime · S-C full execution environment (scheduling, I/O, resource model) | RFC-0012 §Design Space | — (routed into the acceptance ADR) |
 | U-8 packaging | N-yes · N-no · N-defer | RFC-0007 | N-defer accepted; review mandatory (ADR-0004) |
 | U-6 compatibility | P-A strong backward compatibility · P-B editions · P-C semver-style · P-D interim instability window then one of the former | RFC-0005 | P-D window in force (ADR-0004) |
 | U-10 language versioning | V-A monotonic · V-B semver-like · V-C date editions · V-D no language version pre-1.0 | RFC-0009 | V-D in force (ADR-0004) |
@@ -308,8 +311,8 @@ exists today (V-D and the P-D window in force; brief §7).
 ## 13. Cross-impact matrix
 
 The U-14 column reproduces RFC-0012's coherence table, which is
-**descriptive, not binding** — `ADR-0006` records the actual resolutions
-(RFC-0012 §Design Space; brief §2).
+**descriptive, not binding** — the acceptance ADR records the actual
+resolutions (RFC-0012 §Design Space; brief §2).
 
 | Option | U-14 coherence | U-8 signal | S04 | S05 | S06 | S07 | S11 | P05 | P10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -348,7 +351,7 @@ Branch order reproduces RFC-0001's own table order, then DEFER as
 RFC-0001 §Consequences lists it. The tree ranks nothing.
 
 ```text
-D-01 (U-1) — Maintainer act (Article 6), recorded as `ADR-0006` (Article 7)
+D-01 (U-1) — Maintainer act (Article 6), recorded as the acceptance ADR (Article 7)
 │
 ├─ Accept I-A — definition language
 │    U-14 coherence: S-A or S-B (RFC-0012, descriptive)
@@ -378,8 +381,8 @@ D-01 (U-1) — Maintainer act (Article 6), recorded as `ADR-0006` (Article 7)
 
 ## 16. Wave 1 activation sequence
 
-1. `ADR-0006` merges into `docs/decisions/` — Maintainer-authored, via
-   feature branch and PR (the single recorded path, CONTRIBUTING.md;
+1. The acceptance ADR merges into `docs/decisions/` — Maintainer-authored,
+   via feature branch and PR (the single recorded path, CONTRIBUTING.md;
    Article 7).
 2. PROGRAM.md revision PR: §4 gate table (G-D01) and §6 blocker register
    (B-01, B-02) updated — "PROGRAM.md is revised by PR because a gate
@@ -406,13 +409,14 @@ D-01 (U-1) — Maintainer act (Article 6), recorded as `ADR-0006` (Article 7)
 Under DEFER the sequence does not start; the only artifact is the
 deferral record with its review date (DP-15).
 
-## 17. Exact repository state immediately after `ADR-0006` would exist
+## 17. Exact repository state immediately after the acceptance ADR would exist
 
 Relative to `main` = `e300f506`, the merge of the acceptance ADR changes
 **exactly one thing**:
 
-- `docs/decisions/` gains one file (`docs/decisions/ADR-0006.md`),
-  making its contents: ADR-0001..ADR-0005, `ADR-0006`,
+- `docs/decisions/` gains one file — the acceptance ADR, at the next
+  free number in the `ADR-XXXX.md` sequence after ADR-0005 — making
+  its contents: ADR-0001..ADR-0005, the acceptance ADR,
   `D01_DECISION_BRIEF.md`, `D01_DECISION_DOSSIER.md`.
 - In substance (facts recorded inside the ADR): G-D01 is met; B-01
   closed; B-02 resolved or explicitly re-deferred; the RFC-0005/0007/0009
@@ -440,7 +444,7 @@ updates automatically:**
   includes `docs/decisions/ADR-*.md`, the new ADR enters it on the next
   regeneration (DOC_DERIVATION_CONVENTIONS: regenerate, never hand-edit).
 
-## 18. Checklist the Maintainer must complete before writing `ADR-0006`
+## 18. Checklist the Maintainer must complete before writing the acceptance ADR
 
 - [ ] Select the identity from the recorded space (I-A / I-B / I-C /
       I-D) — or record DEFER with an explicit review date (RFC-0001
