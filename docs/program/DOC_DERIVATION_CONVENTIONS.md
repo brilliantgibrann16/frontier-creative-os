@@ -1,6 +1,7 @@
 # Documentation Derivation Conventions
 
-- Status: Active (Wave 0, program P13 — package P13.1)
+- Status: Active (Wave 0, program P13 — derivation pipeline; initial
+  package P13.1)
 - Artifact class: program documentation (non-normative; defines mechanical
   conventions only)
 - Governing artifacts: Baseline L-2 (documentation is informative, never
@@ -42,15 +43,36 @@ excluded.
 
 ## 3. Pipeline
 
-- Tool: `tools/docs/derive_corpus_index.py` (standard library only).
-- Output: `docs/derived/CORPUS_INDEX.md` — the derived index of the
-  ratified corpus.
-- Invocation, from the repository root:
+The derivation platform lives under `tools/docs/` (standard library
+only) and writes to `docs/derived/`. `tools/docs/README.md` documents
+the platform; `tools/docs/corpus.py` holds the shared mechanical
+helpers.
+
+| Tool | Output |
+| --- | --- |
+| `tools/docs/derive_corpus_index.py` | `docs/derived/CORPUS_INDEX.md` |
+| `tools/docs/derive_navigation.py` | `docs/derived/NAVIGATION.md` |
+| `tools/docs/derive_id_crossref.py` | `docs/derived/ID_CROSSREF.md` |
+| `tools/docs/derive_document_graph.py` | `docs/derived/DOCUMENT_GRAPH.md` |
+| `tools/docs/derive_architecture_outline.py` | `docs/derived/ARCHITECTURE_OUTLINE.md` |
+| `tools/docs/derive_repository_inventory.py` | `docs/derived/REPOSITORY_INVENTORY.md` |
+
+- Build everything, from the repository root:
 
 ```
-python tools/docs/derive_corpus_index.py
+python tools/docs/build_docs.py
 ```
 
+- Verify committed derived output matches regeneration:
+
+```
+python tools/docs/build_docs.py --check
+```
+
+- Content extraction stays within the §1 source corpus. Two path-only
+  surfaces copy no document content: the repository inventory records
+  file paths across the tracked tree, and the navigation document links
+  to human-maintained entry-point indexes by path only.
 - Location note: the documentation area is `docs/derived/` and the
   derivation tooling lives under `tools/docs/`. This is an
   implementation-plan note (PROGRAM.md P13, repository areas), not a
@@ -68,4 +90,7 @@ normal PR path and carries no authority of its own.
 Fixture tests for the pipeline live in `tests/` and run in the CI test
 job (see `docs/program/TESTING_CONVENTIONS.md`). Derived output under
 `docs/` is scanned by the link and identifier checks like any other
-documentation.
+documentation. A freshness test compares committed derived output with
+regeneration (`python tools/docs/build_docs.py --check`); it activates
+once `docs/derived/` exists (first generation) and is skipped before
+that.
