@@ -92,4 +92,5 @@ ADRs (see `docs/program/DELIVERY_STRATEGY.md`, Release strategy).
 | Specification corpus (binds only when ratified) | [`specs/`](./specs/) |
 | Program, plans, and conventions | [`docs/program/`](./docs/program/) |
 | Mechanical checks | [`tools/checks/`](./tools/checks/) |
+| Documentation derivation platform (regenerates `docs/derived/`) | [`tools/docs/`](./tools/docs/) |
 | Engineering prompt library | [`docs/prompts/`](./docs/prompts/) |

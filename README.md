@@ -35,13 +35,22 @@ In any normative conflict, higher documents win:
 ## Repository layout
 
 - `docs/` — authoritative documents (constitution, decisions, architecture,
-  RFCs, engineering prompts)
+  RFCs, engineering prompts) plus the implementation program plans and
+  conventions (`docs/program/`) and the draft engineering specification
+  standard (`docs/engineering/`)
 - `specs/` — implementation specification corpus (home recorded by
   ADR-0005; individual specifications bind only when ratified)
+- `tools/checks/` — mechanical documentation checks (internal links,
+  governance identifiers); they run as CI gates on every pull request and
+  every push to `main`
 - `tools/compiler/fcos/` — the Phase 0 specification-document pipeline
   (prototype). Historical context only; it is not the language compiler and
   never constrains language design.
-- `tests/` — tests for the prototype pipeline
+- `tools/docs/` — documentation derivation platform for the derived
+  documentation set (`docs/derived/`, which appears with its first
+  committed generation; see `docs/program/DOC_DERIVATION_CONVENTIONS.md`)
+- `tests/` — tests for the prototype pipeline, the mechanical checks, and
+  the documentation platform
 - `schemas/`, `examples/`, `assets/` — scaffolding (empty)
 - `build/` — retained Phase 0 build-process artifacts (bootstrap prompt,
   execution manifest, playbook, prompt templates). Historical context
