@@ -15,7 +15,7 @@
 | `DELIVERY_STRATEGY.md` | Branch, merge, release, testing, and verification strategies |
 | `MILESTONE_TEMPLATE.md` | Mandatory template for every program milestone |
 | `RISK_REGISTER.md` | Program-execution risk register |
-| `DOC_DERIVATION_CONVENTIONS.md` | Documentation derivation conventions: source corpus, mechanical rules, pipeline locations (P13.1) |
+| `DOC_DERIVATION_CONVENTIONS.md` | Documentation derivation conventions: source corpus, mechanical rules, the `tools/docs/` pipeline and its `docs/derived/` outputs, staleness and freshness gates (P13.1) |
 | `KNOWLEDGE_SYNC_RUNBOOK.md` | Repo→mirror sync runbook: ADR Log, RFC Index, Spec Index, Ops Log, registers; repo wins on conflict (P02.1) |
 | `WAVE_0_VERIFICATION.md` | Wave 0 verification record: hygiene and gate evidence (P00/P01) |
 | `AGENT_CONTRIBUTION_CONVENTIONS.md` | Agent contribution conventions: one path, review rules, disclosure duties, blocker protocol (P15.1) |
