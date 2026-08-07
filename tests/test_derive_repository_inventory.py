@@ -72,4 +72,7 @@ def test_main_idempotent_across_runs(tmp_path):
     assert main(["derive_repository_inventory.py", str(tmp_path)]) == 0
     second = (tmp_path / OUTPUT_PATH).read_text(encoding="utf-8")
     assert first == second
-    assert "docs/derived" not in first.split("## Totals")[0].split("- Limitations")[0].split("## (")[-1]
+    # The second run executes with docs/derived/ already on disk; the
+    # inventory must not list its own output file (self-listing would
+    # make regeneration non-idempotent).
+    assert f"- `{OUTPUT_PATH}`" not in second
