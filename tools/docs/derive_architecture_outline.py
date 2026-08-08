@@ -12,6 +12,15 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+# Support the documented direct-execution form from the repository root,
+#     python tools/docs/derive_architecture_outline.py
+# ``tools`` is a namespace package, so the repository root must be on
+# ``sys.path`` before the ``tools.docs`` imports resolve; plain script
+# execution puts only this file's directory there.
+_REPO_ROOT = str(Path(__file__).resolve().parents[2])
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
 from tools.docs.corpus import banner, extract_headings, first_heading, read_text
 
 OUTPUT_PATH = "docs/derived/ARCHITECTURE_OUTLINE.md"
