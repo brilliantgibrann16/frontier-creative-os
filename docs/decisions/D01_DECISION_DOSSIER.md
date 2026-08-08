@@ -22,6 +22,29 @@ authoring time as the next in sequence after ADR-0005.
 open pull requests; `docs/decisions/` contains ADR-0001..ADR-0005 and
 `D01_DECISION_BRIEF.md`.
 
+**Post-compilation currency note (2026-08-09):** the compilation-state
+block above and §17 are the 2026-08-05 record and are retained
+unedited (the corpus convention for superseded point-in-time
+statements — see the dated notes added by PR #23, e.g. in
+`specs/README.md`). As of `main` = `0210430f` (merge of PR #26):
+PRs #10–#26 are merged; `docs/decisions/` contains
+ADR-0001..ADR-0005, `D01_DECISION_BRIEF.md`, and this dossier. The
+acceptance ADR still does not exist and D-01 remains undecided; the
+next free number in the ADR sequence after ADR-0005 remains
+unclaimed. One §17 statement is superseded: `docs/derived/` now
+exists — PR #26 merged the first generated documentation corpus
+(`CORPUS_INDEX.md`, `NAVIGATION.md`, `ID_CROSSREF.md`,
+`DOCUMENT_GRAPH.md`, `ARCHITECTURE_OUTLINE.md`,
+`REPOSITORY_INVENTORY.md`). Because `docs/derived/` exists, the
+derivation freshness gate is active
+(`docs/program/DOC_DERIVATION_CONVENTIONS.md` §5), and
+`docs/decisions/ADR-*.md` is a derivation source: the pull request
+that merges the acceptance ADR must include the regenerated derived
+documentation in the same change, or the freshness test fails in CI.
+ADR-0001..ADR-0005 and RFC-0001..RFC-0017 are byte-identical to the
+compilation state (verified by blob hash); §§1–16 and §18 otherwise
+describe the current decision space unchanged.
+
 ---
 
 ## 1. Decision statement
