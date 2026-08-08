@@ -15,6 +15,17 @@ import argparse
 from collections.abc import Callable
 from pathlib import Path
 
+# Support the documented direct-execution form from the repository root,
+#     python tools/docs/build_docs.py
+# ``tools`` is a namespace package, so the repository root must be on
+# ``sys.path`` before the ``tools.docs`` imports resolve; plain script
+# execution puts only this file's directory there.
+import sys
+
+_REPO_ROOT = str(Path(__file__).resolve().parents[2])
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
 from tools.docs import (
     derive_architecture_outline,
     derive_corpus_index,
