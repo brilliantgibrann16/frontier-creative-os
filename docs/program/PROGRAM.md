@@ -25,8 +25,8 @@ ratifications, passing gates), never date-based.
 | Architecture Baseline (`docs/architecture/baseline.md`) | Ratified 1.0.0 (ADR-0002) | Rank 2 |
 | Master System Blueprint (`docs/architecture/blueprint.md`) | Ratified — descriptive (ADR-0002) | None (descriptive) |
 | Universal Engineering Doctrine (`docs/architecture/doctrine.md`) | Ratified — explanatory (ADR-0002) | None (explanatory) |
-| ADR-0001 … ADR-0005 (`docs/decisions/`) | Accepted | Rank 3 |
-| RFC-0001 … RFC-0017 (`docs/rfc/`) | Disposed per ADR-0004 | Rationale only |
+| ADR-0001 … ADR-0006 (`docs/decisions/`) | Accepted | Rank 3 |
+| RFC-0001 … RFC-0017 (`docs/rfc/`) | Disposed per ADR-0004; RFC-0001 accepted (I-D), RFC-0007 decided (N-no), RFC-0012 discharged per ADR-0006 | Rationale only |
 | Specifications S01–S16 (`specs/`) | **In Review — not ratified** | None until ratified |
 
 Because no specification is ratified yet, **no program may cite `specs/` as
@@ -42,14 +42,14 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | P00 | Repository Bootstrap | — (repository interface, Blueprint §8; INV-6) | ACTIVE |
 | P01 | Core Infrastructure (CI & Mechanical Gates) | gate encoding for S12/S15/S1 enforcement (U-12 → RFC-0011 E-A) | ACTIVE |
 | P02 | Knowledge System | S3 | STANDING |
-| P03 | Language Definition | S4 | GATED (G-D01) |
+| P03 | Language Definition | S4 | ACTIVE (G-D01 met — ADR-0006) |
 | P04 | Compiler | S5 | GATED |
-| P05 | Runtime | S6 | GATED (existence undecided, U-14) |
+| P05 | Runtime | S6 | GATED (exists — minimal scope S-B, ADR-0006) |
 | P06 | Standard Library | S7 | GATED |
 | P07 | SDK | S8 | GATED |
 | P08 | Developer Tools | S9 | GATED (scope rule U-A) |
 | P09 | Build System | S10 | GATED |
-| P10 | Package Manager | S11 | DEFERRED (RFC-0007 N-defer) |
+| P10 | Package Manager | S11 | CLOSED (RFC-0007 N-no, ADR-0006 — program does not exist) |
 | P11 | Testing Infrastructure | S12 | ACTIVE |
 | P12 | Verification & Conformance | S13 | PARTIALLY GATED |
 | P13 | Documentation System | S14 | ACTIVE (frame) |
@@ -76,7 +76,7 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | Gate | Definition | State |
 | --- | --- | --- |
 | **G0** | Governance closure: ADR-0004/0005 merged, indexes consistent (PR #14) | **MET** (2026-08-02) |
-| **G-D01** | RFC-0001 decided by Maintainer and recorded as an acceptance ADR. Per RFC-0012 (procedural, ADR-0004) that ADR also resolves U-14; it unlocks full decisions on RFC-0005, RFC-0007, RFC-0009 | **OPEN** — the controlling gate |
+| **G-D01** | RFC-0001 decided by Maintainer and recorded as an acceptance ADR. Per RFC-0012 (procedural, ADR-0004) that ADR also resolves U-14; it unlocks full decisions on RFC-0005, RFC-0007, RFC-0009 | **MET** (2026-08-10, ADR-0006 — U-14 resolved S-B and RFC-0007 decided N-no in the same act; RFC-0005/RFC-0009 decision windows open) |
 | **G-CI** | CI gates live per RFC-0011 E-A and enforced as required checks on `main` | OPEN (P01 exit) |
 | **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | OPEN for all programs |
 | **G-CONF** | Conformance judgment available from P12 for the ratified clause set | OPEN |
@@ -179,7 +179,7 @@ never to be filled by invention.
 
 ---
 
-### P03 — Language Definition, S4 (GATED: G-D01)
+### P03 — Language Definition, S4 (ACTIVE — G-D01 met, ADR-0006)
 
 - **Purpose:** the sole home of meaning (INV-2); everything below the A3
   meaning line is judged against it.
@@ -193,10 +193,10 @@ never to be filled by invention.
 - **Deliverables:** ratified language-definition clauses; clause index;
   ratification records.
 - **Dependencies:** G-D01.
-- **Required RFCs:** RFC-0001 — **Blocked-by: Maintainer decision D-01
-  (ADR-0004 records it open)**; RFC-0002, RFC-0008 (accepted).
-- **Required ADRs:** the future RFC-0001 acceptance ADR; a recorded
-  ratification per spec version (Article 7).
+- **Required RFCs:** RFC-0001 (accepted — identity I-D, ADR-0006); RFC-0002,
+  RFC-0008 (accepted).
+- **Required ADRs:** ADR-0006 (the RFC-0001 acceptance ADR — recorded); a
+  recorded ratification per spec version (Article 7).
 - **Required Specifications:** S04 (In Review; container only today).
 - **Required Tests:** spec lint via P01 (ID validity, cross-references);
   alignment review against the P12 conformance suite.
@@ -257,23 +257,29 @@ never to be filled by invention.
 
 ---
 
-### P05 — Runtime, S6 (GATED: existence undecided)
+### P05 — Runtime, S6 (GATED — exists, minimal scope S-B per ADR-0006)
 
-- **Purpose:** spec-declared execution services, **if** D-01 yields an
-  executed language.
-- **Scope:** **Blocked-by: U-14, resolved inside the RFC-0001 acceptance ADR
-  (RFC-0012 procedural ruling, ADR-0004).** This program may be voided.
+- **Purpose:** spec-declared execution services — a validation-evaluation
+  runtime (S-B, ADR-0006).
+- **Scope:** **Resolved (ADR-0006): U-14 = S-B.** The program exists with
+  minimal scope bounded by the validation-evaluation runtime; the runtime's
+  observable behavior is spec-defined and it holds zero defining authority
+  (L-3). S06 is scoped minimal now and grows only by recorded stage
+  transitions; the boundary between the S-B runtime and S13 conformance
+  tooling must be drawn precisely in specification work (RFC-0012 S-B row).
 - **Deliverables / Required Tests / Acceptance Gates / Exit Criteria:**
-  definable only post-gate; recorded here as blocked, not invented.
+  definable only as ratified S06 specification content lands (B-08);
+  recorded here as pending, not invented.
 - **Dependencies:** G-D01; P03; P12.
 - **Required RFCs:** RFC-0001 + RFC-0012 (procedural).
-- **Required ADRs:** the RFC-0001 acceptance ADR (also disposes this
-  program's existence).
+- **Required ADRs:** ADR-0006 (recorded — disposes this program's existence
+  as S-B).
 - **Required Specifications:** S06 (In Review; bounds only).
-- **Engineering Risks:** anticipatory runtime work presuming a D-01 outcome
-  (violates the Blueprint §14 rule: no unknown resolved implicitly).
-- **Rollback Strategy:** if voided, the program closes with a record; no
-  artifacts to roll back pre-gate.
+- **Engineering Risks:** scope creep beyond the S-B validation-evaluation
+  boundary; entering a later capability stage without its recorded RFC →
+  ADR transition (CN-14).
+- **Rollback Strategy:** no artifacts exist yet; code reverts once
+  implementation begins.
 - **Estimated Parallelism / Required Teams:** determined post-gate.
 - **Repository Areas:** none pre-gate.
 - **Future Expansion:** embedding boundary work (Blueprint §8) if the
@@ -382,21 +388,28 @@ never to be filled by invention.
 
 ---
 
-### P10 — Package Manager, S11 (DEFERRED)
+### P10 — Package Manager, S11 (CLOSED: RFC-0007 N-no, ADR-0006)
 
-- **Purpose:** naming, versioning, distribution, resolution — **if needed**.
-- **Scope:** **Blocked-by: RFC-0007 deferral (N-defer, ADR-0004) — the
-  packaging decision is taken at/after RFC-0001 acceptance; necessity is
-  conditional on D-01 (Blueprint §2, U-8).** No work items exist.
-- **Dependencies:** G-D01 → packaging decision → (possibly) this program.
-- **Required RFCs:** the deferred packaging decision. **Required ADRs:** its
-  recording ADR. **Required Specifications:** S11 (In Review; bounds only).
+- **Purpose:** naming, versioning, distribution, resolution — **decided not
+  needed** (RFC-0007 N-no, ADR-0006).
+- **Scope:** **Decided (ADR-0006): N-no.** The mandatory RFC-0007 review was
+  conducted inside the D-01 acceptance act: no package-distribution
+  subsystem exists and this program does not exist. The interim N-defer
+  disposition (ADR-0004) is superseded. S11 retires via the Baseline §13
+  amendment path — supersession with a successor pointer, never deletion —
+  as a queued follow-up. No work items exist.
+- **Dependencies:** none — the packaging decision is taken (N-no); the
+  program is closed.
+- **Required RFCs:** RFC-0007 (reviewed — N-no). **Required ADRs:** ADR-0006
+  (recorded). **Required Specifications:** S11 — retires via the Baseline
+  §13 amendment (queued).
 - **Required Tests / Acceptance Gates / Exit Criteria / Parallelism /
-  Teams:** definable only after the decision; recorded as blocked.
+  Teams:** none — the program is closed (N-no).
 - **Engineering Risks:** anticipatory registry work presuming an outcome.
-- **Rollback Strategy:** n/a pre-decision.
-- **Repository Areas:** none pre-decision.
-- **Future Expansion:** registry boundary work per Blueprint §8 if decided.
+- **Rollback Strategy:** n/a — closed with no artifacts.
+- **Repository Areas:** none.
+- **Future Expansion:** none — reopening requires a new RFC → ADR decision
+  (CN-14).
 
 ---
 
@@ -562,9 +575,9 @@ never to be filled by invention.
 
 | ID | Blocker | Blocks | Governing artifact |
 | --- | --- | --- | --- |
-| B-01 | D-01 language identity undecided; RFC-0001 records no recommendation | P03–P10 entry | RFC-0001; ADR-0004 |
-| B-02 | U-14 runtime existence/scope — resolves inside the RFC-0001 acceptance ADR | P05 existence | RFC-0012 (procedural); ADR-0004 |
-| B-03 | Packaging decision deferred to at/after RFC-0001 acceptance | P10 entirely | RFC-0007 (N-defer); ADR-0004 |
+| B-01 | **Closed (ADR-0006, 2026-08-10):** D-01 decided — identity I-D (definition core with staged evolution) | P03–P10 entry — released | RFC-0001; ADR-0004; ADR-0006 |
+| B-02 | **Resolved (ADR-0006):** U-14 = S-B — P05 exists with minimal validation-evaluation scope | P05 existence — resolved | RFC-0012 (procedural); ADR-0004; ADR-0006 |
+| B-03 | **Closed (ADR-0006):** packaging decided N-no — P10 does not exist; S11 retirement via Baseline §13 amendment queued | P10 entirely — program closed | RFC-0007 (N-no); ADR-0004; ADR-0006 |
 | B-04 | Compatibility policy: interim instability window only | P14 guarantees | RFC-0005; ADR-0004 |
 | B-05 | No language versioning scheme pre-1.0 (V-D) | P14 versioned releases | RFC-0009; ADR-0004 |
 | B-06 | All interface forms UNKNOWN until specified (compiler boundary, tooling contract, SDK surfaces, embedding, registry) | P04, P07, P08, P09 contracts | Blueprint §8 |
