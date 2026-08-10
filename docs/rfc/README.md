@@ -12,7 +12,8 @@ recommendation appears it is labeled and non-binding.
 
 **Disposition (2026-08-02):** the set was disposed by **ADR-0004** (with
 ADR-0005 amending the specification-home element of RFC-0003). The table
-below is the authoritative disposition record together with ADR-0004;
+below is the authoritative disposition record together with ADR-0004
+and ADR-0006;
 individual RFC files retain their submission-time `Status: In Review`
 headers by design — per the standing no-bulk-rewrite rule, they are not
 rewritten wholesale.
@@ -20,20 +21,20 @@ rewritten wholesale.
 Numbering is provisional pending RFC-0002 (identifier scheme); renumbering
 after D-03 resolution, if any, will preserve a mapping table here.
 
-| RFC | Title | Resolves | Subsystem | Disposition (ADR-0004) |
+| RFC | Title | Resolves | Subsystem | Disposition (ADR-0004; ADR-0006 where cited) |
 | --- | --- | --- | --- | --- |
-| 0001 | Language Identity and Design Philosophy | U-1 (D-01) | S4 | **Open** — no recommendation recorded; requires dedicated decision + ADR |
+| 0001 | Language Identity and Design Philosophy | U-1 (D-01) | S4 | **Accepted (I-D — ADR-0006)**; Q1/Q2 re-deferred to the S04 charter; Q4: name FSL retained |
 | 0002 | Artifact Identifier and Namespace Scheme | U-2 (D-03) | cross-cutting | Accepted (N-B + N-C) |
 | 0003 | Specification Corpus Location and Repository Taxonomy | U-3 (D-13), D-14 remainder | cross-cutting | Accepted (T-A), home amended by ADR-0005 to `/specs` |
 | 0004 | Conformance Levels and Third-Party Certification | U-5 (D-04), U-13 | S13 | Accepted — frame (L-A + C-A); levels remain future work |
 | 0005 | Compatibility and Stability Policy | U-6 | S4/S15 | Accepted — interim rule only (pre-1.0 instability window); full policy blocked by RFC-0001 |
 | 0006 | Reference Implementation Policy | U-7 | S5 | Accepted (R-A — no defining-authority reference implementation) |
-| 0007 | Package Distribution Model | U-8 | S11 | Accepted — deferral (N-defer, decided at/after RFC-0001 acceptance) |
+| 0007 | Package Distribution Model | U-8 | S11 | Accepted — deferral (N-defer) discharged: decided **N-no** (ADR-0006); S11 retires via Baseline §13 supersession |
 | 0008 | Machine-Readable Specification Format | U-9 | S4/S13 | Accepted (M-B — prose-authoritative + clause index) |
 | 0009 | Language Versioning Scheme | U-10 | S4 | Accepted — interim rule only (V-D, no language version pre-1.0) |
 | 0010 | Multi-Maintainer Governance Procedure | U-11 | S1 | Accepted (G-D + cooling rule); blocker J.4 removed |
 | 0011 | CI Platform and Gate Encoding | U-12 | S12/S15 | Accepted (E-A — tests + link/ID checks) |
-| 0012 | Runtime Scope | U-14 | S6 | Accepted — procedural (U-14 resolved inside the future RFC-0001 acceptance ADR) |
+| 0012 | Runtime Scope | U-14 | S6 | Accepted — procedural routing discharged: U-14 resolved **S-B** in ADR-0006 |
 | 0013 | Candidate Subsystem: Planner | — (introduction) | none (new) | **Rejected** (P-A) |
 | 0014 | Candidate Subsystem: Memory | — (routing + introduction) | S4 or new | **Open** — routing (M-A/M-B/M-C) unchosen |
 | 0015 | Candidate Subsystem: Context Engine | — (introduction) | none (new) | **Open** — blocked on definition (L-12) |
@@ -53,3 +54,18 @@ routing) ahead of RFC-0001, and gave RFC-0005 and RFC-0009 interim
 rules; the full compatibility policy (RFC-0005) and the U-14
 resolution (RFC-0012) still land at or after RFC-0001 acceptance,
 exactly as the table records.
+
+*Post-disposition note (2026-08-10):* **ADR-0006** (the D-01 acceptance)
+disposed the three rows above that ADR-0004 had left open or routed
+forward: RFC-0001 is accepted with identity **I-D** (Q1/Q2 explicitly
+re-deferred to the S04 language-definition charter; Q4 — the name
+Frontier Specification Language is retained); RFC-0007's deferral
+trigger fired and the decision is **N-no** (the interim N-defer
+disposition is superseded; S11 retires via the Baseline §13 amendment
+path — supersession with a successor pointer, never deletion — queued as
+its own follow-up); RFC-0012's procedural routing is discharged, with
+U-14 resolved **S-B** inside ADR-0006. The interim rules of RFC-0005
+(P-D) and RFC-0009 (V-D) remain in force; their decision windows are
+open per ADR-0006. Individual RFC files keep their submission-time
+`Status: In Review` headers per the ADR-0004 convention: this index plus
+the disposing ADRs are the authoritative disposition record.
