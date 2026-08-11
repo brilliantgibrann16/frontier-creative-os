@@ -18,13 +18,15 @@ individual RFC files retain their submission-time `Status: In Review`
 headers by design — per the standing no-bulk-rewrite rule, they are not
 rewritten wholesale.
 
-Numbering is provisional pending RFC-0002 (identifier scheme); renumbering
-after D-03 resolution, if any, will preserve a mapping table here.
+Numbering is settled (ADR-0008): every existing identifier is
+grandfathered — never renumbered, never migrated; no mapping table
+exists because no migration is performed. New namespaces enter only
+through their own RFC → ADR decision.
 
 | RFC | Title | Resolves | Subsystem | Disposition (ADR-0004; ADR-0006 where cited) |
 | --- | --- | --- | --- | --- |
 | 0001 | Language Identity and Design Philosophy | U-1 (D-01) | S4 | **Accepted (I-D — ADR-0006)**; Q1/Q2 resolved at the charter review point (ADR-0007); Q4: name FSL retained |
-| 0002 | Artifact Identifier and Namespace Scheme | U-2 (D-03) | cross-cutting | Accepted (N-B + N-C) |
+| 0002 | Artifact Identifier and Namespace Scheme | U-2 (D-03) | cross-cutting | Accepted (N-B + N-C); registry authority, grandfathering, and token discipline recorded in **ADR-0008** |
 | 0003 | Specification Corpus Location and Repository Taxonomy | U-3 (D-13), D-14 remainder | cross-cutting | Accepted (T-A), home amended by ADR-0005 to `/specs` |
 | 0004 | Conformance Levels and Third-Party Certification | U-5 (D-04), U-13 | S13 | Accepted — frame (L-A + C-A); levels remain future work |
 | 0005 | Compatibility and Stability Policy | U-6 | S4/S15 | Accepted — interim rule only (pre-1.0 instability window); full policy blocked by RFC-0001 |
