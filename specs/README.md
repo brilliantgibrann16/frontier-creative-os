@@ -85,3 +85,16 @@ are retained unedited. As of `main` today:
 | S14-documentation-system.md | S14 Documentation System | Full |
 | S15-release-distribution.md | S15 Release & Distribution | Gate frame (CI pending) |
 | S16-ai-layer.md | S16 AI Layer | Full |
+
+### Post-decision note (2026-08-11)
+
+- **Assumption 2 is discharged.** D-01 is recorded: identity I-D
+  (ADR-0006), with RFC-0001 Q1/Q2 resolved at their recorded DP-15
+  review point (ADR-0007). Corpus markers reading "blocked by:
+  RFC-0001" now discharge into P03 specification work; marker updates
+  travel WBS P03.6.
+- Index rows below are submission-time text, retained unedited: S04's
+  content inputs are now decided (identity, consumers, success
+  criteria — ADR-0006, ADR-0007); S06 scope is decided (S-B —
+  ADR-0006, Decision 2); S11 existence is decided (N-no — retired,
+  ADR-0006, Decision 4; Baseline 1.1.0 §13).

@@ -4,9 +4,12 @@
 
 ## Scope
 
-**BLOCKED at the existence level** — missing: whether FCOS needs a
-package manager at all; blocked by: RFC-0007 (U-8), which recommends
-recording N-defer inside RFC-0001's acceptance ADR; unblock: that ADR.
+**Existence decided: N-no — S11 is retired.** The RFC-0001 acceptance
+ADR resolved U-8 as N-no (ADR-0006, Decision 4); the Baseline records
+the retirement by supersession (Baseline 1.1.0, §13 Amendment record)
+and no successor subsystem exists. The remainder of this document is
+retained unedited as the historical record of the bounds that would
+have bound any package manager; it binds nothing.
 
 S11 is the only subsystem whose existence is conditional (Blueprint §2).
 This specification therefore fixes only the bounds that would bind any

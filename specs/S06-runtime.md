@@ -4,14 +4,18 @@
 
 ## Scope
 
-**BLOCKED at the scope level** — missing: whether a runtime exists and
-what it is (S-A none / S-B validation-evaluation / S-C full execution,
-per RFC-0012’s design space); blocked by: RFC-0012, which is itself
-blocked by RFC-0001 (D-01, U-14); unblock: RFC-0001 acceptance ADR
-(RFC-0012 recommends resolving U-14 within it).
+**Scope decided: S-B** — a validation-evaluation runtime (U-14
+resolved inside the RFC-0001 acceptance ADR per RFC-0012’s routing:
+ADR-0006, Decision 2; Baseline L-3 stands — zero defining authority).
+Runtime content remains **BLOCKED** — missing: the S-B boundary drawn
+as specification clauses ("the boundary between the
+validation-evaluation runtime and S13 conformance tooling must be
+drawn precisely in specification work" — ADR-0006, Decision 2);
+blocked by: ratified S04 Stage 0 clauses (P03); unblock: that
+specification work.
 
-Everything specifiable independent of that decision is recorded below;
-every other section is blocked with the same citation.
+Everything specifiable independent of the remaining boundary work is
+recorded below; every other section is blocked with the same citation.
 
 ## Responsibilities
 
@@ -27,7 +31,8 @@ Conditional obligations (bind if and only if a runtime exists):
 
 Runtime embedding boundary exists as an architectural placeholder
 (Blueprint §8) “required only if D-01 yields an executed language.”
-**BLOCKED** — missing: all interface content; blocked by: RFC-0012/RFC-0001.
+**BLOCKED** — missing: all interface content; blocked by: the S-B
+boundary specification work above (S-B decided — ADR-0006, Decision 2).
 
 ## Data model
 
