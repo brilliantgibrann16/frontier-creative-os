@@ -23,7 +23,7 @@ after D-03 resolution, if any, will preserve a mapping table here.
 
 | RFC | Title | Resolves | Subsystem | Disposition (ADR-0004; ADR-0006 where cited) |
 | --- | --- | --- | --- | --- |
-| 0001 | Language Identity and Design Philosophy | U-1 (D-01) | S4 | **Accepted (I-D — ADR-0006)**; Q1/Q2 re-deferred to the S04 charter; Q4: name FSL retained |
+| 0001 | Language Identity and Design Philosophy | U-1 (D-01) | S4 | **Accepted (I-D — ADR-0006)**; Q1/Q2 resolved at the charter review point (ADR-0007); Q4: name FSL retained |
 | 0002 | Artifact Identifier and Namespace Scheme | U-2 (D-03) | cross-cutting | Accepted (N-B + N-C) |
 | 0003 | Specification Corpus Location and Repository Taxonomy | U-3 (D-13), D-14 remainder | cross-cutting | Accepted (T-A), home amended by ADR-0005 to `/specs` |
 | 0004 | Conformance Levels and Third-Party Certification | U-5 (D-04), U-13 | S13 | Accepted — frame (L-A + C-A); levels remain future work |
