@@ -39,6 +39,7 @@
 - §11 Risk Model
 - §12 Architectural Vocabulary (normative)
 - §13 Versioning and Amendment
+  - Amendment record
 
 ## `docs/architecture/blueprint.md` -- Frontier Creative OS — Master System Blueprint
 

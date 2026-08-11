@@ -1,7 +1,9 @@
 # Frontier Creative OS — Architecture Baseline
 
-**Status:** Ratified — adoption recorded as ADR-0002 (2026-08-02)
-**Version:** 1.0.0 (Architecture Baseline v1, per the adoption terms of ADR-0002)
+**Status:** Ratified — adoption recorded as ADR-0002 (2026-08-02); amended per
+ADR-0006 (2026-08-10, MINOR — see §13 Amendment record)
+**Version:** 1.1.0 (MINOR amendment per ADR-0006 — S11 retirement recorded in
+§13; 1.0.0 = Architecture Baseline v1, per the adoption terms of ADR-0002)
 **Subordinate to:** Constitution v1 (1.0.0)
 **Companions:** `blueprint.md` (descriptive), `doctrine.md` (explanatory) — both subordinate to this document
 
@@ -284,9 +286,28 @@ decision, never silent.
   (L-13, …), never by reinterpreting existing text. Volatile content goes
   to registers, never into this document.
 
+### Amendment record
+
+- **1.1.0 (2026-08-10) — S11 retired by supersession (ADR-0006).** At
+  D-01 acceptance the RFC-0007 deferral trigger fired and packaging was
+  decided **N-no** (U-8): FCOS does not adopt a package manager.
+  Subsystem S11 (Package Manager) is retired by supersession — struck
+  with a pointer, never deleted. The superseding record is ADR-0006;
+  there is no successor subsystem (the packaging responsibility lapses
+  rather than transferring — no replacement is invented). Per the S11
+  acceptance criteria, `specs/S11-package-manager.md` is **Deprecated**
+  by this amendment; the specification file and all historical S11
+  references remain in place as submission-time text, per the corpus
+  convention that indexes plus the disposing ADR are the authoritative
+  record. The corresponding program (P10) does not exist. Re-opening
+  packaging requires a new RFC → ADR (CN-14). MINOR change: no Layer
+  Model, Dependency Law, authority-ranking, or information-flow rule is
+  affected.
+
 ---
 
-**Open decisions this Baseline deliberately does not preempt:** D-01
-(language identity), D-03 (identifier/namespace scheme; must be
+**Open decisions this Baseline deliberately does not preempt:** ~~D-01
+(language identity)~~ *(decided — ADR-0006, identity I-D; see §13
+Amendment record)*, D-03 (identifier/namespace scheme; must be
 namespace-capable), D-13 (`specs/fcos/` disposition), D-14 (AI artifact
 classes). See `blueprint.md`, "Future Unknowns".

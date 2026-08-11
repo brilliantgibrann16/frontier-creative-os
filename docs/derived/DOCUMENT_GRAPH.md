@@ -25,7 +25,7 @@
 | Document | Relative links to | Governance records referenced |
 | --- | --- | --- |
 | `docs/architecture/README.md` | `docs/architecture/baseline.md`; `docs/architecture/blueprint.md`; `docs/architecture/doctrine.md` | (none) |
-| `docs/architecture/baseline.md` | (none) | `docs/decisions/ADR-0002.md` |
+| `docs/architecture/baseline.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/decisions/ADR-0006.md`; `docs/rfc/RFC-0007.md` |
 | `docs/architecture/blueprint.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0001.md` |
 | `docs/architecture/doctrine.md` | (none) | `docs/decisions/ADR-0001.md`; `docs/decisions/ADR-0002.md` |
 | `docs/constitution/01-mission.md` | (none) | (none) |
