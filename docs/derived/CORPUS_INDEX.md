@@ -38,6 +38,7 @@
 - `docs/decisions/ADR-0004.md` -- ADR-0004 — Disposition of the RFC Decision Set (RFC-0001–RFC-0017)
 - `docs/decisions/ADR-0005.md` -- ADR-0005 — Specification Corpus Home: `/specs`
 - `docs/decisions/ADR-0006.md` -- ADR-0006 — Language Identity: Definition Core with Staged Evolution (I-D)
+- `docs/decisions/ADR-0007.md` -- ADR-0007 — FSL First-Class Consumers and Success Criteria (RFC-0001 Q1/Q2)
 
 ## RFCs (dispositions recorded in ADR-0004) (`docs/rfc/`)
 

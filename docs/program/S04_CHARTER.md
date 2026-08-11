@@ -1,8 +1,8 @@
 # S04 Language-Definition Charter — Preparation and the Q1/Q2 Decision Surface
 
-- Status: Prepared — awaiting the Maintainer's Q1/Q2 disposition. This
-  document is the recorded DP-15 review point where the Q1/Q2
-  re-deferrals come due (ADR-0006, Decision 5).
+- Status: Q1/Q2 resolved — the disposition at this recorded DP-15
+  review point (ADR-0006, Decision 5) is recorded in ADR-0007
+  (2026-08-11). Charter content work proceeds under P03.
 - Artifact class: program documentation (P03 first act — charter
   preparation and decision surface). It carries **no decision authority**
   (Blueprint §7), **contains no recommendation**, and compiles, without
@@ -58,7 +58,7 @@ The plan is the recorded WBS P03 package list; nothing is added here:
 6. **P03.6** Update `specs/` TODO(blocked-by…) markers that the
    acceptance ADR discharges.
 
-## 4. Decision surface — RFC-0001 Q1 and Q2 (OPEN; Maintainer only)
+## 4. Decision surface — RFC-0001 Q1 and Q2 (RESOLVED — ADR-0007)
 
 Exactly as recorded in RFC-0001, §Open Questions:
 
@@ -68,7 +68,9 @@ Exactly as recorded in RFC-0001, §Open Questions:
 
 Recorded status: both were explicitly re-deferred by ADR-0006
 (Decision 5) to this charter, with the DP-15 review point recorded.
-They come due here.
+They came due here. Resolution: recorded in ADR-0007 (2026-08-11) —
+admissible disposition 1 below was taken; both questions are decided;
+neither is re-deferred.
 
 **What Q1/Q2 block (recorded):**
 
