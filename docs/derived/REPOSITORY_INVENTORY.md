@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 76)
+## `docs/` (files: 77)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -91,6 +91,7 @@
 - `docs/program/PROGRAM.md`
 - `docs/program/PROGRAM_INDEX.md`
 - `docs/program/RISK_REGISTER.md`
+- `docs/program/S04_CHARTER.md`
 - `docs/program/TESTING_CONVENTIONS.md`
 - `docs/program/WAVE_0_VERIFICATION.md`
 - `docs/program/WORK_BREAKDOWN_STRUCTURE.md`
@@ -274,5 +275,5 @@
 
 ## Totals
 
-- Files listed: 225
+- Files listed: 226
 - Top-level groups: 10
