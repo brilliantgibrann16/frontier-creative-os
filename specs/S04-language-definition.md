@@ -16,8 +16,8 @@ authoring, tools consuming, AI systems doing both symmetrically
 (ADR-0007, Q1). Success criteria: the Article 1 metric instantiated by
 the Article 10 goals, indexed to phases and capability stages
 (ADR-0007, Q2). Clause content remains **BLOCKED** — missing: ratified
-Stage 0 clause set; blocked by: P03.2 clause-ID application and P03.3
-per-clause ratification (Article 7); unblock: those P03 packages.
+Stage 0 clause set; blocked by: P03.3 per-clause ratification (Article
+7); unblock: the P03.3 package.
 
 ## Responsibilities
 
@@ -40,16 +40,23 @@ per-clause ratification (Article 7); unblock: those P03 packages.
 
 ## Data model
 
-- **Specification document:** ID (per RFC-0002 scheme N-B + N-C,
-  ratified by ADR-0004; assignment TODO(blocked-by: namespace-registry
-  decision — RFC-0002 Open Question 1 and the §Consequences
-  grandfathering statement remain unrecorded)), status, version,
-  clauses.
+- **Specification document:** ID per the adopted **N-B + N-C** scheme
+  (ADR-0004; ADR-0008). This S04 document uses the grandfathered
+  document identifier `S04`. N-B supplies the namespace-capable document
+  identifier layer; N-C supplies hierarchical dotted clause identifiers
+  layered on the document identifier. Existing identifiers are
+  grandfathered exactly as assigned: they are never renumbered or
+  migrated, and no mapping table is created. No concrete namespace token
+  is ratified by this specification; each future namespace token requires
+  its own RFC → ADR path, and the recording ADRs constitute the namespace
+  registry. Clause-numbering freeze becomes binding with S04 container
+  ratification (ADR-0008, RFC-0002 OQ3); until then, this specification
+  remains In Review.
 - **Clause:** stable ID (never renumbered after ratification), category
   (one of the four above), text, traceability links (tests, RFCs, ADRs).
 - Language content model: **BLOCKED** — missing: ratified Stage 0
   clause set (identity, consumers, and success criteria are decided —
-  ADR-0006, ADR-0007); blocked by: P03.2/P03.3; unblock: per-clause
+  ADR-0006, ADR-0007); blocked by: P03.3; unblock: per-clause
   ratification.
 
 ## API contracts
@@ -120,4 +127,4 @@ ADR-0007); unblock: first ratified specification.
 | Four-category conformance model | Baseline §10 |
 | Lifecycle | Blueprint §7 |
 | Identity decision | RFC-0001; ADR-0006; ADR-0007; CN-14 |
-| Clause IDs / index | RFC-0002, RFC-0008 (accepted — ADR-0004); namespace registry unrecorded (RFC-0002, Open Question 1) |
+| Clause IDs / index | RFC-0002 N-B + N-C; ADR-0004; ADR-0008; namespace registry via recording ADRs; S04 freeze point at container ratification |
