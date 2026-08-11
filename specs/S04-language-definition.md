@@ -9,9 +9,15 @@ Frontier Specification Language (A3, "the meaning line"). This document
 specifies the *container*: structure, lifecycle, and obligations of
 language specifications. The *content* is entirely blocked.
 
-**BLOCKED (content)** — missing: language identity, purpose, consumers,
-success criteria; blocked by: RFC-0001 (D-01, no recommendation recorded);
-unblock: RFC-0001 acceptance ADR.
+**Content inputs decided.** Identity and purpose: I-D — an
+interchange/definition core (I-A scope) with a staged evolution path
+toward executable semantics (ADR-0006, Decision 1). Consumers: humans
+authoring, tools consuming, AI systems doing both symmetrically
+(ADR-0007, Q1). Success criteria: the Article 1 metric instantiated by
+the Article 10 goals, indexed to phases and capability stages
+(ADR-0007, Q2). Clause content remains **BLOCKED** — missing: ratified
+Stage 0 clause set; blocked by: P03.2 clause-ID application and P03.3
+per-clause ratification (Article 7); unblock: those P03 packages.
 
 ## Responsibilities
 
@@ -26,18 +32,25 @@ unblock: RFC-0001 acceptance ADR.
 
 - **Specification → machine:** machine-readable expression required for
   scalable conformance; posture M-B per RFC-0008 (prose authoritative +
-  clause index). Schema: **BLOCKED** — missing: index schema; blocked by:
-  acceptance ADR for RFC-0008 + first ratified spec; unblock: both.
+  clause index; posture ratified by ADR-0004). Schema: **BLOCKED** —
+  missing: index schema; blocked by: first specification ratification
+  (RFC-0008, §Consequences: the schema is decided there); unblock:
+  P03.4 at that ratification.
 - **Human authoring/review:** repository interface (PR path) only.
 
 ## Data model
 
-- **Specification document:** ID (per RFC-0002 scheme, TODO(blocked-by:
-  acceptance ADR for RFC-0002)), status, version, clauses.
+- **Specification document:** ID (per RFC-0002 scheme N-B + N-C,
+  ratified by ADR-0004; assignment TODO(blocked-by: namespace-registry
+  decision — RFC-0002 Open Question 1 and the §Consequences
+  grandfathering statement remain unrecorded)), status, version,
+  clauses.
 - **Clause:** stable ID (never renumbered after ratification), category
   (one of the four above), text, traceability links (tests, RFCs, ADRs).
-- Language content model: **BLOCKED** — missing: everything semantic;
-  blocked by: RFC-0001; unblock: acceptance ADR.
+- Language content model: **BLOCKED** — missing: ratified Stage 0
+  clause set (identity, consumers, and success criteria are decided —
+  ADR-0006, ADR-0007); blocked by: P03.2/P03.3; unblock: per-clause
+  ratification.
 
 ## API contracts
 
@@ -89,13 +102,15 @@ Mechanical: clause-ID uniqueness and stability; four-category totality
 (every normative sentence categorized); CN-9 closure (every clause → ≥1
 conformance test, marker D-03-style exceptions recorded). All
 **BLOCKED** in practice — missing: any ratified spec to check; blocked
-by: RFC-0001; unblock: first ratified specification.
+by: P03.1/P03.3 ratification (RFC-0001 is decided — ADR-0006,
+ADR-0007); unblock: first ratified specification.
 
 ## Acceptance criteria
 
 - Container criteria (checkable now): this structure ratified; ID scheme
   adopted; lifecycle enforced on first Draft.
-- Content criteria: **BLOCKED** by RFC-0001.
+- Content criteria: **BLOCKED** by per-clause ratification (P03.3);
+  the governing decisions are recorded (ADR-0006, ADR-0007).
 
 ## Traceability
 
@@ -104,5 +119,5 @@ by: RFC-0001; unblock: first ratified specification.
 | Sole ownership of meaning | INV-2..5; Baseline P-1, L-1, L-2 |
 | Four-category conformance model | Baseline §10 |
 | Lifecycle | Blueprint §7 |
-| Identity blockage | RFC-0001; Blueprint §14 U-1; CN-14 |
-| Clause IDs / index | RFC-0002, RFC-0008 (acceptance pending) |
+| Identity decision | RFC-0001; ADR-0006; ADR-0007; CN-14 |
+| Clause IDs / index | RFC-0002, RFC-0008 (accepted — ADR-0004); namespace registry unrecorded (RFC-0002, Open Question 1) |

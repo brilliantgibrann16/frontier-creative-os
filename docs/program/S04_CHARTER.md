@@ -2,7 +2,8 @@
 
 - Status: Q1/Q2 resolved — the disposition at this recorded DP-15
   review point (ADR-0006, Decision 5) is recorded in ADR-0007
-  (2026-08-11). Charter content work proceeds under P03.
+  (2026-08-11). Charter content is recorded in §6; the P03 execution
+  state and the next decision surface are recorded in §7.
 - Artifact class: program documentation (P03 first act — charter
   preparation and decision surface). It carries **no decision authority**
   (Blueprint §7), **contains no recommendation**, and compiles, without
@@ -109,7 +110,59 @@ Maintainer's alone):**
 ## 5. Stop boundary
 
 - No syntax, grammar, or semantics is drafted under this preparation
-  (PROGRAM.md P03: content scope comes from recorded decisions, and
-  Q1/Q2 are open).
+  (PROGRAM.md P03: content scope comes from recorded decisions —
+  ADR-0006 and ADR-0007; clause drafting additionally awaits the
+  identifier decision surface recorded in §7).
 - No Wave-1 implementation begins (CN-14; the G-SPEC gates stand).
 - This document selects no answer to Q1 or Q2.
+
+## 6. Consumers and success criteria (recorded — ADR-0007)
+
+Charter content, compiled from the recording ADR without addition.
+
+**Consumers (Q1).** The first-class consumers of the Frontier
+Specification Language are exactly the three classes named in RFC-0001
+Q1, affirmed jointly and symmetrically: humans authoring (RFC-0001
+§Recommendation collaborative ruling; Article 6), tools consuming
+(identity I-D: structured definitions "consumed by tools" — ADR-0006,
+Decision 1), and AI systems doing both (Article 2; INV-19; Baseline
+P-4; CN-23 bounds per the RFC-0016 rejection, ADR-0004). Bounds: no
+consumer class acquires defining authority (A-1, P-1, L-2; Baseline
+L-3; R-A), and the classes are stage-invariant under the ratified
+staging discipline (ADR-0006, Decision 3; CN-14). Source: ADR-0007,
+Decision Q1.
+
+**Success criteria (Q2).** At every horizon the criterion is the
+Article 1 metric — "The project measures success by the quality and
+traceability of its engineering, not by speed of delivery" —
+instantiated by the Article 10 goals and indexed to phases and
+capability stages, never calendar deadlines: year 1 = traceability of
+every significant decision plus Stage 0 discipline (goal 2; CN-14;
+ADR-0006, Decision 3); year 5 = roadmap advancement through recorded
+decisions plus a contributor community under the constitution (goals 1
+and 3); year 20 = ten-year comprehensibility preserved (goal 4;
+Article 1 decade-scale maintainability). No calendar commitment and no
+new metric exist. Source: ADR-0007, Decision Q2.
+
+## 7. P03 execution state and the next decision surface (2026-08-11)
+
+Recorded classification of the WBS packages after ADR-0007:
+
+| Package | State | Governing reason |
+| --- | --- | --- |
+| P03.1 | Blocked | Ratification freezes clause IDs (S04, §State machines); IDs cannot be assigned until the P03.2 surface below is decided |
+| P03.2 | **Stopped at a decision surface** | N-B requires a "ratified namespace registry" (RFC-0002, Design Space); RFC-0002 Open Question 1 (who ratifies namespaces) and the grandfathering statement its §Consequences requires of the acceptance ADR are recorded in no ADR — ADR-0004 ratified the scheme but stated neither |
+| P03.3 | Blocked | Clause drafting requires stable clause IDs (P03.2); ratification travels per-clause decisions (PROGRAM.md P03, acceptance gates) |
+| P03.4 | Blocked | M-B schema is "deferred to first specification ratification" (RFC-0008, §Recommendation and §Consequences; ADR-0004) |
+| P03.5 | Blocked | Depends on the P03.4 index existing (WBS) |
+| P03.6 | **Executed** | Marker updates the acceptance ADRs discharge (S04, S06, S11, specs/README post-decision note) — this change |
+
+**Next decision surface (Maintainer, RFC → ADR path):** the RFC-0002
+namespace registry — which namespace tokens exist, who ratifies
+additions (RFC-0002, Open Question 1), and whether existing flat IDs
+(RFC-NNNN, ADR-NNNN, S<nn>) are grandfathered per RFC-0002 A-1 or
+migrated with a mapping table (RFC-0002, §Consequences: "the
+acceptance ADR must state" this, and ADR-0004 does not). No recorded
+artifact answers these questions; inventing namespace tokens here
+would violate the no-invention rule and CN-14. Every remaining P03
+package sits behind this surface.
