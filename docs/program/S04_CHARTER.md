@@ -3,7 +3,8 @@
 - Status: Q1/Q2 resolved — the disposition at this recorded DP-15
   review point (ADR-0006, Decision 5) is recorded in ADR-0007
   (2026-08-11). Charter content is recorded in §6; the P03 execution
-  state and the next decision surface are recorded in §7.
+  state is recorded in §7 — its namespace decision surface is resolved
+  (ADR-0008).
 - Artifact class: program documentation (P03 first act — charter
   preparation and decision surface). It carries **no decision authority**
   (Blueprint §7), **contains no recommendation**, and compiles, without
@@ -39,7 +40,7 @@
 | Runtime scope (U-14) | **S-B** — validation-evaluation runtime; Baseline L-3 stands (zero defining authority); "the boundary between the validation-evaluation runtime and S13 conformance tooling must be drawn precisely in specification work" | ADR-0006, Decision 2 |
 | Packaging (U-8) | **N-no** — no package-distribution subsystem exists; S11 retired by supersession (Baseline 1.1.0, §13 Amendment record); Program P10 does not exist; no packaging content enters S04 | ADR-0006, Decision 4; Baseline §13 |
 | Naming (Q4) | "the name Frontier Specification Language is retained" — per RFC-0001 A-3 the name is not evidence and constrains nothing | ADR-0006, Decision 5 |
-| Clause identifiers | **N-B + N-C** composite (namespaced sequential document IDs + hierarchical dotted clause IDs; clauses may not renumber after ratification) | RFC-0002; ADR-0004 disposition; WBS P03.2 |
+| Clause identifiers | **N-B + N-C** composite (namespaced sequential document IDs + hierarchical dotted clause IDs; clauses may not renumber after ratification) | RFC-0002; ADR-0004 disposition; ADR-0008 (registry authority, grandfathering, token discipline); WBS P03.2 |
 | Machine-readable index | **M-B** posture — prose authoritative + structured clause index; concrete schema deferred to first specification ratification | RFC-0008; ADR-0004 disposition; WBS P03.4 |
 | Versioning / compatibility interim rules | P-D (pre-1.0 instability window) and V-D (no language version before 1.0) remain in force; the eventual versioning scheme must encode capability stages (U-10) | ADR-0004; ADR-0006, Decision 5 (Q3 row) |
 
@@ -150,19 +151,21 @@ Recorded classification of the WBS packages after ADR-0007:
 
 | Package | State | Governing reason |
 | --- | --- | --- |
-| P03.1 | Blocked | Ratification freezes clause IDs (S04, §State machines); IDs cannot be assigned until the P03.2 surface below is decided |
-| P03.2 | **Stopped at a decision surface** | N-B requires a "ratified namespace registry" (RFC-0002, Design Space); RFC-0002 Open Question 1 (who ratifies namespaces) and the grandfathering statement its §Consequences requires of the acceptance ADR are recorded in no ADR — ADR-0004 ratified the scheme but stated neither |
-| P03.3 | Blocked | Clause drafting requires stable clause IDs (P03.2); ratification travels per-clause decisions (PROGRAM.md P03, acceptance gates) |
+| P03.1 | Blocked (one decision out) | Needs the P03.2 scheme text recorded in S04, then its own recorded ratification per Article 7 (G-SPEC(S04)) — a Maintainer decision |
+| P03.2 | **Unblocked (ADR-0008)** | Registry authority, grandfathering, and token discipline are recorded; the grandfathered document ID `S04` carries the N-C clause-ID layering, so the scheme's spec text proceeds with no namespace token — specification work via its own P03 PR |
+| P03.3 | Blocked | Needs the merged P03.2 scheme text and a drafted Stage 0 clause inventory travelling Draft → In Review → per-clause ratification (PROGRAM.md P03, acceptance gates); no recorded decision enumerates the clause inventory, so no clause ID is derivable today |
 | P03.4 | Blocked | M-B schema is "deferred to first specification ratification" (RFC-0008, §Recommendation and §Consequences; ADR-0004) |
 | P03.5 | Blocked | Depends on the P03.4 index existing (WBS) |
-| P03.6 | **Executed** | Marker updates the acceptance ADRs discharge (S04, S06, S11, specs/README post-decision note) — this change |
+| P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged markers (S04 §Data model assignment TODO) update in the P03.2 specification PR |
 
-**Next decision surface (Maintainer, RFC → ADR path):** the RFC-0002
-namespace registry — which namespace tokens exist, who ratifies
-additions (RFC-0002, Open Question 1), and whether existing flat IDs
-(RFC-NNNN, ADR-NNNN, S<nn>) are grandfathered per RFC-0002 A-1 or
-migrated with a mapping table (RFC-0002, §Consequences: "the
-acceptance ADR must state" this, and ADR-0004 does not). No recorded
-artifact answers these questions; inventing namespace tokens here
-would violate the no-invention rule and CN-14. Every remaining P03
-package sits behind this surface.
+**Decision surface resolved (2026-08-11 — ADR-0008):** the Maintainer
+decided explicitly: every new namespace requires its own RFC → ADR
+path (no delegated register); every existing identifier is
+grandfathered — authoritative, never renumbered, never migrated, no
+mapping table; and no concrete namespace token is ratified — each
+future token enters through its own RFC → ADR decision. RFC-0002 Open
+Questions 2 (mirror ID display) and 3 (exact clause-freeze point)
+remain open; the freeze point becomes binding at the S04 container
+ratification. Remaining Maintainer decisions ahead of P03: the S04
+container ratification ADR (P03.1, after the P03.2 scheme text
+merges) and, when first needed, the first concrete namespace token.
