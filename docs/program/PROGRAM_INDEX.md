@@ -21,6 +21,7 @@
 | `AGENT_CONTRIBUTION_CONVENTIONS.md` | Agent contribution conventions: one path, review rules, disclosure duties, blocker protocol (P15.1) |
 | `TESTING_CONVENTIONS.md` | Test harness conventions and the evidence taxonomy (P11.2/P11.3) |
 | `CONFORMANCE_FRAME.md` | Conformance frame status: accepted RFC-0004 frame, blocking conditions (P12.1) |
+| `S04_CHARTER.md` | S04 language-definition charter preparation and the recorded RFC-0001 Q1/Q2 decision surface (P03 first act; ADR-0006 follow-up 5) |
 
 ## Program catalog
 
