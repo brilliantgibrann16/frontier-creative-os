@@ -51,6 +51,7 @@
 - [ADR-0006 — Language Identity: Definition Core with Staged Evolution (I-D)](../decisions/ADR-0006.md) -- `docs/decisions/ADR-0006.md`
 - [ADR-0007 — FSL First-Class Consumers and Success Criteria (RFC-0001 Q1/Q2)](../decisions/ADR-0007.md) -- `docs/decisions/ADR-0007.md`
 - [ADR-0008 — Namespace Registry Authority, Identifier Grandfathering, and Token Discipline (RFC-0002)](../decisions/ADR-0008.md) -- `docs/decisions/ADR-0008.md`
+- [ADR-0009 — S04 Container Specification Ratification (P03.1)](../decisions/ADR-0009.md) -- `docs/decisions/ADR-0009.md`
 
 ## RFCs (dispositions recorded in ADR-0004) (`docs/rfc/`)
 
