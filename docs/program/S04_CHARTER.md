@@ -158,7 +158,7 @@ and the Stage 0 minimal-contract decision cycle (RFC-0018 → ADR-0011):
 | P03.2 | **Executed (PR #37)** | The N-B + N-C scheme text is recorded in `specs/S04-language-definition.md` on the grandfathered document ID `S04` with N-C clause-ID layering and no namespace token (ADR-0008); authored and merged by the Maintainer |
 | P03.3 | **Executed (ADR-0011)** | The Maintainer decided the Stage 0 inventory scope explicitly on 2026-08-12: a minimal contract inventory — only obligations already authoritative on main. The twelve-clause set (S04#1.1–S04#4.2) entered S04 through the amendment path (proposal RFC-0018 → recording ADR-0011) with N-C identifiers on the grandfathered `S04` document ID; language content (syntax, grammar, semantics) remains future content outside Stage 0's contract inventory |
 | P03.4 | **Executed (ADR-0010)** | The Maintainer decided the concrete M-B schema explicitly on 2026-08-12; ADR-0010 records the per-spec YAML sidecar model (`specs/<spec>.index.yaml`), the five-field clause schema, the four-category vocabulary from the ratified S04 Data model, derived-hygiene status (OQ3), the sidecar location (OQ2), and the narrow mechanical audit set (OQ1); the drift checker and the S04 sidecar instantiation were queued ADR-0010 follow-ups at decision time and were discharged by ADR-0011 (2026-08-12) |
-| P03.5 | Blocked (decision-level) | The mechanical prerequisites now exist — `tools/checks/check_clause_index.py` and the instantiated `specs/S04-language-definition.index.yaml` with ratified clauses (ADR-0011) — but wiring the checker into the CI gate set is gate-set expansion: decision-level per PROGRAM.md P01 ("Gate-set expansion is decision-level and out of scope") and explicitly excluded from the 2026-08-12 directive (no CI required-gate change); this is the exact remaining Maintainer decision (ADR-0011, Decision 8) |
+| P03.5 | **Executed (Maintainer decision 2026-08-13)** | The Maintainer decided gate integration explicitly on 2026-08-13, resolving the exact decision surface ADR-0011 (Decision 8) left open: `check_clause_index.py` joined the documentation-gates job in `.github/workflows/ci.yml` alongside the link and ID checks (`python tools/checks/check_clause_index.py`); the RFC-0011 E-A baseline gates are unchanged, the checker stays read-only and derived-hygiene (prose authoritative), and the required-checks branch protection remains the Maintainer console action (G-CI, P01 exit) |
 | P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged marker (S04 §Data model assignment TODO) was updated in the merged P03.2 specification PR (#37) |
 
 **Decision surface resolved (2026-08-11 — ADR-0008):** the Maintainer
@@ -178,8 +178,9 @@ authorizations were decided 2026-08-12 and recorded as ADR-0011 via
 the amendment path (RFC-0018): the Stage 0 minimal contract inventory
 (twelve clauses, ratified), S04 `spec.version` = 1.0.0 (S04-only, no
 versioning policy), and the drift-checker implementation (not a CI
-gate). Remaining Maintainer decisions: P03.5 gate integration (whether
-`check_clause_index.py` joins the RFC-0011 E-A gate set); language
+gate). The P03.5 gate integration was decided 2026-08-13: the
+clause-index checker joined the CI documentation gates (the RFC-0011
+E-A baseline unchanged). Remaining Maintainer decisions: language
 content beyond the Stage 0 contract inventory (amendment path); when
 first needed, the first concrete namespace token; RFC-0002 OQ2 remains
 open.
