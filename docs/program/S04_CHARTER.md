@@ -41,7 +41,7 @@
 | Packaging (U-8) | **N-no** — no package-distribution subsystem exists; S11 retired by supersession (Baseline 1.1.0, §13 Amendment record); Program P10 does not exist; no packaging content enters S04 | ADR-0006, Decision 4; Baseline §13 |
 | Naming (Q4) | "the name Frontier Specification Language is retained" — per RFC-0001 A-3 the name is not evidence and constrains nothing | ADR-0006, Decision 5 |
 | Clause identifiers | **N-B + N-C** composite (namespaced sequential document IDs + hierarchical dotted clause IDs; clauses may not renumber after ratification) | RFC-0002; ADR-0004 disposition; ADR-0008 (registry authority, grandfathering, token discipline); WBS P03.2 |
-| Machine-readable index | **M-B** posture — prose authoritative + structured clause index; concrete schema deferred to first specification ratification — trigger fired by the S04 container ratification (ADR-0009, decision 4) | RFC-0008; ADR-0004 disposition; ADR-0009; WBS P03.4 |
+| Machine-readable index | **M-B** posture — prose authoritative + structured clause index; concrete schema recorded by **ADR-0010**: per-spec YAML sidecar under `/specs` (`specs/<spec>.index.yaml`), five required clause fields (id, category, title, status, source), four-category vocabulary from the ratified S04 Data model, derived hygiene — not independently normative; RFC-0008 OQ1–OQ3 discharged | RFC-0008; ADR-0004 disposition; ADR-0009; ADR-0010; WBS P03.4 |
 | Versioning / compatibility interim rules | P-D (pre-1.0 instability window) and V-D (no language version before 1.0) remain in force; the eventual versioning scheme must encode capability stages (U-10) | ADR-0004; ADR-0006, Decision 5 (Q3 row) |
 
 ## 3. Charter work plan — recorded WBS packages, no new scope
@@ -148,16 +148,17 @@ new metric exist. Source: ADR-0007, Decision Q2.
 ## 7. P03 execution state and the next decision surface (2026-08-11)
 
 Recorded classification of the WBS packages after ADR-0008, the
-merged P03.2 specification package (PR #37), and the S04 container
-ratification (ADR-0009):
+merged P03.2 specification package (PR #37), the S04 container
+ratification (ADR-0009), and the M-B concrete-schema decision
+(ADR-0010):
 
 | Package | State | Governing reason |
 | --- | --- | --- |
 | P03.1 | **Executed (ADR-0009)** | The Maintainer decided the container ratification explicitly on 2026-08-12; ADR-0009 pins it to main b879605535305a98ea3b945db10dadb55c8153e2 (S04 blob 8db4d5f2), container-only, with the clause-numbering freeze now binding — G-SPEC(S04) met container-only |
 | P03.2 | **Executed (PR #37)** | The N-B + N-C scheme text is recorded in `specs/S04-language-definition.md` on the grandfathered document ID `S04` with N-C clause-ID layering and no namespace token (ADR-0008); authored and merged by the Maintainer |
 | P03.3 | Blocked | Needs the merged P03.2 scheme text and a drafted Stage 0 clause inventory travelling Draft → In Review → per-clause ratification (PROGRAM.md P03, acceptance gates); no recorded decision enumerates the clause inventory, so no clause ID is derivable today |
-| P03.4 | Unblocked (decision due) | ADR-0009 (decision 4) interprets "first specification ratification" as the S04 container ratification, so the M-B concrete-schema decision comes due (RFC-0008; ADR-0004); the schema has no recorded definition and must be established through its own recorded decision path |
-| P03.5 | Blocked | Depends on the P03.4 index existing (WBS) |
+| P03.4 | **Executed (ADR-0010)** | The Maintainer decided the concrete M-B schema explicitly on 2026-08-12; ADR-0010 records the per-spec YAML sidecar model (`specs/<spec>.index.yaml`), the five-field clause schema, the four-category vocabulary from the ratified S04 Data model, derived-hygiene status (OQ3), the sidecar location (OQ2), and the narrow mechanical audit set (OQ1); the drift checker and the S04 sidecar instantiation are queued ADR-0010 follow-ups, not pretended to exist |
+| P03.5 | Blocked | Depends on the ADR-0010 drift checker (follow-up implementation task — `tools/checks/` has no index checker today) and on an instantiated index with ratified clauses (P03.3; ADR-0010 follow-up 2) |
 | P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged marker (S04 §Data model assignment TODO) was updated in the merged P03.2 specification PR (#37) |
 
 **Decision surface resolved (2026-08-11 — ADR-0008):** the Maintainer
@@ -170,7 +171,10 @@ Questions 2 (mirror ID display) and 3 (exact clause-freeze point)
 remain open; the freeze point becomes binding at the S04 container
 ratification. The S04 container ratification was decided 2026-08-12 and recorded as
 ADR-0009 (container-only; the clause-numbering freeze is now binding).
-Remaining Maintainer decisions ahead of P03: the RFC-0008 M-B
-concrete-schema decision (P03.4, now due), the Stage 0 clause
-inventory (P03.3), and, when first needed, the first concrete
+The M-B concrete schema was decided the same day and recorded as
+ADR-0010 (per-spec YAML sidecar; derived hygiene — not independently
+normative; RFC-0008 OQ1–OQ3 discharged). Remaining Maintainer
+decisions ahead of P03: the Stage 0 clause inventory (P03.3), the
+`spec.version` value the S04 sidecar needs before instantiation
+(ADR-0010 follow-up 2), and, when first needed, the first concrete
 namespace token; RFC-0002 OQ2 remains open.

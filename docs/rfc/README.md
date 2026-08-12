@@ -32,7 +32,7 @@ through their own RFC → ADR decision.
 | 0005 | Compatibility and Stability Policy | U-6 | S4/S15 | Accepted — interim rule only (pre-1.0 instability window); full policy blocked by RFC-0001 |
 | 0006 | Reference Implementation Policy | U-7 | S5 | Accepted (R-A — no defining-authority reference implementation) |
 | 0007 | Package Distribution Model | U-8 | S11 | Accepted — deferral (N-defer) discharged: decided **N-no** (ADR-0006); S11 retires via Baseline §13 supersession |
-| 0008 | Machine-Readable Specification Format | U-9 | S4/S13 | Accepted (M-B — prose-authoritative + clause index) |
+| 0008 | Machine-Readable Specification Format | U-9 | S4/S13 | Accepted (M-B — prose-authoritative + clause index); concrete schema recorded in **ADR-0010** — per-spec YAML sidecar, derived hygiene, OQ1–OQ3 discharged |
 | 0009 | Language Versioning Scheme | U-10 | S4 | Accepted — interim rule only (V-D, no language version pre-1.0) |
 | 0010 | Multi-Maintainer Governance Procedure | U-11 | S1 | Accepted (G-D + cooling rule); blocker J.4 removed |
 | 0011 | CI Platform and Gate Encoding | U-12 | S12/S15 | Accepted (E-A — tests + link/ID checks) |
