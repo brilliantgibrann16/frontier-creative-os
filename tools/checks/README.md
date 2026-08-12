@@ -14,7 +14,7 @@ Small, dependency-free scripts that verify **mechanical** properties of the repo
 | --- | --- | --- |
 | `check_links.py` | Every relative Markdown link in scanned docs points to an existing file or directory. | Does not validate external URLs, anchors within files, or content quality. |
 | `check_ids.py` | Every `ADR-XXXX` / `RFC-XXXX` identifier mentioned in scanned docs has a corresponding file in `docs/decisions/` / `docs/rfc/`. | Does not check identifier status, disposition, or the correctness of the citation. |
-| `check_clause_index.py` | Every clause-index sidecar (`specs/<spec>.index.yaml`, ADR-0010) is consistent with its specification prose: clause ↔ index correspondence, duplicate IDs, category/status vocabularies, identifier syntax, and source references (ADR-0010 decision 11; implementation authorized by ADR-0011). | Does not interpret clause content, does not judge categorization correctness, never modifies or auto-fixes anything, and is not a CI gate step (gate-set expansion is decision-level — PROGRAM.md P01; the open P03.5 decision). |
+| `check_clause_index.py` | Every clause-index sidecar (`specs/<spec>.index.yaml`, ADR-0010) is consistent with its specification prose: clause ↔ index correspondence, duplicate IDs, category/status vocabularies, identifier syntax, and source references (ADR-0010 decision 11; implementation authorized by ADR-0011). | Does not interpret clause content, does not judge categorization correctness, and never modifies or auto-fixes anything. |
 
 ## Scope
 
@@ -43,7 +43,7 @@ Fixture-based tests live in `tests/test_check_links.py`, `tests/test_check_ids.p
 
 ## CI integration
 
-The link and ID checks run in `.github/workflows/ci.yml` on every push to `main` and every pull request, alongside the prototype test suite. They gate all contributions identically (INV-19 / L-5). `check_clause_index.py` is **not** a CI gate step: the RFC-0011 E-A gate set is exactly tests + link checks + ID checks, and gate-set expansion is decision-level (PROGRAM.md P01; the open P03.5 decision — ADR-0011, Decision 8). Its regression tests run inside the CI test job like every other test.
+The link, ID, and clause-index checks run in `.github/workflows/ci.yml` on every push to `main` and every pull request, alongside the prototype test suite. They gate all contributions identically (INV-19 / L-5). `check_clause_index.py` joined the documentation-gates job by explicit Maintainer decision on 2026-08-13 (P03.5 — the exact decision surface ADR-0011, Decision 8, left open); the RFC-0011 E-A baseline gates (tests + link checks + ID checks) are unchanged, and any further gate-set expansion remains decision-level (PROGRAM.md P01). Its regression tests run inside the CI test job like every other test.
 
 ## Design constraints
 

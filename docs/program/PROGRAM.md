@@ -77,7 +77,7 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | --- | --- | --- |
 | **G0** | Governance closure: ADR-0004/0005 merged, indexes consistent (PR #14) | **MET** (2026-08-02) |
 | **G-D01** | RFC-0001 decided by Maintainer and recorded as an acceptance ADR. Per RFC-0012 (procedural, ADR-0004) that ADR also resolves U-14; it unlocks full decisions on RFC-0005, RFC-0007, RFC-0009 | **MET** (2026-08-10, ADR-0006 — U-14 resolved S-B and RFC-0007 decided N-no in the same act; RFC-0005/RFC-0009 decision windows open) |
-| **G-CI** | CI gates live per RFC-0011 E-A and enforced as required checks on `main` | OPEN (P01 exit) |
+| **G-CI** | CI gates live per RFC-0011 E-A (plus the clause-index gate added by the 2026-08-13 P03.5 decision) and enforced as required checks on `main` | OPEN (P01 exit — the required-checks branch protection remains the Maintainer console action) |
 | **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | **MET for S04** — container (ADR-0009) plus the Stage 0 minimal contract clause set (ADR-0011, 2026-08-12); the contract inventory defines no language content, so content-dependent programs (e.g. P04) still lack implementable clauses; OPEN for all other programs |
 | **G-CONF** | Conformance judgment available from P12 for the ratified clause set | OPEN |
 
@@ -122,9 +122,11 @@ never to be filled by invention.
 - **Purpose:** encode the already-declared gates mechanically. CI enforces
   and never decides (INV-10, L-10); Article 9 makes CI a release
   precondition.
-- **Scope:** exactly the accepted RFC-0011 E-A gate set: run the test suite;
-  link-integrity checks; identifier/cross-reference checks. Gate-set
-  expansion is decision-level and out of scope.
+- **Scope:** the accepted RFC-0011 E-A gate set — run the test suite;
+  link-integrity checks; identifier/cross-reference checks — plus the
+  clause-index drift check added by explicit Maintainer decision on
+  2026-08-13 (P03.5; the decision surface ADR-0011 left open). Further
+  gate-set expansion remains decision-level and out of scope.
 - **Deliverables:** `.github/workflows/` pipelines; check tooling under
   `tools/` (engineering tooling, within the RFC-0017 U-A scope rule);
   required-checks branch protection (Maintainer console action, recorded in

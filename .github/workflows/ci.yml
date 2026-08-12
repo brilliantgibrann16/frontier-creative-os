@@ -3,6 +3,9 @@
 # Governing artifacts: RFC-0011 disposition E-A per ADR-0004 (gates encoded
 # in CI), Constitution Article 9 (no release before CI), Baseline L-5 and
 # Blueprint INV-19 (identical gates for human and AI contributions).
+# The clause-index drift check (tools/checks/check_clause_index.py) joined
+# the documentation gates by explicit Maintainer decision on 2026-08-13,
+# resolving the P03.5 decision surface left open by ADR-0011.
 #
 # Python 3.11 and pytest match the repository's existing test conventions
 # (see docs/program/TESTING_CONVENTIONS.md). The prototype and the checks
@@ -32,7 +35,7 @@ jobs:
         run: python -m pytest tests/ -v
 
   docs-checks:
-    name: Documentation gates (links, IDs)
+    name: Documentation gates (links, IDs, clause index)
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -45,3 +48,5 @@ jobs:
         run: python tools/checks/check_links.py
       - name: Governance ID reference check
         run: python tools/checks/check_ids.py
+      - name: Clause-index drift check
+        run: python tools/checks/check_clause_index.py
