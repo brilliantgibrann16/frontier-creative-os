@@ -1,5 +1,7 @@
 """Fixture tests for tools/checks/check_clause_index.py (clause-index drift checker)."""
 
+import subprocess
+import sys
 from pathlib import Path
 
 from tools.checks.check_clause_index import collect_errors
@@ -231,3 +233,65 @@ def test_excluded_fcos_tree_is_skipped(tmp_path: Path) -> None:
         "totally: not\nvalid: schema\n",
     )
     assert collect_errors(tmp_path) == []
+
+
+# ---------------------------------------------------------------------------
+# CLI behavior: the exact invocation the CI documentation-gates job runs
+# (P03.5 gate integration; failure must propagate as a non-zero exit).
+# ---------------------------------------------------------------------------
+
+_CHECKER = (
+    Path(__file__).resolve().parents[1] / "tools" / "checks" / "check_clause_index.py"
+)
+
+
+def _run_cli(root: Path) -> "subprocess.CompletedProcess[str]":
+    return subprocess.run(
+        [sys.executable, str(_CHECKER), str(root)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def test_cli_exits_zero_on_consistent_repo(tmp_path: Path) -> None:
+    repo = _repo(
+        tmp_path,
+        SPEC_TWO_CLAUSES,
+        _index(_entry(), _entry("S04#1.2", title="Beta")),
+    )
+    result = _run_cli(repo)
+    assert result.returncode == 0
+    assert "all clause indexes are consistent" in result.stdout
+
+
+def test_cli_exits_nonzero_on_drifted_index(tmp_path: Path) -> None:
+    repo = _repo(
+        tmp_path,
+        SPEC_ONE_CLAUSE,
+        _index(_entry(), _entry("S04#9.9", title="Ghost")),
+    )
+    result = _run_cli(repo)
+    assert result.returncode == 1
+    assert "S04#9.9" in result.stdout
+    assert "drift finding" in result.stdout
+
+
+def test_cli_failure_stops_a_fail_fast_gate_sequence(tmp_path: Path) -> None:
+    """A drifted index must abort a fail-fast step sequence (CI job semantics)."""
+    repo = _repo(
+        tmp_path,
+        SPEC_ONE_CLAUSE,
+        _index(_entry(), _entry("S04#9.9", title="Ghost")),
+    )
+    marker = tmp_path / "next-step-ran"
+    script = (
+        "set -e\n"
+        f'"{sys.executable}" "{_CHECKER}" "{repo}"\n'
+        f'touch "{marker}"\n'
+    )
+    result = subprocess.run(
+        ["bash", "-c", script], capture_output=True, text=True, check=False
+    )
+    assert result.returncode != 0
+    assert not marker.exists()
