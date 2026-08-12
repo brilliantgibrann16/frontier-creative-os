@@ -42,6 +42,7 @@ through their own RFC → ADR decision.
 | 0015 | Candidate Subsystem: Context Engine | — (introduction) | none (new) | **Open** — blocked on definition (L-12) |
 | 0016 | Candidate Subsystem: Agent Framework | — (introduction) | S16-adjacent | **Rejected** (A-A) |
 | 0017 | Candidate Subsystem: Product UI | — (scope + introduction) | S9 or new | Accepted — scope rule (U-A: S9 engineering tooling only) |
+| 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -56,6 +57,14 @@ routing) ahead of RFC-0001, and gave RFC-0005 and RFC-0009 interim
 rules; the full compatibility policy (RFC-0005) and the U-14
 resolution (RFC-0012) still land at or after RFC-0001 acceptance,
 exactly as the table records.
+
+*Post-disposition note (2026-08-12):* **RFC-0018** is the first
+post-set RFC: an amendment proposal under the ratified S04 sequence
+flow (proposal RFC → amended clauses → recording ADR, same decision
+cycle), accepted and recorded by **ADR-0011** per the Maintainer's
+explicit written directive of 2026-08-12. Unlike the decision-framing
+0001–0017 set described above, it proposes a concrete clause set (its
+recommendation is labeled and non-binding per convention).
 
 *Post-disposition note (2026-08-10):* **ADR-0006** (the D-01 acceptance)
 disposed the three rows above that ADR-0004 had left open or routed

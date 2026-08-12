@@ -78,7 +78,7 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | **G0** | Governance closure: ADR-0004/0005 merged, indexes consistent (PR #14) | **MET** (2026-08-02) |
 | **G-D01** | RFC-0001 decided by Maintainer and recorded as an acceptance ADR. Per RFC-0012 (procedural, ADR-0004) that ADR also resolves U-14; it unlocks full decisions on RFC-0005, RFC-0007, RFC-0009 | **MET** (2026-08-10, ADR-0006 — U-14 resolved S-B and RFC-0007 decided N-no in the same act; RFC-0005/RFC-0009 decision windows open) |
 | **G-CI** | CI gates live per RFC-0011 E-A and enforced as required checks on `main` | OPEN (P01 exit) |
-| **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | **MET for S04, container-only** (ADR-0009, 2026-08-12); OPEN for all other programs |
+| **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | **MET for S04** — container (ADR-0009) plus the Stage 0 minimal contract clause set (ADR-0011, 2026-08-12); the contract inventory defines no language content, so content-dependent programs (e.g. P04) still lack implementable clauses; OPEN for all other programs |
 | **G-CONF** | Conformance judgment available from P12 for the ratified clause set | OPEN |
 
 ## 5. Program catalog
@@ -197,8 +197,10 @@ never to be filled by invention.
   RFC-0008 (accepted).
 - **Required ADRs:** ADR-0006 (the RFC-0001 acceptance ADR — recorded); a
   recorded ratification per spec version (Article 7).
-- **Required Specifications:** S04 (container Ratified, ADR-0009;
-  content sections remain blocked pending per-clause ratification).
+- **Required Specifications:** S04 (container Ratified, ADR-0009; Stage 0
+  minimal contract clause set Ratified, ADR-0011; language content —
+  syntax, grammar, semantics — remains blocked and enters only through
+  the amendment path).
 - **Required Tests:** spec lint via P01 (ID validity, cross-references);
   alignment review against the P12 conformance suite.
 - **Acceptance Gates:** per-clause ratification via PR + recorded decision.

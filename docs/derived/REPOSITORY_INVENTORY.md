@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 81)
+## `docs/` (files: 83)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -81,6 +81,7 @@
 - `docs/decisions/ADR-0008.md`
 - `docs/decisions/ADR-0009.md`
 - `docs/decisions/ADR-0010.md`
+- `docs/decisions/ADR-0011.md`
 - `docs/decisions/D01_DECISION_BRIEF.md`
 - `docs/decisions/D01_DECISION_DOSSIER.md`
 - `docs/engineering/WP15_Engineering_Specification_Standard.md`
@@ -135,6 +136,7 @@
 - `docs/rfc/RFC-0015.md`
 - `docs/rfc/RFC-0016.md`
 - `docs/rfc/RFC-0017.md`
+- `docs/rfc/RFC-0018.md`
 - `docs/rfc/RFC_ROADMAP.md`
 
 ## `examples/` (files: 1)
@@ -145,12 +147,13 @@
 
 - `schemas/.gitkeep`
 
-## `specs/` (files: 64)
+## `specs/` (files: 65)
 
 - `specs/README.md`
 - `specs/S01-governance.md`
 - `specs/S02-architecture.md`
 - `specs/S03-knowledge-system.md`
+- `specs/S04-language-definition.index.yaml`
 - `specs/S04-language-definition.md`
 - `specs/S05-compiler.md`
 - `specs/S06-runtime.md`
@@ -212,13 +215,14 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 21)
+## `tests/` (files: 22)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
+- `tests/test_check_clause_index.py`
 - `tests/test_check_ids.py`
 - `tests/test_check_links.py`
 - `tests/test_compiler.py`
@@ -236,10 +240,11 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 38)
+## `tools/` (files: 39)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
+- `tools/checks/check_clause_index.py`
 - `tools/checks/check_ids.py`
 - `tools/checks/check_links.py`
 - `tools/compiler/.gitkeep`
@@ -279,5 +284,5 @@
 
 ## Totals
 
-- Files listed: 230
+- Files listed: 235
 - Top-level groups: 10

@@ -42,6 +42,7 @@
 - `docs/decisions/ADR-0008.md` -- ADR-0008 — Namespace Registry Authority, Identifier Grandfathering, and Token Discipline (RFC-0002)
 - `docs/decisions/ADR-0009.md` -- ADR-0009 — S04 Container Specification Ratification (P03.1)
 - `docs/decisions/ADR-0010.md` -- ADR-0010 — Concrete M-B Clause-Index Schema (P03.4)
+- `docs/decisions/ADR-0011.md` -- ADR-0011 — S04 Stage 0 Minimal Contract Clause Set, Sidecar Instantiation, and Drift-Checker Authorization (P03.3 + ADR-0010 Follow-ups 1–2)
 
 ## RFCs (dispositions recorded in ADR-0004) (`docs/rfc/`)
 
@@ -62,3 +63,4 @@
 - `docs/rfc/RFC-0015.md` -- RFC-0015 — Candidate Subsystem: Context Engine
 - `docs/rfc/RFC-0016.md` -- RFC-0016 — Candidate Subsystem: Agent Framework
 - `docs/rfc/RFC-0017.md` -- RFC-0017 — Candidate Subsystem: Product UI
+- `docs/rfc/RFC-0018.md` -- RFC-0018 — S04 Stage 0 Minimal Contract Clause Set (Amendment Proposal)

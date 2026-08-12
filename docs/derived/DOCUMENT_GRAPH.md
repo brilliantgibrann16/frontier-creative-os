@@ -49,6 +49,7 @@
 | `docs/decisions/ADR-0008.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0008.md` |
 | `docs/decisions/ADR-0009.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/rfc/RFC-0001.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0008.md` |
 | `docs/decisions/ADR-0010.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md` |
+| `docs/decisions/ADR-0011.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0011.md`; `docs/rfc/RFC-0018.md` |
 | `docs/rfc/RFC-0001.md` | (none) | `docs/rfc/RFC-0005.md` |
 | `docs/rfc/RFC-0002.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0001.md` |
 | `docs/rfc/RFC-0003.md` | (none) | `docs/decisions/ADR-0003.md` |
@@ -66,6 +67,7 @@
 | `docs/rfc/RFC-0015.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0013.md` |
 | `docs/rfc/RFC-0016.md` | (none) | `docs/decisions/ADR-0002.md` |
 | `docs/rfc/RFC-0017.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0001.md`; `docs/rfc/RFC-0003.md` |
+| `docs/rfc/RFC-0018.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0008.md` |
 
 ## Governance reference graph (ADR / RFC files)
 
@@ -83,6 +85,7 @@ flowchart LR
   ADR0008["ADR-0008"]
   ADR0009["ADR-0009"]
   ADR0010["ADR-0010"]
+  ADR0011["ADR-0011"]
   RFC0001["RFC-0001"]
   RFC0002["RFC-0002"]
   RFC0003["RFC-0003"]
@@ -100,6 +103,7 @@ flowchart LR
   RFC0015["RFC-0015"]
   RFC0016["RFC-0016"]
   RFC0017["RFC-0017"]
+  RFC0018["RFC-0018"]
   ADR0002 --> ADR0001
   ADR0003 --> ADR0002
   ADR0004 --> ADR0002
@@ -142,6 +146,17 @@ flowchart LR
   ADR0010 --> RFC0002
   ADR0010 --> RFC0008
   ADR0010 --> RFC0009
+  ADR0011 --> ADR0004
+  ADR0011 --> ADR0006
+  ADR0011 --> ADR0007
+  ADR0011 --> ADR0008
+  ADR0011 --> ADR0009
+  ADR0011 --> ADR0010
+  ADR0011 --> RFC0002
+  ADR0011 --> RFC0008
+  ADR0011 --> RFC0009
+  ADR0011 --> RFC0011
+  ADR0011 --> RFC0018
   RFC0001 --> RFC0005
   RFC0002 --> ADR0002
   RFC0002 --> RFC0001
@@ -174,4 +189,12 @@ flowchart LR
   RFC0017 --> ADR0002
   RFC0017 --> RFC0001
   RFC0017 --> RFC0003
+  RFC0018 --> ADR0004
+  RFC0018 --> ADR0006
+  RFC0018 --> ADR0007
+  RFC0018 --> ADR0008
+  RFC0018 --> ADR0009
+  RFC0018 --> ADR0010
+  RFC0018 --> RFC0002
+  RFC0018 --> RFC0008
 ```
