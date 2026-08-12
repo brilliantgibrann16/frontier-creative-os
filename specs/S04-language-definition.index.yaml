@@ -1,0 +1,71 @@
+# Machine-readable clause index for specs/S04-language-definition.md.
+# Derived hygiene and consistency infrastructure only: the
+# specification prose is authoritative and this index never overrides
+# it (RFC-0008 M-B; ADR-0010 decision 1). Schema: ADR-0010 decision 5.
+# Instantiated per ADR-0011; spec.version 1.0.0 is the current value
+# for the ratified S04 container only (no versioning policy —
+# ADR-0011 decision 2). Checked by tools/checks/check_clause_index.py.
+spec:
+  id: S04
+  version: 1.0.0
+clauses:
+  - id: "S04#1.1"
+    category: defined
+    title: Language identity
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#1.2"
+    category: defined
+    title: Staging discipline
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#1.3"
+    category: defined
+    title: Runtime scope
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#2.1"
+    category: defined
+    title: Sole ownership of meaning
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#2.2"
+    category: defined
+    title: First-class consumers
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#2.3"
+    category: defined
+    title: Success criteria
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#3.1"
+    category: defined
+    title: Identifier scheme
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#3.2"
+    category: defined
+    title: Clause-identifier stability
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#3.3"
+    category: defined
+    title: Behavior categorization
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#3.4"
+    category: defined
+    title: Lifecycle and amendment
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#4.1"
+    category: defined
+    title: Index posture
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#4.2"
+    category: defined
+    title: Index schema and audits
+    status: ratified
+    source: specs/S04-language-definition.md
