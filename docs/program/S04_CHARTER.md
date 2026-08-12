@@ -147,16 +147,17 @@ new metric exist. Source: ADR-0007, Decision Q2.
 
 ## 7. P03 execution state and the next decision surface (2026-08-11)
 
-Recorded classification of the WBS packages after ADR-0007:
+Recorded classification of the WBS packages after ADR-0008 and the
+merged P03.2 specification package (PR #37):
 
 | Package | State | Governing reason |
 | --- | --- | --- |
-| P03.1 | Blocked (one decision out) | Needs the P03.2 scheme text recorded in S04, then its own recorded ratification per Article 7 (G-SPEC(S04)) — a Maintainer decision |
-| P03.2 | **Unblocked (ADR-0008)** | Registry authority, grandfathering, and token discipline are recorded; the grandfathered document ID `S04` carries the N-C clause-ID layering, so the scheme's spec text proceeds with no namespace token — specification work via its own P03 PR |
+| P03.1 | Blocked (ratification decision) | The P03.2 scheme text is merged into S04 (PR #37); what remains is the container-ratification decision itself, recorded as its own ADR per Article 7 (G-SPEC(S04)) — a Maintainer decision |
+| P03.2 | **Executed (PR #37)** | The N-B + N-C scheme text is recorded in `specs/S04-language-definition.md` on the grandfathered document ID `S04` with N-C clause-ID layering and no namespace token (ADR-0008); authored and merged by the Maintainer |
 | P03.3 | Blocked | Needs the merged P03.2 scheme text and a drafted Stage 0 clause inventory travelling Draft → In Review → per-clause ratification (PROGRAM.md P03, acceptance gates); no recorded decision enumerates the clause inventory, so no clause ID is derivable today |
 | P03.4 | Blocked | M-B schema is "deferred to first specification ratification" (RFC-0008, §Recommendation and §Consequences; ADR-0004) |
 | P03.5 | Blocked | Depends on the P03.4 index existing (WBS) |
-| P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged markers (S04 §Data model assignment TODO) update in the P03.2 specification PR |
+| P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged marker (S04 §Data model assignment TODO) was updated in the merged P03.2 specification PR (#37) |
 
 **Decision surface resolved (2026-08-11 — ADR-0008):** the Maintainer
 decided explicitly: every new namespace requires its own RFC → ADR
@@ -167,5 +168,5 @@ future token enters through its own RFC → ADR decision. RFC-0002 Open
 Questions 2 (mirror ID display) and 3 (exact clause-freeze point)
 remain open; the freeze point becomes binding at the S04 container
 ratification. Remaining Maintainer decisions ahead of P03: the S04
-container ratification ADR (P03.1, after the P03.2 scheme text
-merges) and, when first needed, the first concrete namespace token.
+container ratification ADR (P03.1 — the P03.2 scheme text is merged
+via PR #37) and, when first needed, the first concrete namespace token.
