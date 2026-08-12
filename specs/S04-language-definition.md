@@ -1,6 +1,6 @@
 # S4 — Language Definition Subsystem Specification
 
-**Status:** In Review · **Subsystem:** S4 (Blueprint §2, "Empty by design") · **Date:** 2026-08-02
+**Status:** Ratified (container-only, ADR-0009) · **Subsystem:** S4 (Blueprint §2, "Empty by design") · **Date:** 2026-08-02
 
 ## Scope
 
@@ -49,9 +49,9 @@ Stage 0 clause set; blocked by: P03.3 per-clause ratification (Article
   migrated, and no mapping table is created. No concrete namespace token
   is ratified by this specification; each future namespace token requires
   its own RFC → ADR path, and the recording ADRs constitute the namespace
-  registry. Clause-numbering freeze becomes binding with S04 container
-  ratification (ADR-0008, RFC-0002 OQ3); until then, this specification
-  remains In Review.
+  registry. Clause-numbering freeze is binding as of the S04 container
+  ratification (ADR-0008, RFC-0002 OQ3; ratified container-only by
+  ADR-0009).
 - **Clause:** stable ID (never renumbered after ratification), category
   (one of the four above), text, traceability links (tests, RFCs, ADRs).
 - Language content model: **BLOCKED** — missing: ratified Stage 0
