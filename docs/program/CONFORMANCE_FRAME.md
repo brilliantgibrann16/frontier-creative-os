@@ -11,7 +11,7 @@
 
 ## 2. What explicitly does not exist yet
 
-- No conformance harness, no fixture corpus, no official judgments (packages P12.2 and beyond): **blocked by G-SPEC(S13) and B-08** — the specifications, including S13, are In Review and unratified, so there are no ratified clauses to judge against.
+- No conformance harness, no fixture corpus, no official judgments (packages P12.2 and beyond): **blocked by G-SPEC(S13) and B-08** — S13, the specification that governs conformance, is In Review and unratified. The S04 Stage 0 minimal contract clause set (ADR-0011) is ratified and indexed, but it records governance obligations rather than language behavior, and its mechanical audit (`tools/checks/check_clause_index.py`, in CI per the 2026-08-13 P03.5 decision) is derived hygiene — not a conformance judgment (INV-16).
 - No conformance levels or versioning beyond what ADR-0004 records.
 
 ## 3. Blocking conditions
