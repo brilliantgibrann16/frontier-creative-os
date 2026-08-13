@@ -26,7 +26,7 @@ Tests are **evidence, not definition**. A passing suite demonstrates that code b
 
 ## 4. Traceability convention (recorded now; consumable after ratification)
 
-When specification-derived implementation begins, every test that exercises a normative requirement must name the governing clause identifier (scheme per RFC-0002 dispositions N-B/N-C) in its test name or docstring, so conformance evidence is mechanically traceable. Until specifications are ratified (currently gated: G-SPEC, blocker B-08), **no test may claim to verify a specification clause**.
+When specification-derived implementation begins, every test that exercises a normative requirement must name the governing clause identifier (scheme per RFC-0002 dispositions N-B/N-C) in its test name or docstring, so conformance evidence is mechanically traceable. Ratified clauses now exist: the S04 Stage 0 minimal contract clause set (S04#1.1–S04#4.2, ADR-0011). A test may name one of those clause identifiers as spec-derived evidence for the obligation it exercises. For every other specification (unratified; G-SPEC, blocker B-08), **no test may claim to verify a specification clause**, and conformance judgments remain prohibited regardless (section 5).
 
 ## 5. Prohibited test classes (current state)
 
