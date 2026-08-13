@@ -35,10 +35,11 @@ unless noted.
   dispositions, and the specs corpus (on Maintainer instruction).
 - **P02.3** Staleness checklist executed after every governance/spec merge.
 
-## P03 — Language Definition (GATED: G-D01)
+## P03 — Language Definition (EXECUTED at Stage 0 scope)
 
-- **P03.0** ⛔ Entry — Blocked-by: RFC-0001 acceptance ADR (D-01; ADR-0004
-  records it open). No pre-gate packages exist by design (L-1).
+- **P03.0** Entry gate met — the RFC-0001 acceptance ADR is recorded
+  (ADR-0006, 2026-08-10; G-D01 MET). No pre-gate packages existed by
+  design (L-1).
 - **P03.1** Ratify the S04 container specification (G-SPEC(S04)).
 - **P03.2** Apply the RFC-0002 (N-B + N-C) identifier scheme to clause
   numbering; record the scheme's spec text.
@@ -49,6 +50,11 @@ unless noted.
 - **P03.5** Wire clause-index validation into P01 checks.
 - **P03.6** Update `specs/` TODO(blocked-by…) markers that the acceptance
   ADR discharges (spec-editing work, done inside this program).
+
+*Status (2026-08-13): P03.1–P03.6 are all executed — the per-package record
+lives in `docs/program/S04_CHARTER.md` §7. The Stage 0 scope is a minimal
+contract inventory (ADR-0011); language-content clauses enter S04 only
+through the amendment path (RFC → recording ADR).*
 
 ## P04 — Compiler (GATED)
 
@@ -123,8 +129,10 @@ unless noted.
   known-violating fixtures correctly) — Blocked-by: G-SPEC(S13) + B-08
   (`CONFORMANCE_FRAME.md` §2 records packages P12.2 and beyond as
   blocked; no ratified clauses exist to judge against).
-- **P12.3** ⛔ Clause-indexed suite — Blocked-by: P03.4 clause index
-  (RFC-0008 M-B).
+- **P12.3** ⛔ Clause-indexed suite — the P03.4 clause-index prerequisite is
+  met (`specs/S04-language-definition.index.yaml`, ADR-0011); still
+  Blocked-by: the P12.2 harness (G-SPEC(S13) + B-08) and the absence of
+  ratified language-behavior clauses to judge.
 - **P12.4** ⛔ Official judgments — Blocked-by: S13 ratification
   (G-SPEC(S13)).
 - **P12.5** ⛔ Conformance levels — Blocked-by: future work per ADR-0004
@@ -137,7 +145,9 @@ unless noted.
 - **P13.2** Traceability lint: behavior claims must carry clause refs
   (with P01).
 - **P13.3** ⛔ Behavior documentation — Blocked-by: existence of ratified
-  clauses (P03).
+  language-behavior clauses (the Stage 0 contract inventory ratified by
+  ADR-0011 records governance obligations, not language behavior; behavior
+  clauses enter S04 only through the amendment path).
 
 ## P14 — Release Infrastructure (GATED: Article 9)
 

@@ -181,7 +181,7 @@ never to be filled by invention.
 
 ---
 
-### P03 — Language Definition, S4 (ACTIVE — G-D01 met, ADR-0006)
+### P03 — Language Definition, S4 (EXECUTED at Stage 0 scope — G-D01 met, ADR-0006; P03.1–P03.6 executed per docs/program/S04_CHARTER.md §7; language content reopens only through the amendment path)
 
 - **Purpose:** the sole home of meaning (INV-2); everything below the A3
   meaning line is judged against it.
@@ -587,7 +587,7 @@ never to be filled by invention.
 | B-05 | No language versioning scheme pre-1.0 (V-D) | P14 versioned releases | RFC-0009; ADR-0004 |
 | B-06 | All interface forms UNKNOWN until specified (compiler boundary, tooling contract, SDK surfaces, embedding, registry) | P04, P07, P08, P09 contracts | Blueprint §8 |
 | B-07 | Conformance levels are future work; only the L-A + C-A frame is accepted | P12 full scope | RFC-0004; ADR-0004 |
-| B-08 | Specifications S01–S16 are In Review, not ratified; nothing may build against them as binding | first WP of every implementation program | Blueprint §7 lifecycle; PR #13 |
+| B-08 | Specifications remain unratified except S04 (Ratified — container ADR-0009 plus the Stage 0 minimal contract clause set ADR-0011, which records governance obligations and defines no implementable language content) and S11 (Deprecated — ADR-0006, Baseline §13); nothing may build against unratified specifications as binding | first WP of every implementation program | Blueprint §7 lifecycle; PR #13; ADR-0006; ADR-0009; ADR-0011 |
 | B-09 | Memory routing (M-A/B/C) and Context Engine definition (L-12) undecided | no programs exist for these candidates | RFC-0014, RFC-0015; ADR-0004 |
 | B-10 | No ratified quantitative performance requirement exists anywhere | all performance budgets and performance testing | PR #13 blocked-section census |
 | B-11 | `specs/fcos/` is not an empty scaffold — it holds ~40 substantive legacy specification documents; their disposal (delete / archive / adopt) is an undecided Maintainer question. Discovered during Wave 0 (PR #16); detailed in WAVE_0_VERIFICATION.md | P00.1 | ADR-0005 (governs the specification home, not legacy-content disposal); PR #16 verification record |
