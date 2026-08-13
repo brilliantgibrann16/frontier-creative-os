@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 83)
+## `docs/` (files: 84)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -137,6 +137,7 @@
 - `docs/rfc/RFC-0016.md`
 - `docs/rfc/RFC-0017.md`
 - `docs/rfc/RFC-0018.md`
+- `docs/rfc/RFC-0019.md`
 - `docs/rfc/RFC_ROADMAP.md`
 
 ## `examples/` (files: 1)
@@ -234,55 +235,4 @@
 - `tests/test_derive_repository_inventory.py`
 - `tests/test_docs_cli.py`
 - `tests/test_docs_corpus.py`
-- `tests/test_generator.py`
-- `tests/test_optimizer.py`
-- `tests/test_parser.py`
-- `tests/test_semantic.py`
-- `tests/test_validator.py`
-
-## `tools/` (files: 39)
-
-- `tools/checks/README.md`
-- `tools/checks/__init__.py`
-- `tools/checks/check_clause_index.py`
-- `tools/checks/check_ids.py`
-- `tools/checks/check_links.py`
-- `tools/compiler/.gitkeep`
-- `tools/compiler/fcos/__init__.py`
-- `tools/compiler/fcos/compiler.py`
-- `tools/compiler/fcos/exceptions.py`
-- `tools/compiler/fcos/generator.py`
-- `tools/compiler/fcos/io.py`
-- `tools/compiler/fcos/logging.py`
-- `tools/compiler/fcos/models/__init__.py`
-- `tools/compiler/fcos/models/artifact.py`
-- `tools/compiler/fcos/models/ast.py`
-- `tools/compiler/fcos/models/compilation_result.py`
-- `tools/compiler/fcos/models/diagnostic.py`
-- `tools/compiler/fcos/models/execution_bundle.py`
-- `tools/compiler/fcos/models/semantic.py`
-- `tools/compiler/fcos/models/validation.py`
-- `tools/compiler/fcos/optimizer.py`
-- `tools/compiler/fcos/parser.py`
-- `tools/compiler/fcos/semantic.py`
-- `tools/compiler/fcos/types.py`
-- `tools/compiler/fcos/validator.py`
-- `tools/compiler/fcos/version.py`
-- `tools/compiler/fcos/writer.py`
-- `tools/docs/README.md`
-- `tools/docs/__init__.py`
-- `tools/docs/build_docs.py`
-- `tools/docs/corpus.py`
-- `tools/docs/derive_architecture_outline.py`
-- `tools/docs/derive_corpus_index.py`
-- `tools/docs/derive_document_graph.py`
-- `tools/docs/derive_id_crossref.py`
-- `tools/docs/derive_navigation.py`
-- `tools/docs/derive_repository_inventory.py`
-- `tools/scripts/.gitkeep`
-- `tools/templates/.gitkeep`
-
-## Totals
-
-- Files listed: 235
-- Top-level groups: 10
+- `t
