@@ -43,6 +43,7 @@ through their own RFC → ADR decision.
 | 0016 | Candidate Subsystem: Agent Framework | — (introduction) | S16-adjacent | **Rejected** (A-A) |
 | 0017 | Candidate Subsystem: Product UI | — (scope + introduction) | S9 or new | Accepted — scope rule (U-A: S9 engineering tooling only) |
 | 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
+| 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Open** — In Review (2026-08-14); decision-framing; nothing is decided until the Maintainer’s recording ADR |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -65,6 +66,16 @@ cycle), accepted and recorded by **ADR-0011** per the Maintainer's
 explicit written directive of 2026-08-12. Unlike the decision-framing
 0001–0017 set described above, it proposes a concrete clause set (its
 recommendation is labeled and non-binding per convention).
+
+*Post-disposition note (2026-08-14):* **RFC-0019** is the second
+post-set RFC: a decision-framing proposal covering the Stage 0 →
+Stage 1 capability-stage transition (S04#1.2) and the Stage 1
+language-content scope that P04 requires. Like the 0001–0017 set it
+selects nothing: the transition, the scope package, and the
+type-model and determinism dispositions are Maintainer decisions,
+binding only when recorded as an ADR (L-8/INV-8). It proposes no
+clause text; if accepted, clause content travels subsequent S04
+amendment cycles (proposal RFC → recording ADR).
 
 *Post-disposition note (2026-08-10):* **ADR-0006** (the D-01 acceptance)
 disposed the three rows above that ADR-0004 had left open or routed

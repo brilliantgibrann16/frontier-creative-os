@@ -64,3 +64,4 @@
 - `docs/rfc/RFC-0016.md` -- RFC-0016 — Candidate Subsystem: Agent Framework
 - `docs/rfc/RFC-0017.md` -- RFC-0017 — Candidate Subsystem: Product UI
 - `docs/rfc/RFC-0018.md` -- RFC-0018 — S04 Stage 0 Minimal Contract Clause Set (Amendment Proposal)
+- `docs/rfc/RFC-0019.md` -- RFC-0019 — S04 Stage 1 Language-Content Scope (Minimum P04 Unlock)

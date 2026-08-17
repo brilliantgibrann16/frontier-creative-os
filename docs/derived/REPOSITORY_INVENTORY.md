@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 83)
+## `docs/` (files: 84)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -137,6 +137,7 @@
 - `docs/rfc/RFC-0016.md`
 - `docs/rfc/RFC-0017.md`
 - `docs/rfc/RFC-0018.md`
+- `docs/rfc/RFC-0019.md`
 - `docs/rfc/RFC_ROADMAP.md`
 
 ## `examples/` (files: 1)
@@ -284,5 +285,5 @@
 
 ## Totals
 
-- Files listed: 235
+- Files listed: 236
 - Top-level groups: 10
