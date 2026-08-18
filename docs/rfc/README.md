@@ -43,7 +43,7 @@ through their own RFC → ADR decision.
 | 0016 | Candidate Subsystem: Agent Framework | — (introduction) | S16-adjacent | **Rejected** (A-A) |
 | 0017 | Candidate Subsystem: Product UI | — (scope + introduction) | S9 or new | Accepted — scope rule (U-A: S9 engineering tooling only) |
 | 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
-| 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Open** — In Review (2026-08-14); decision-framing; nothing is decided until the Maintainer’s recording ADR |
+| 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Accepted (ADR-0012)** — D1: Stage 1 entered; D2: scope **W-B** (interchange kernel); D3: type/data model explicitly labeled deferred; D4: deterministic validation outcomes required; clause content travels subsequent S04 amendment cycles |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -91,3 +91,15 @@ U-14 resolved **S-B** inside ADR-0006. The interim rules of RFC-0005
 open per ADR-0006. Individual RFC files keep their submission-time
 `Status: In Review` headers per the ADR-0004 convention: this index plus
 the disposing ADRs are the authoritative disposition record.
+
+*Post-disposition note (2026-08-18):* **ADR-0012** records the
+Maintainer's acceptance of RFC-0019: Stage 1 is entered (D1), the
+Stage 1 scope is the **W-B interchange kernel** (D2), the type/data
+model is explicitly labeled deferred (D3), and deterministic
+validation outcomes are required at Stage 1 (D4). Acceptance ratifies
+no clause text: the Stage 1 clauses travel subsequent S04 amendment
+cycles (proposal RFC → recording ADR), and the interchange form's
+format sub-decision (existing boring format per GL-15/DP-28 versus a
+bespoke form) is recorded for that cycle. The RFC file keeps its
+submission-time `Status: In Review` header per the ADR-0004
+convention.
