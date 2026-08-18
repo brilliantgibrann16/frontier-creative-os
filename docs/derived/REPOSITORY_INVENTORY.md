@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 84)
+## `docs/` (files: 85)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -82,6 +82,7 @@
 - `docs/decisions/ADR-0009.md`
 - `docs/decisions/ADR-0010.md`
 - `docs/decisions/ADR-0011.md`
+- `docs/decisions/ADR-0012.md`
 - `docs/decisions/D01_DECISION_BRIEF.md`
 - `docs/decisions/D01_DECISION_DOSSIER.md`
 - `docs/engineering/WP15_Engineering_Specification_Standard.md`
@@ -285,5 +286,5 @@
 
 ## Totals
 
-- Files listed: 236
+- Files listed: 237
 - Top-level groups: 10
