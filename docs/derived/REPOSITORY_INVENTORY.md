@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 90)
+## `docs/` (files: 91)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -97,6 +97,7 @@
 - `docs/program/KNOWLEDGE_SYNC_RUNBOOK.md`
 - `docs/program/MILESTONE_TEMPLATE.md`
 - `docs/program/P04_1_COMPILER_IMPLEMENTATION_PLAN.md`
+- `docs/program/P04_4_SPEC_DERIVED_TEST_EVIDENCE.md`
 - `docs/program/PROGRAM.md`
 - `docs/program/PROGRAM_INDEX.md`
 - `docs/program/RISK_REGISTER.md`
@@ -223,13 +224,14 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 25)
+## `tests/` (files: 26)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
 - `tests/compiler/test_fsl_compiler_skeleton.py`
 - `tests/compiler/test_fsl_diagnostics_plumbing.py`
+- `tests/compiler/test_fsl_spec_derived_evidence.py`
 - `tests/compiler/test_fsl_stage1_wb_realization.py`
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
@@ -303,5 +305,5 @@
 
 ## Totals
 
-- Files listed: 254
+- Files listed: 256
 - Top-level groups: 10

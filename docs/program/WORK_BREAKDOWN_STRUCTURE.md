@@ -65,8 +65,8 @@ only through the amendment path (RFC → recording ADR).*
 - **P04.2** ✅ Skeleton + diagnostics plumbing per the ratified diagnostics
   contract (`S05#2.1`–`S05#2.4`) and CLI entry point (`S05#3.1`–`S05#3.2` — complete via PR #52).
 - **P04.3** ✅ Implement ratified S04 clauses incrementally (`S04#5.1`–`S04#8.3`); every PR cites the
-  clause IDs it realizes (INV-17).
-- **P04.4** Spec-derived test evidence per clause (with P11).
+  clause IDs it realizes (INV-17 — complete via PR #53).
+- **P04.4** ✅ Spec-derived test evidence per clause (with P11).
 - **P04.5** Conformance submission to P12; iterate to green.
 
 ## P05 — Runtime (GATED: existence undecided)
