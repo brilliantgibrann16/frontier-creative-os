@@ -11,6 +11,8 @@ from tools.compiler.fsl.models import (
     Diagnostic,
     DiagnosticCode,
     ExecutionBundle,
+    ValidationOutcome,
+    ValidationStatus,
 )
 
 __all__ = [
@@ -18,6 +20,8 @@ __all__ = [
     "Diagnostic",
     "DiagnosticCode",
     "ExecutionBundle",
+    "ValidationOutcome",
+    "ValidationStatus",
     "compile_artifact",
 ]
 
