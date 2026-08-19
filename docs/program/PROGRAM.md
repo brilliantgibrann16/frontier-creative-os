@@ -43,8 +43,8 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | P01 | Core Infrastructure (CI & Mechanical Gates) | gate encoding for S12/S15/S1 enforcement (U-12 → RFC-0011 E-A) | ACTIVE |
 | P02 | Knowledge System | S3 | STANDING |
 | P03 | Language Definition | S4 | **EXECUTED (Stage 0: ADR-0011; Stage 1 W-B: ADR-0012/ADR-0013)** |
-| P04 | Compiler | S5 | GATED |
-| P05 | Runtime | S6 | GATED (exists — minimal scope S-B, ADR-0006) |
+| P04 | Compiler | S5 | ACTIVE (harness/skeleton unblocked via ADR-0014) |
+| P05 | Runtime | S6 | GATED (existence S-B per ADR-0006) |
 | P06 | Standard Library | S7 | GATED |
 | P07 | SDK | S8 | GATED |
 | P08 | Developer Tools | S9 | GATED (scope rule U-A) |
@@ -224,18 +224,18 @@ never to be filled by invention.
 
 ---
 
-### P04 — Compiler, S5 (GATED: ratified S04 clauses)
+### P04 — Compiler, S5 (ACTIVE — G-SPEC(S04/S05) MET)
 
-- **Purpose:** first conforming translation implementation. The compiler
+- **Purpose:** first conforming translation implementation under the ratified S05 boundary contract (ADR-0014). The compiler
   never defines language behavior (INV-3); no implementation holds defining
   authority (RFC-0006 R-A).
-- **Scope:** implementation plan → compiler realizing ratified clauses;
-  diagnostics per the ratified diagnostics contract.
+- **Scope:** implementation plan → compiler realizing ratified S04 clauses;
+  diagnostics per the ratified diagnostics contract (`S05#2.1`–`S05#2.4`); Stage 1 execution bundle emission (`S05#4.1`–`S05#4.3`).
 - **Deliverables:** conforming compiler; diagnostics; S12 test evidence;
   S13 conformance judgment.
-- **Dependencies:** P03 (ratified clauses); P11 (harness); P12 (judge);
+- **Dependencies:** P03 (ratified clauses); S05 (ratified boundary contract); P11 (harness); P12 (judge);
   G-CI.
-- **Required RFCs:** RFC-0006 (accepted).
+- **Required RFCs:** RFC-0006 (accepted), RFC-0021 (accepted via ADR-0014).
 - **Required ADRs:** none decision-level foreseen; a recorded
   implementation-plan note fixes the source location before the first code
   PR — **Blocked-by: that recorded choice (Blueprint §8 leaves the

@@ -45,7 +45,7 @@ through their own RFC → ADR decision.
 | 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
 | 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Accepted (ADR-0012)** — D1: Stage 1 entered; D2: scope **W-B** (interchange kernel); D3: type/data model explicitly labeled deferred; D4: deterministic validation outcomes required; clause content travels subsequent S04 amendment cycles |
 | 0020 | S04 Stage 1 W-B Interchange-Kernel Clause Set (amendment proposal) | ADR-0012 follow-up 1 — the Wave 2 W-B clause-drafting cycle | S4 | **Accepted (ADR-0013)** — F1 decided 2026-08-19: **JSON** (F1-A per GL-15/DP-28); F2 decided path 1 (revise-then-ratify); the revised thirteen-clause W-B kernel (S04#5.1–S04#8.3) is ratified into S04 through the amendment path |
-| 0021 | S05 Compiler Subsystem Boundary Contract Specification | ADR-0013 follow-up 2 — S05 compiler-boundary contract drafting cycle | S5 | **In Review** — establishes input acceptance, diagnostics, invocation, and Stage 1 output emission contracts |
+| 0021 | S05 Compiler Subsystem Boundary Contract Specification | ADR-0013 follow-up 2 — S05 compiler-boundary contract drafting cycle | S5 | **Accepted (ADR-0014)** — establishes input acceptance, diagnostics, invocation, and Stage 1 output emission contracts ratified into S05 (S05#1.1–S05#4.3) |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -138,14 +138,17 @@ post-set RFC: the S05 Compiler Subsystem Boundary Contract proposal
 (ADR-0013 follow-up 2). It proposes the minimal normative boundary
 specification for S05, defining input acceptance (`S05#1.x`), clause-traceable
 diagnostics (`S05#2.x`), invocation API/CLI (`S05#3.x`), and Stage 1
-deterministic execution-bundle output emission (`S05#4.x`), providing the
-exact specification necessary to unblock P04 upon ratification.
+deterministic execution-bundle output emission (`S05#4.x`). Accepted and
+recorded by **ADR-0014**; all 13 clauses (`S05#1.1`–`S05#4.3`) ratified
+into `specs/S05-compiler.md` with sidecar `specs/S05-compiler.index.yaml`,
+discharging G-SPEC(S05) and resolving B-06 for the compiler boundary.
 
-## Current RFC state summary (post-RFC-0021 submission)
+## Current RFC state summary (post-RFC-0021 ratification)
 
 - 21 total RFCs (0001–0021).
-- 17 accepted (0001–0004, 0006–0012, 0017–0020; 0005/0009 interim rules in force).
+- 18 accepted (0001–0004, 0006–0012, 0017–0021; 0005/0009 interim rules in force).
 - 2 rejected (0013, 0016).
-- 2 open / in review (0014, 0015; 0021 in review).
+- 2 open / in review (0014, 0015).
 - 1 withdrawn (none).
+
 

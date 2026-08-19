@@ -57,16 +57,15 @@ and the Stage 1 W-B interchange kernel scope (ADR-0012, ADR-0013; 13 clauses
 ratified) are complete; language-content clauses beyond Stage 1 enter S04
 only through the amendment path (RFC → recording ADR).*
 
-## P04 — Compiler (GATED)
+## P04 — Compiler (ACTIVE — G-SPEC(S04/S05) MET)
 
-- **P04.0** ⛔ Entry — Blocked-by: ratified S04 clauses + ratified S05
-  compiler-boundary contract (Blueprint §8; B-06, B-08).
+- **P04.0** ✅ Entry — G-SPEC(S04) MET via ADR-0011 / ADR-0013; G-SPEC(S05) MET via ADR-0014.
 - **P04.1** Record the implementation-plan note fixing source location and
-  toolchain (no decision authority; just a recorded plan).
+  skeleton structure before the first compiler code PR (PR-05 quarantine).
 - **P04.2** Skeleton + diagnostics plumbing per the ratified diagnostics
-  contract.
-- **P04.3** Implement ratified clauses incrementally; every PR cites the
-  clause IDs it realizes (INV-17 traceability).
+  contract (`S05#2.1`–`S05#2.4`) and CLI entry point (`S05#3.1`).
+- **P04.3** Implement ratified S04 clauses incrementally (`S04#5.1`–`S04#8.3`); every PR cites the
+  clause IDs it realizes (INV-17).
 - **P04.4** Spec-derived test evidence per clause (with P11).
 - **P04.5** Conformance submission to P12; iterate to green.
 
