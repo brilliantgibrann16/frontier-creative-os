@@ -24,6 +24,7 @@ def test_s04_5_2_stage1_self_containment():
         "manifest": {
             "name": "isolated.pkg",
             "version": "1.0.0",
+            "kind": "application",
             "dependencies": ["local.pkg.a", "local.pkg.b"]
         }
     }
@@ -87,7 +88,8 @@ def test_s04_8_1_8_3_json_concrete_interchange_form():
         "schema_version": "fsl/1.0",
         "manifest": {
             "name": "json.interchange.test",
-            "version": "1.0.0"
+            "version": "1.0.0",
+            "kind": "application"
         }
     })
     res = compile_artifact(valid_json_text)
@@ -102,7 +104,7 @@ def test_api_cli_parity(tmp_path: Path):
     """Verify programmatic API and CLI produce identical outcome for valid & invalid artifacts."""
     valid_obj = {
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "parity.pkg", "version": "1.0.0"}
+        "manifest": {"name": "parity.pkg", "version": "1.0.0", "kind": "application"}
     }
     api_res = compile_artifact(valid_obj)
     assert api_res.success

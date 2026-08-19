@@ -1,0 +1,20 @@
+{
+  "fixture_id": "neg_s04_6_2_missing_manifest_kind",
+  "target_clause_ids": [
+    "S04#6.2",
+    "S05#1.1"
+  ],
+  "fixture_type": "negative",
+  "input_payload": {
+    "schema_version": "fsl/1.0",
+    "manifest": {
+      "name": "valid-name",
+      "version": "1.0.0"
+    }
+  },
+  "expected_exit_code": 1,
+  "expected_diagnostic_codes": [
+    "S04#6.2"
+  ],
+  "description": "Missing required manifest field 'kind' testing S04#6.2 validity closure rejection."
+}

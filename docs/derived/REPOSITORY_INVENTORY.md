@@ -228,16 +228,27 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 27)
+## `tests/` (files: 38)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
+- `tests/compiler/test_conformance_fixture_corpus.py`
 - `tests/compiler/test_conformance_harness.py`
 - `tests/compiler/test_fsl_compiler_skeleton.py`
 - `tests/compiler/test_fsl_diagnostics_plumbing.py`
 - `tests/compiler/test_fsl_spec_derived_evidence.py`
 - `tests/compiler/test_fsl_stage1_wb_realization.py`
+- `tests/fixtures/conformance/manifest.json`
+- `tests/fixtures/conformance/neg_s04_5_1_missing_manifest.json`
+- `tests/fixtures/conformance/neg_s04_5_2_non_empty_external_dependencies.json`
+- `tests/fixtures/conformance/neg_s04_6_1_missing_manifest_name.json`
+- `tests/fixtures/conformance/neg_s04_6_2_missing_manifest_kind.json`
+- `tests/fixtures/conformance/neg_s04_8_3_missing_schema_version.json`
+- `tests/fixtures/conformance/neg_s04_8_3_unsupported_schema_version.json`
+- `tests/fixtures/conformance/pos_s04_5_1_minimal_valid.json`
+- `tests/fixtures/conformance/pos_s04_5_2_self_contained_empty_deps.json`
+- `tests/fixtures/conformance/pos_s04_8_1_json_interchange.json`
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
 - `tests/test_check_clause_index.py`
@@ -314,5 +325,5 @@
 
 ## Totals
 
-- Files listed: 265
+- Files listed: 276
 - Top-level groups: 10

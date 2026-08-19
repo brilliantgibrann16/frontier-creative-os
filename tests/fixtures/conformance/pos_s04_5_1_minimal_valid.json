@@ -1,0 +1,19 @@
+{
+  "fixture_id": "pos_s04_5_1_minimal_valid",
+  "target_clause_ids": [
+    "S04#5.1",
+    "S05#1.1"
+  ],
+  "fixture_type": "positive",
+  "input_payload": {
+    "schema_version": "fsl/1.0",
+    "manifest": {
+      "name": "valid-minimal-test",
+      "version": "1.0.0",
+      "kind": "application"
+    }
+  },
+  "expected_exit_code": 0,
+  "expected_diagnostic_codes": [],
+  "description": "Minimal valid FSL Stage 1 artifact testing S04#5.1 and S05#1.1 acceptance."
+}

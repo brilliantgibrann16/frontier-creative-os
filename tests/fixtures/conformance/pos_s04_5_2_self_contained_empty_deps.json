@@ -1,0 +1,20 @@
+{
+  "fixture_id": "pos_s04_5_2_self_contained_empty_deps",
+  "target_clause_ids": [
+    "S04#5.2",
+    "S05#4.1"
+  ],
+  "fixture_type": "positive",
+  "input_payload": {
+    "schema_version": "fsl/1.0",
+    "manifest": {
+      "name": "self-contained-test",
+      "version": "1.0.0",
+      "kind": "application",
+      "dependencies": []
+    }
+  },
+  "expected_exit_code": 0,
+  "expected_diagnostic_codes": [],
+  "description": "Valid self-contained artifact with empty dependencies array testing S04#5.2 and S05#4.1."
+}
