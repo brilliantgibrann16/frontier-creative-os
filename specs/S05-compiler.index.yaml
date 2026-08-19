@@ -1,0 +1,71 @@
+# Machine-readable clause index for specs/S05-compiler.md.
+# Schema: ADR-0010. Instantiated per ADR-0014.
+spec:
+  id: S05
+  version: 1.0.0
+clauses:
+  - id: "S05#1.1"
+    category: defined
+    title: Input format
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#1.2"
+    category: defined
+    title: Schema version validation
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#1.3"
+    category: defined
+    title: Deterministic JSON parse
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#2.1"
+    category: defined
+    title: Clause-traceable diagnostics
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#2.2"
+    category: defined
+    title: Diagnostic structure
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#2.3"
+    category: defined
+    title: Deterministic diagnostic ordering
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#2.4"
+    category: defined
+    title: No semantic inventions
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#3.1"
+    category: defined
+    title: CLI entry point
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#3.2"
+    category: defined
+    title: Exit codes
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#3.3"
+    category: defined
+    title: Programmatic API
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#4.1"
+    category: defined
+    title: Stage 1 output target
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#4.2"
+    category: defined
+    title: Execution bundle structure
+    status: ratified
+    source: specs/S05-compiler.md
+  - id: "S05#4.3"
+    category: defined
+    title: Determinism guarantee
+    status: ratified
+    source: specs/S05-compiler.md

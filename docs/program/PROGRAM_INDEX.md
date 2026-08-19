@@ -31,7 +31,7 @@
 | P01 | Core Infrastructure (CI & Gates) | gate encoding (RFC-0011 E-A) | **ACTIVE** | none | — |
 | P02 | Knowledge System | S3 | **STANDING** | none | — |
 | P03 | Language Definition | S4 | **EXECUTED (Stage 0: ADR-0011; Stage 1 W-B: ADR-0012/ADR-0013)** | G-D01 | B-01 |
-| P04 | Compiler | S5 | GATED | G-SPEC(S04/S05) | B-01, B-06, B-08 |
+| P04 | Compiler | S5 | **ACTIVE (harness/skeleton unblocked)** | G-SPEC(S04/S05) [MET: ADR-0013/ADR-0014] | G-CI |
 | P05 | Runtime | S6 | GATED (existence undecided) | G-D01 (U-14) | B-02 |
 | P06 | Standard Library | S7 | GATED | G-D01 + P03 | B-01 |
 | P07 | SDK | S8 | GATED | ratified interface specs | B-06, B-08 |
