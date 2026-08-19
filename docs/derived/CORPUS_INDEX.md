@@ -72,3 +72,4 @@
 - `docs/rfc/RFC-0020.md` -- RFC-0020 — S04 Stage 1 W-B Interchange-Kernel Clause Set (Amendment Proposal)
 - `docs/rfc/RFC-0021.md` -- RFC-0021 — S05 Compiler Subsystem Boundary Contract Specification
 - `docs/rfc/RFC-0022.md` -- RFC-0022 — S13 Verification & Conformance Subsystem Specification
+- `docs/rfc/RFC-0023.md` -- RFC-0023 — S04 Stage 2 Capability-Stage Transition & Scope Framing
