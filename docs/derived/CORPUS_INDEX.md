@@ -44,6 +44,7 @@
 - `docs/decisions/ADR-0010.md` -- ADR-0010 — Concrete M-B Clause-Index Schema (P03.4)
 - `docs/decisions/ADR-0011.md` -- ADR-0011 — S04 Stage 0 Minimal Contract Clause Set, Sidecar Instantiation, and Drift-Checker Authorization (P03.3 + ADR-0010 Follow-ups 1–2)
 - `docs/decisions/ADR-0012.md` -- ADR-0012 — S04 Stage 1 Entry with the W-B Interchange-Kernel Scope (RFC-0019 Acceptance)
+- `docs/decisions/ADR-0013.md` -- ADR-0013 — RFC-0020 Acceptance: Stage 1 W-B Clause-Set Ratification with JSON as the Concrete Interchange Form (F1/F2 Resolution)
 
 ## RFCs (dispositions recorded in ADR-0004) (`docs/rfc/`)
 
