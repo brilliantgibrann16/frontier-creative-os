@@ -10,17 +10,18 @@
 - INV-16: there is exactly one conformance judge. No parallel or competing source of conformance judgments may be created.
 
 ## 2. What explicitly does not exist yet
-
-- No conformance harness, no fixture corpus, no official judgments (packages P12.2 and beyond): **blocked by G-SPEC(S13) and B-08** — S13, the specification that governs conformance, is In Review and unratified. The S04 Stage 0 minimal contract clause set (ADR-0011) is ratified and indexed, but it records governance obligations rather than language behavior, and its mechanical audit (`tools/checks/check_clause_index.py`, in CI per the 2026-08-13 P03.5 decision) is derived hygiene — not a conformance judgment (INV-16).
+ 
+- Conformance harness implementation, fixture corpus, and official judgments (packages P12.2–P12.4): unblocked by S13 ratification (ADR-0015) and scheduled for execution under P12.
 - No conformance levels or versioning beyond what ADR-0004 records.
 
 ## 3. Blocking conditions
 
-| Item | Blocked by |
-| --- | --- |
-| Conformance harness implementation | G-SPEC(S13), B-08 |
-| Fixture corpora | Harness + ratified clauses |
-| Official judgments | All of the above + INV-16 judge designation |
+| Item | Blocked by | Status |
+| --- | --- | --- |
+| S13 Specification Ratification | G-SPEC(S13), B-08 | ✅ MET (ADR-0015) |
+| Conformance harness implementation (P12.2) | S13 ratification | Unblocked (Ready for execution) |
+| Fixture corpora (P12.3) | Harness + ratified clauses | Unblocked |
+| Official judgments & claims (P12.4) | Harness + Fixtures + S13 Judge | Unblocked |
 
 ## 4. Non-duplication rule
 

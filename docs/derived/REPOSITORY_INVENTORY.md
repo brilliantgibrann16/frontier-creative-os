@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 93)
+## `docs/` (files: 94)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -85,6 +85,7 @@
 - `docs/decisions/ADR-0012.md`
 - `docs/decisions/ADR-0013.md`
 - `docs/decisions/ADR-0014.md`
+- `docs/decisions/ADR-0015.md`
 - `docs/decisions/D01_DECISION_BRIEF.md`
 - `docs/decisions/D01_DECISION_DOSSIER.md`
 - `docs/engineering/WP15_Engineering_Specification_Standard.md`
@@ -157,7 +158,7 @@
 
 - `schemas/.gitkeep`
 
-## `specs/` (files: 66)
+## `specs/` (files: 67)
 
 - `specs/README.md`
 - `specs/S01-governance.md`
@@ -174,6 +175,7 @@
 - `specs/S10-build-system.md`
 - `specs/S11-package-manager.md`
 - `specs/S12-testing.md`
+- `specs/S13-verification-conformance.index.yaml`
 - `specs/S13-verification-conformance.md`
 - `specs/S14-documentation-system.md`
 - `specs/S15-release-distribution.md`
@@ -307,5 +309,5 @@
 
 ## Totals
 
-- Files listed: 258
+- Files listed: 260
 - Top-level groups: 10

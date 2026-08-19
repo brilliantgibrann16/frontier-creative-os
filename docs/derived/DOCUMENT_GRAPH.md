@@ -53,6 +53,7 @@
 | `docs/decisions/ADR-0012.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0019.md` |
 | `docs/decisions/ADR-0013.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0018.md`; `docs/rfc/RFC-0019.md`; `docs/rfc/RFC-0020.md` |
 | `docs/decisions/ADR-0014.md` | (none) | `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0013.md`; `docs/rfc/RFC-0021.md` |
+| `docs/decisions/ADR-0015.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/rfc/RFC-0004.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0022.md` |
 | `docs/rfc/RFC-0001.md` | (none) | `docs/rfc/RFC-0005.md` |
 | `docs/rfc/RFC-0002.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0001.md` |
 | `docs/rfc/RFC-0003.md` | (none) | `docs/decisions/ADR-0003.md` |
@@ -96,6 +97,7 @@ flowchart LR
   ADR0012["ADR-0012"]
   ADR0013["ADR-0013"]
   ADR0014["ADR-0014"]
+  ADR0015["ADR-0015"]
   RFC0001["RFC-0001"]
   RFC0002["RFC-0002"]
   RFC0003["RFC-0003"]
@@ -199,6 +201,14 @@ flowchart LR
   ADR0014 --> ADR0010
   ADR0014 --> ADR0013
   ADR0014 --> RFC0021
+  ADR0015 --> ADR0004
+  ADR0015 --> ADR0010
+  ADR0015 --> ADR0011
+  ADR0015 --> ADR0013
+  ADR0015 --> ADR0014
+  ADR0015 --> RFC0004
+  ADR0015 --> RFC0008
+  ADR0015 --> RFC0022
   RFC0001 --> RFC0005
   RFC0002 --> ADR0002
   RFC0002 --> RFC0001

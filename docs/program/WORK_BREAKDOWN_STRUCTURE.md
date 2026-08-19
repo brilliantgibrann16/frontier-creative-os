@@ -123,18 +123,11 @@ only through the amendment path (RFC → recording ADR).*
 
 ## P12 — Verification & Conformance (PARTIALLY GATED)
 
-- **P12.1** Harness architecture per the accepted RFC-0004 frame (L-A +
-  C-A); implementation-independent by construction (INV-16).
-- **P12.2** ⛔ Fixture validation (harness judges known-conforming and
-  known-violating fixtures correctly) — Blocked-by: G-SPEC(S13) + B-08
-  (`CONFORMANCE_FRAME.md` §2 records packages P12.2 and beyond as
-  blocked; no ratified clauses exist to judge against).
-- **P12.3** ⛔ Clause-indexed suite — the P03.4 clause-index prerequisite is
-  met (`specs/S04-language-definition.index.yaml`, ADR-0011); still
-  Blocked-by: the P12.2 harness (G-SPEC(S13) + B-08) and the absence of
-  ratified language-behavior clauses to judge.
-- **P12.4** ⛔ Official judgments — Blocked-by: S13 ratification
-  (G-SPEC(S13)).
+- **P12.1** ✅ Harness architecture per the accepted RFC-0004 frame (L-A +
+  C-A); implementation-independent by construction (INV-16 — `docs/program/CONFORMANCE_FRAME.md`).
+- **P12.2** Conformance test harness implementation (`tools/conformance/`, unblocked by S13 ratification per ADR-0015).
+- **P12.3** Conformance fixture corpus construction (`tests/fixtures/conformance/`, unblocked by S13 ratification per ADR-0015).
+- **P12.4** Official judging execution and claim publication (`docs/conformance/claims/`, unblocked by S13 ratification per ADR-0015).
 - **P12.5** ⛔ Conformance levels — Blocked-by: future work per ADR-0004
   (RFC-0004 frame only).
 
