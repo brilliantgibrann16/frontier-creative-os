@@ -74,6 +74,7 @@
 | `docs/rfc/RFC-0019.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/rfc/RFC-0001.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0012.md`; `docs/rfc/RFC-0014.md`; `docs/rfc/RFC-0015.md`; `docs/rfc/RFC-0018.md` |
 | `docs/rfc/RFC-0020.md` | (none) | `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0018.md`; `docs/rfc/RFC-0019.md` |
 | `docs/rfc/RFC-0021.md` | (none) | `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md` |
+| `docs/rfc/RFC-0022.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/rfc/RFC-0004.md`; `docs/rfc/RFC-0008.md` |
 
 ## Governance reference graph (ADR / RFC files)
 
@@ -116,6 +117,7 @@ flowchart LR
   RFC0019["RFC-0019"]
   RFC0020["RFC-0020"]
   RFC0021["RFC-0021"]
+  RFC0022["RFC-0022"]
   ADR0002 --> ADR0001
   ADR0003 --> ADR0002
   ADR0004 --> ADR0002
@@ -269,4 +271,11 @@ flowchart LR
   RFC0020 --> RFC0019
   RFC0021 --> ADR0012
   RFC0021 --> ADR0013
+  RFC0022 --> ADR0004
+  RFC0022 --> ADR0010
+  RFC0022 --> ADR0011
+  RFC0022 --> ADR0013
+  RFC0022 --> ADR0014
+  RFC0022 --> RFC0004
+  RFC0022 --> RFC0008
 ```
