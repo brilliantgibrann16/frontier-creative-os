@@ -228,11 +228,12 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 26)
+## `tests/` (files: 27)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
+- `tests/compiler/test_conformance_harness.py`
 - `tests/compiler/test_fsl_compiler_skeleton.py`
 - `tests/compiler/test_fsl_diagnostics_plumbing.py`
 - `tests/compiler/test_fsl_spec_derived_evidence.py`
@@ -257,7 +258,7 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 47)
+## `tools/` (files: 51)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
@@ -294,6 +295,10 @@
 - `tools/compiler/fsl/loader.py`
 - `tools/compiler/fsl/models.py`
 - `tools/compiler/fsl/validator.py`
+- `tools/conformance/__init__.py`
+- `tools/conformance/cli.py`
+- `tools/conformance/models.py`
+- `tools/conformance/runner.py`
 - `tools/docs/README.md`
 - `tools/docs/__init__.py`
 - `tools/docs/build_docs.py`
@@ -309,5 +314,5 @@
 
 ## Totals
 
-- Files listed: 260
+- Files listed: 265
 - Top-level groups: 10
