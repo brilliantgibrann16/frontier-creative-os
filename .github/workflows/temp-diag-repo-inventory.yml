@@ -1,0 +1,79 @@
+name: TEMP diag - regenerate REPOSITORY_INVENTORY with the real generator
+
+on:
+  push:
+    branches: ["rfc/0020-stage1-wb-clause-set"]
+    paths: [".github/workflows/temp-diag-repo-inventory.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rfc/0020-stage1-wb-clause-set
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Diagnose and regenerate on the final (post-cleanup) tree
+        run: |
+          set -euxo pipefail
+          DIAG=/tmp/fcos-repo-inventory-diagnostic
+          mkdir -p "$DIAG"
+          cp docs/derived/REPOSITORY_INVENTORY.md "$DIAG/REPOSITORY_INVENTORY.committed.md"
+          # Remove this temporary workflow from the WORKING TREE ONLY before
+          # generating, so the paths-only inventory reflects the final
+          # production tree. The branch-level deletion happens in a separate
+          # PAT-authored commit immediately after this run.
+          git rm -q .github/workflows/temp-diag-repo-inventory.yml
+          python tools/docs/build_docs.py
+          mkdir -p "$DIAG/pass1"
+          cp docs/derived/*.md "$DIAG/pass1/"
+          python tools/docs/build_docs.py
+          for f in docs/derived/*.md; do
+            cmp "$f" "$DIAG/pass1/$(basename "$f")"
+          done
+          cp docs/derived/REPOSITORY_INVENTORY.md "$DIAG/REPOSITORY_INVENTORY.generated.md"
+          {
+            echo "== determinism: build_docs.py ran twice; all outputs byte-identical (cmp) =="
+            echo "== sha256 =="
+            sha256sum "$DIAG/REPOSITORY_INVENTORY.committed.md" "$DIAG/REPOSITORY_INVENTORY.generated.md"
+            echo "== byte counts =="
+            wc -c "$DIAG/REPOSITORY_INVENTORY.committed.md" "$DIAG/REPOSITORY_INVENTORY.generated.md"
+            echo "== unified diff committed -> generated =="
+            diff -u "$DIAG/REPOSITORY_INVENTORY.committed.md" "$DIAG/REPOSITORY_INVENTORY.generated.md" || true
+            echo "== final 10 lines of generated =="
+            tail -10 "$DIAG/REPOSITORY_INVENTORY.generated.md"
+            echo "== final 16 bytes of generated (hex) =="
+            tail -c 16 "$DIAG/REPOSITORY_INVENTORY.generated.md" | xxd
+            echo "== build_docs.py --check on the final tree =="
+            python tools/docs/build_docs.py --check
+            echo "== pytest on the final tree =="
+            python -m pytest tests/ -v || echo "PYTEST FAILED ON FINAL TREE"
+          } | tee "$DIAG/diagnostic.txt"
+
+      - name: Commit ONLY the regenerated derived outputs
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Unstage and restore this workflow file: its deletion must NOT be
+          # committed by the bot; the PAT-authored cleanup commit handles it
+          # (and triggers CI on the final tree, which bot pushes cannot).
+          git reset -q
+          git checkout -- .github/workflows/temp-diag-repo-inventory.yml
+          git add docs/derived/
+          git commit -m "docs(derived): regenerate REPOSITORY_INVENTORY.md with the repository generator (CI Python 3.11)" -m "Exact byte output of python tools/docs/build_docs.py with the temporary diagnostic workflow removed from the walked tree, matching its imminent branch deletion. No hand edits. Refs #7"
+          git push origin HEAD:rfc/0020-stage1-wb-clause-set
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fcos-repo-inventory-diagnostic
+          path: /tmp/fcos-repo-inventory-diagnostic
