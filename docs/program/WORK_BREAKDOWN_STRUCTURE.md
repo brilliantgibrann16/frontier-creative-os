@@ -60,10 +60,10 @@ only through the amendment path (RFC → recording ADR).*
 ## P04 — Compiler (ACTIVE — G-SPEC(S04/S05) MET)
 
 - **P04.0** ✅ Entry — G-SPEC(S04) MET via ADR-0011 / ADR-0013; G-SPEC(S05) MET via ADR-0014.
-- **P04.1** Record the implementation-plan note fixing source location and
-  skeleton structure before the first compiler code PR (PR-05 quarantine).
-- **P04.2** Skeleton + diagnostics plumbing per the ratified diagnostics
-  contract (`S05#2.1`–`S05#2.4`) and CLI entry point (`S05#3.1`).
+- **P04.1** ✅ Record the implementation-plan note fixing source location and
+  skeleton structure before the first compiler code PR (PR-05 quarantine — complete via PR #51).
+- **P04.2** ✅ Skeleton + diagnostics plumbing per the ratified diagnostics
+  contract (`S05#2.1`–`S05#2.4`) and CLI entry point (`S05#3.1`–`S05#3.2`).
 - **P04.3** Implement ratified S04 clauses incrementally (`S04#5.1`–`S04#8.3`); every PR cites the
   clause IDs it realizes (INV-17).
 - **P04.4** Spec-derived test evidence per clause (with P11).

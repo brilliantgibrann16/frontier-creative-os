@@ -9,7 +9,7 @@ from tools.compiler.fsl.api import compile_artifact
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Run the fcos-compile CLI interface."""
+    """Run the fcos-compile CLI interface adhering to S05#3.1–S05#3.2."""
     parser = argparse.ArgumentParser(
         prog="fcos-compile",
         description="FSL Stage 1 Boundary Compiler (S05 conforming).",
@@ -66,9 +66,29 @@ def main(argv: list[str] | None = None) -> int:
             )
         else:
             print(f"Error: Input file is not valid UTF-8: {exc}", file=sys.stderr)
-        return 1
+        return 1  # S05#3.2 Input validation failure
 
-    result = compile_artifact(raw_text)
+    try:
+        result = compile_artifact(raw_text)
+    except Exception as exc:
+        if args.format == "json":
+            print(
+                json.dumps(
+                    [
+                        {
+                            "code": "INTERNAL_ERROR",
+                            "clause_id": None,
+                            "message": f"Internal compiler fault: {exc}",
+                            "path": "",
+                        }
+                    ],
+                    indent=2,
+                ),
+                file=sys.stderr,
+            )
+        else:
+            print(f"Internal compiler fault: {exc}", file=sys.stderr)
+        return 3  # S05#3.2 Internal unhandled fault
 
     if not result.success:
         if args.format == "json":
@@ -83,7 +103,7 @@ def main(argv: list[str] | None = None) -> int:
                     f"{diag.code.value}{clause_str}: {diag.message} at '{diag.path}'",
                     file=sys.stderr,
                 )
-        return 1  # S05#3.2 Specification failure
+        return 1  # S05#3.2 Specification / validation failure
 
     assert result.bundle is not None
     bundle_json = json.dumps(result.bundle.to_dict(), indent=2)
