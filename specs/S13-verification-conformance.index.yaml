@@ -1,0 +1,81 @@
+# Machine-readable clause index for specs/S13-verification-conformance.md.
+# Schema: ADR-0010. Instantiated per ADR-0015.
+spec:
+  id: S13
+  version: 1.0.0
+clauses:
+  - id: "S13#1.1"
+    category: defined
+    title: Sole judge authority
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#1.2"
+    category: defined
+    title: Binary conformance model
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#1.3"
+    category: defined
+    title: Clause totality
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#2.1"
+    category: defined
+    title: Black-box invocation
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#2.2"
+    category: defined
+    title: Standard harness interface
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#2.3"
+    category: defined
+    title: Deterministic harness execution
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#2.4"
+    category: defined
+    title: Reproducible test reporting
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#3.1"
+    category: defined
+    title: Clause-traced fixtures
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#3.2"
+    category: defined
+    title: Dual-corpus requirement
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#3.3"
+    category: defined
+    title: Fixture immutability
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#3.4"
+    category: defined
+    title: Synthetic independence
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#4.1"
+    category: defined
+    title: Self-certification protocol
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#4.2"
+    category: defined
+    title: Conformance claim structure
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#4.3"
+    category: defined
+    title: Claim invalidation
+    status: ratified
+    source: specs/S13-verification-conformance.md
+  - id: "S13#4.4"
+    category: defined
+    title: Public claim registry
+    status: ratified
+    source: specs/S13-verification-conformance.md
