@@ -51,10 +51,11 @@ unless noted.
 - **P03.6** Update `specs/` TODO(blocked-by…) markers that the acceptance
   ADR discharges (spec-editing work, done inside this program).
 
-*Status (2026-08-13): P03.1–P03.6 are all executed — the per-package record
-lives in `docs/program/S04_CHARTER.md` §7. The Stage 0 scope is a minimal
-contract inventory (ADR-0011); language-content clauses enter S04 only
-through the amendment path (RFC → recording ADR).*
+*Status (2026-08-19): P03.1–P03.6 are all executed — the per-package record
+lives in `docs/program/S04_CHARTER.md` §7. The Stage 0 scope (ADR-0011)
+and the Stage 1 W-B interchange kernel scope (ADR-0012, ADR-0013; 13 clauses
+ratified) are complete; language-content clauses beyond Stage 1 enter S04
+only through the amendment path (RFC → recording ADR).*
 
 ## P04 — Compiler (GATED)
 
@@ -144,10 +145,10 @@ through the amendment path (RFC → recording ADR).*
   (constitution, architecture, ADRs, dispositions).
 - **P13.2** Traceability lint: behavior claims must carry clause refs
   (with P01).
-- **P13.3** ⛔ Behavior documentation — Blocked-by: existence of ratified
-  language-behavior clauses (the Stage 0 contract inventory ratified by
-  ADR-0011 records governance obligations, not language behavior; behavior
-  clauses enter S04 only through the amendment path).
+- **P13.3** ⛔ Behavior documentation — the Stage 1 W-B clause set is
+  ratified (ADR-0013), providing the artifact-model and JSON interchange
+  kernel specifications; documentation of semantics beyond Stage 1 W-B
+  remains Blocked-by: future stage amendments.
 
 ## P14 — Release Infrastructure (GATED: Article 9)
 
