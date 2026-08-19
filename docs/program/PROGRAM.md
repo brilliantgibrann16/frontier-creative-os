@@ -42,7 +42,7 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | P00 | Repository Bootstrap | — (repository interface, Blueprint §8; INV-6) | ACTIVE |
 | P01 | Core Infrastructure (CI & Mechanical Gates) | gate encoding for S12/S15/S1 enforcement (U-12 → RFC-0011 E-A) | ACTIVE |
 | P02 | Knowledge System | S3 | STANDING |
-| P03 | Language Definition | S4 | ACTIVE (G-D01 met — ADR-0006) |
+| P03 | Language Definition | S4 | **EXECUTED (Stage 0: ADR-0011; Stage 1 W-B: ADR-0012/ADR-0013)** |
 | P04 | Compiler | S5 | GATED |
 | P05 | Runtime | S6 | GATED (exists — minimal scope S-B, ADR-0006) |
 | P06 | Standard Library | S7 | GATED |
@@ -78,7 +78,7 @@ Programs derive one-to-one from Blueprint §2 subsystems. Nothing is added.
 | **G0** | Governance closure: ADR-0004/0005 merged, indexes consistent (PR #14) | **MET** (2026-08-02) |
 | **G-D01** | RFC-0001 decided by Maintainer and recorded as an acceptance ADR. Per RFC-0012 (procedural, ADR-0004) that ADR also resolves U-14; it unlocks full decisions on RFC-0005, RFC-0007, RFC-0009 | **MET** (2026-08-10, ADR-0006 — U-14 resolved S-B and RFC-0007 decided N-no in the same act; RFC-0005/RFC-0009 decision windows open) |
 | **G-CI** | CI gates live per RFC-0011 E-A (plus the clause-index gate added by the 2026-08-13 P03.5 decision) and enforced as required checks on `main` | OPEN (P01 exit — the required-checks branch protection remains the Maintainer console action) |
-| **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | **MET for S04** — container (ADR-0009) plus the Stage 0 minimal contract clause set (ADR-0011, 2026-08-12); the contract inventory defines no language content, so content-dependent programs (e.g. P04) still lack implementable clauses; OPEN for all other programs |
+| **G-SPEC(x)** | The governing specification sections for program x are ratified (PR + recorded ratification per Article 7) | **MET for S04** — container (ADR-0009), Stage 0 minimal contract clause set (ADR-0011, 2026-08-12), and Stage 1 W-B interchange kernel (ADR-0013, 2026-08-19; 13 clauses ratified); OPEN for S05 and all other programs |
 | **G-CONF** | Conformance judgment available from P12 for the ratified clause set | OPEN |
 
 ## 5. Program catalog
@@ -181,7 +181,7 @@ never to be filled by invention.
 
 ---
 
-### P03 — Language Definition, S4 (EXECUTED at Stage 0 scope — G-D01 met, ADR-0006; P03.1–P03.6 executed per docs/program/S04_CHARTER.md §7; language content reopens only through the amendment path)
+### P03 — Language Definition, S4 (EXECUTED at Stage 0 and Stage 1 W-B scope — G-D01 met, ADR-0006; P03.1–P03.6 executed per docs/program/S04_CHARTER.md §7; Stage 1 entered via ADR-0012 and W-B clause set ratified via ADR-0013; future language content reopens only through the amendment path)
 
 - **Purpose:** the sole home of meaning (INV-2); everything below the A3
   meaning line is judged against it.
@@ -200,9 +200,9 @@ never to be filled by invention.
 - **Required ADRs:** ADR-0006 (the RFC-0001 acceptance ADR — recorded); a
   recorded ratification per spec version (Article 7).
 - **Required Specifications:** S04 (container Ratified, ADR-0009; Stage 0
-  minimal contract clause set Ratified, ADR-0011; language content —
-  syntax, grammar, semantics — remains blocked and enters only through
-  the amendment path).
+  minimal contract clause set Ratified, ADR-0011; Stage 1 W-B interchange
+  kernel clause set Ratified, ADR-0013; language content beyond Stage 1 W-B
+  remains blocked and enters only through the amendment path).
 - **Required Tests:** spec lint via P01 (ID validity, cross-references);
   alignment review against the P12 conformance suite.
 - **Acceptance Gates:** per-clause ratification via PR + recorded decision.
@@ -587,7 +587,7 @@ never to be filled by invention.
 | B-05 | No language versioning scheme pre-1.0 (V-D) | P14 versioned releases | RFC-0009; ADR-0004 |
 | B-06 | All interface forms UNKNOWN until specified (compiler boundary, tooling contract, SDK surfaces, embedding, registry) | P04, P07, P08, P09 contracts | Blueprint §8 |
 | B-07 | Conformance levels are future work; only the L-A + C-A frame is accepted | P12 full scope | RFC-0004; ADR-0004 |
-| B-08 | Specifications remain unratified except S04 (Ratified — container ADR-0009 plus the Stage 0 minimal contract clause set ADR-0011, which records governance obligations and defines no implementable language content) and S11 (Deprecated — ADR-0006, Baseline §13); nothing may build against unratified specifications as binding | first WP of every implementation program | Blueprint §7 lifecycle; PR #13; ADR-0006; ADR-0009; ADR-0011 |
+| B-08 | Specifications remain unratified except S04 (Ratified — container ADR-0009, Stage 0 minimal contract clause set ADR-0011, and Stage 1 W-B interchange kernel ADR-0013; 25 clauses ratified) and S11 (Deprecated — ADR-0006, Baseline §13); nothing may build against unratified specifications as binding | first WP of every implementation program | Blueprint §7 lifecycle; PR #13; ADR-0006; ADR-0009; ADR-0011; ADR-0013 |
 | B-09 | Memory routing (M-A/B/C) and Context Engine definition (L-12) undecided | no programs exist for these candidates | RFC-0014, RFC-0015; ADR-0004 |
 | B-10 | No ratified quantitative performance requirement exists anywhere | all performance budgets and performance testing | PR #13 blocked-section census |
 | B-11 | `specs/fcos/` is not an empty scaffold — it holds ~40 substantive legacy specification documents; their disposal (delete / archive / adopt) is an undecided Maintainer question. Discovered during Wave 0 (PR #16); detailed in WAVE_0_VERIFICATION.md | P00.1 | ADR-0005 (governs the specification home, not legacy-content disposal); PR #16 verification record |
