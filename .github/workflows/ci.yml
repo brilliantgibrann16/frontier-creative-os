@@ -50,3 +50,5 @@ jobs:
         run: python tools/checks/check_ids.py
       - name: Clause-index drift check
         run: python tools/checks/check_clause_index.py
+      - name: Conformance claims registry check
+        run: python tools/checks/check_conformance.py

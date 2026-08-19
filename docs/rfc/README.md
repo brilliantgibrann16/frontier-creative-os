@@ -144,12 +144,28 @@ recorded by **ADR-0014**; all 13 clauses (`S05#1.1`–`S05#4.3`) ratified
 into `specs/S05-compiler.md` with sidecar `specs/S05-compiler.index.yaml`,
 discharging G-SPEC(S05) and resolving B-06 for the compiler boundary.
 
-## Current RFC state summary (post-RFC-0021 ratification)
+*Post-disposition note (2026-08-19, later):* **RFC-0022** is the fifth
+post-set RFC: the S13 Verification & Conformance Subsystem Specification
+proposal. It proposes the 15 normative clauses of S13, establishing the sole
+judge authority (`S13#1.x`), black-box harness interface (`S13#2.x`),
+clause-traced fixture corpus (`S13#3.x`), and self-certification claim regime
+(`S13#4.x`). Accepted and recorded by **ADR-0015**; all 15 clauses
+(`S13#1.1`–`S13#4.4`) ratified into `specs/S13-verification-conformance.md`
+with sidecar `specs/S13-verification-conformance.index.yaml`, discharging
+`G-SPEC(S13)`.
 
-- 21 total RFCs (0001–0021).
-- 18 accepted (0001–0004, 0006–0012, 0017–0021; 0005/0009 interim rules in force).
+*Post-submission note (2026-08-19):* **RFC-0023** is the sixth post-set
+RFC: the S04 Stage 2 Capability-Stage Transition and Scope Framing proposal.
+It defines the decision surface for Stage 2 entry following the complete
+realization and S13 conformance self-certification of Stage 1 W-B
+(PR #51–PR #60, gate `G-CONF` MET). Submitted for Maintainer review.
+
+## Current RFC state summary (post-RFC-0023 submission)
+
+- 23 total RFCs (0001–0023).
+- 19 accepted (0001–0004, 0006–0012, 0017–0022; 0005/0009 interim rules in force).
 - 2 rejected (0013, 0016).
-- 2 open / in review (0014, 0015).
-- 1 withdrawn (none).
+- 3 open / in review (0014, 0015, 0023).
+- 0 withdrawn.
 
 

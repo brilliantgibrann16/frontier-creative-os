@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 97)
+## `docs/` (files: 98)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -151,6 +151,7 @@
 - `docs/rfc/RFC-0020.md`
 - `docs/rfc/RFC-0021.md`
 - `docs/rfc/RFC-0022.md`
+- `docs/rfc/RFC-0023.md`
 - `docs/rfc/RFC_ROADMAP.md`
 
 ## `examples/` (files: 1)
@@ -231,7 +232,7 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 39)
+## `tests/` (files: 40)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
@@ -256,6 +257,7 @@
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
 - `tests/test_check_clause_index.py`
+- `tests/test_check_conformance.py`
 - `tests/test_check_ids.py`
 - `tests/test_check_links.py`
 - `tests/test_compiler.py`
@@ -273,11 +275,12 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 52)
+## `tools/` (files: 53)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
 - `tools/checks/check_clause_index.py`
+- `tools/checks/check_conformance.py`
 - `tools/checks/check_ids.py`
 - `tools/checks/check_links.py`
 - `tools/compiler/.gitkeep`
@@ -330,5 +333,5 @@
 
 ## Totals
 
-- Files listed: 281
+- Files listed: 284
 - Top-level groups: 10
