@@ -37,6 +37,7 @@ def test_s05_successful_compilation_and_bundle_emission():
         "manifest": {
             "name": "core.component",
             "version": "1.0.0",
+            "kind": "application",
             "dependencies": ["lib.b", "lib.a"]
         }
     }
@@ -64,7 +65,7 @@ def test_s05_cli_exit_codes(tmp_path: Path):
     valid_file = tmp_path / "valid.json"
     valid_file.write_text(json.dumps({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "sample.app", "version": "1.0.0"}
+        "manifest": {"name": "sample.app", "version": "1.0.0", "kind": "application"}
     }), encoding="utf-8")
     out_bundle = tmp_path / "out.bundle.json"
     assert cli_main([str(valid_file), "--out", str(out_bundle)]) == 0

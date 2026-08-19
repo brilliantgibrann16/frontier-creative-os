@@ -1,0 +1,19 @@
+{
+  "fixture_id": "pos_s04_8_1_json_interchange",
+  "target_clause_ids": [
+    "S04#8.1",
+    "S05#1.1"
+  ],
+  "fixture_type": "positive",
+  "input_payload": {
+    "schema_version": "fsl/1.0",
+    "manifest": {
+      "name": "interchange-compliance",
+      "version": "2.1.0-rc1",
+      "kind": "service"
+    }
+  },
+  "expected_exit_code": 0,
+  "expected_diagnostic_codes": [],
+  "description": "Standard JSON serialized interchange form testing S04#8.1."
+}

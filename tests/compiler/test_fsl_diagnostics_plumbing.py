@@ -44,12 +44,12 @@ def test_s04_s05_top_level_type_error():
 def test_s04_missing_or_invalid_schema_version():
     """Verify S04#8.3 / S05#1.2 schema version validation."""
     # Missing
-    res = compile_artifact({"manifest": {"name": "app", "version": "1.0.0"}})
+    res = compile_artifact({"manifest": {"name": "app", "version": "1.0.0", "kind": "application"}})
     assert not res.success
     assert any(d.clause_id == "S04#8.3" and "Missing" in d.message for d in res.diagnostics)
 
     # Invalid version string
-    res2 = compile_artifact({"schema_version": "2.0", "manifest": {"name": "app", "version": "1.0.0"}})
+    res2 = compile_artifact({"schema_version": "2.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}})
     assert not res2.success
     assert any(d.clause_id == "S04#8.3" and "Expected schema_version" in d.message for d in res2.diagnostics)
 
@@ -70,12 +70,12 @@ def test_s04_missing_or_invalid_manifest():
 def test_s04_manifest_identity_and_version_clauses():
     """Verify S04#6.1 and S04#6.2 clause citations."""
     # Missing name (S04#6.1)
-    res1 = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"version": "1.0.0"}})
+    res1 = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"version": "1.0.0", "kind": "application"}})
     assert not res1.success
     assert any(d.clause_id == "S04#6.1" and d.path == "manifest.name" for d in res1.diagnostics)
 
     # Missing version (S04#6.2)
-    res2 = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app"}})
+    res2 = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "kind": "application"}})
     assert not res2.success
     assert any(d.clause_id == "S04#6.2" and d.path == "manifest.version" for d in res2.diagnostics)
 
@@ -85,7 +85,7 @@ def test_s04_manifest_dependencies_self_containment():
     # Non-list dependencies
     res1 = compile_artifact({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "app", "version": "1.0.0", "dependencies": "dep1"}
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application", "dependencies": "dep1"}
     })
     assert not res1.success
     assert any(d.clause_id == "S04#5.2" and d.path == "manifest.dependencies" for d in res1.diagnostics)
@@ -93,7 +93,7 @@ def test_s04_manifest_dependencies_self_containment():
     # Invalid dependency entry in list
     res2 = compile_artifact({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "app", "version": "1.0.0", "dependencies": ["valid.dep", ""]}
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application", "dependencies": ["valid.dep", ""]}
     })
     assert not res2.success
     assert any(d.clause_id == "S04#5.2" and d.path == "manifest.dependencies[1]" for d in res2.diagnostics)
@@ -121,7 +121,7 @@ def test_s05_cli_all_exit_codes(tmp_path: Path):
     valid_file = tmp_path / "valid.json"
     valid_file.write_text(json.dumps({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "app", "version": "1.0.0"}
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}
     }), encoding="utf-8")
     assert cli_main([str(valid_file), "--format", "text"]) == 0
 
@@ -145,6 +145,7 @@ def test_s05_byte_for_byte_reproducibility():
         "manifest": {
             "name": "reproducible.artifact",
             "version": "1.0.0",
+            "kind": "application",
             "dependencies": ["dep.b", "dep.a", "dep.c"]
         }
     }

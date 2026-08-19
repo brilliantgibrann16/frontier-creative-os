@@ -44,9 +44,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Error: fixtures directory '{fixtures_path}' not found.", file=sys.stderr)
         return 2
 
-    fixture_files = sorted(fixtures_path.glob("*.json"))
+    fixture_files = sorted([f for f in fixtures_path.glob("*.json") if f.name != "manifest.json"])
     if not fixture_files:
-        print(f"Error: no .json fixture files found in '{fixtures_path}'.", file=sys.stderr)
+        print(f"Error: no test fixture .json files found in '{fixtures_path}'.", file=sys.stderr)
         return 2
 
     harness = ConformanceHarness(

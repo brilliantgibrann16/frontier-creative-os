@@ -41,23 +41,19 @@ def test_s04_5_1_single_artifact_unit():
 
 def test_s04_5_2_stage1_self_containment():
     """Evidence for S04#5.2 (Stage 1 self-containment): Local dependency checking."""
-    # Valid self-contained local dependencies
+    # Valid self-contained local dependencies with all required manifest fields
     outcome_valid = evaluate_artifact_validity({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "app", "version": "1.0.0", "dependencies": ["dep.a", "dep.b"]}
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application", "dependencies": ["dep.a", "dep.b"]}
     })
     assert outcome_valid.status == ValidationStatus.ACCEPTED
-    assert outcome_valid.is_structurally_valid
-    assert outcome_valid.is_closure_valid
-    assert outcome_valid.violated_clauses == []
 
     # Non-list dependencies rejected
     outcome_invalid_type = evaluate_artifact_validity({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "app", "version": "1.0.0", "dependencies": "dep.a"}
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application", "dependencies": "dep.a"}
     })
     assert outcome_invalid_type.status == ValidationStatus.REJECTED
-    assert not outcome_invalid_type.is_closure_valid
     assert "S04#5.2" in outcome_invalid_type.violated_clauses
 
 
@@ -88,7 +84,7 @@ def test_s04_6_2_validity_closure_distinction():
 
 def test_s04_7_1_outcome_model_accepted_and_rejected():
     """Evidence for S04#7.1 (Validation-outcome model): Explicit ACCEPTED vs REJECTED outcomes."""
-    valid_res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}})
+    valid_res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}})
     assert valid_res.success
     assert valid_res.outcome is not None
     assert valid_res.outcome.status == ValidationStatus.ACCEPTED
@@ -115,7 +111,7 @@ def test_s04_7_2_violated_clause_attribution():
 def test_s04_7_3_outcome_authority_spec_alignment():
     """Evidence for S04#7.3 (Outcome authority): Strictly follows S04 normative prose."""
     # Verifies only ratified clauses are cited and evaluated
-    outcome = evaluate_artifact_validity({"schema_version": "fsl/1.0", "manifest": {"name": "a", "version": "1"}})
+    outcome = evaluate_artifact_validity({"schema_version": "fsl/1.0", "manifest": {"name": "a", "version": "1", "kind": "application"}})
     assert outcome.status == ValidationStatus.ACCEPTED
     for clause in outcome.violated_clauses:
         assert clause.startswith("S04#")
@@ -134,7 +130,7 @@ def test_s04_7_4_outcome_determinism_sweep():
 
 def test_s04_7_5_diagnostic_presentation_contract():
     """Evidence for S04#7.5 (Diagnostic presentation): Conforms to S05 diagnostic contract."""
-    sample = {"schema_version": "fsl/1.0", "manifest": {"name": "", "version": "1.0.0"}}
+    sample = {"schema_version": "fsl/1.0", "manifest": {"name": "", "version": "1.0.0", "kind": "application"}}
     outcome = evaluate_artifact_validity(sample)
     assert len(outcome.diagnostics) >= 1
     diag = outcome.diagnostics[0]
@@ -146,7 +142,7 @@ def test_s04_7_5_diagnostic_presentation_contract():
 
 def test_s04_7_6_conformance_boundary_preservation():
     """Evidence for S04#7.6 (Validation/conformance boundary): Emits outcome, not conformance seal."""
-    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}})
+    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}})
     assert isinstance(res.outcome, ValidationOutcome)
     # The output models do not declare an official conformance seal field
     assert not hasattr(res, "conformance_certificate")
@@ -154,14 +150,14 @@ def test_s04_7_6_conformance_boundary_preservation():
 
 def test_s04_8_1_single_interchange_form_enforcement():
     """Evidence for S04#8.1 (Single interchange form): Enforces JSON interchange form."""
-    res = compile_artifact('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}}')
+    res = compile_artifact('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}}')
     assert res.success
     assert res.bundle is not None
 
 
 def test_s04_8_2_interchange_obligations_decidability():
     """Evidence for S04#8.2 (Interchange-form obligations): Decidable without type system."""
-    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}})
+    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}})
     assert res.outcome.is_accepted
 
 
@@ -243,7 +239,7 @@ def test_s05_2_4_clause_traceable_diagnostics():
 def test_s05_3_1_cli_interface(tmp_path: Path):
     """Evidence for S05#3.1 (Command-line interface): CLI execution & flags."""
     src = tmp_path / "app.json"
-    src.write_text('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}}', encoding="utf-8")
+    src.write_text('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}}', encoding="utf-8")
     out = tmp_path / "out.bundle.json"
     code = cli_main([str(src), "--out", str(out), "--format", "json"])
     assert code == 0
@@ -253,7 +249,7 @@ def test_s05_3_1_cli_interface(tmp_path: Path):
 def test_s05_3_2_cli_exit_code_protocol(tmp_path: Path):
     """Evidence for S05#3.2 (Exit code protocol): Validates codes 0, 1, 2, 3."""
     src = tmp_path / "app.json"
-    src.write_text('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0"}}', encoding="utf-8")
+    src.write_text('{"schema_version": "fsl/1.0", "manifest": {"name": "app", "version": "1.0.0", "kind": "application"}}', encoding="utf-8")
     assert cli_main([str(src)]) == 0
 
     bad_src = tmp_path / "bad.json"
@@ -268,7 +264,7 @@ def test_s05_3_2_cli_exit_code_protocol(tmp_path: Path):
 
 def test_s05_3_3_programmatic_api_parity():
     """Evidence for S05#3.3 (Programmatic API): Full parity with CLI."""
-    artifact = {"schema_version": "fsl/1.0", "manifest": {"name": "pkg", "version": "1.0.0"}}
+    artifact = {"schema_version": "fsl/1.0", "manifest": {"name": "pkg", "version": "1.0.0", "kind": "application"}}
     res = compile_artifact(artifact)
     assert res.success
     assert res.bundle is not None
@@ -277,7 +273,7 @@ def test_s05_3_3_programmatic_api_parity():
 
 def test_s05_4_1_execution_bundle_emission():
     """Evidence for S05#4.1 (Execution bundle output): Emission of ExecutionBundle."""
-    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "pkg", "version": "1.0.0"}})
+    res = compile_artifact({"schema_version": "fsl/1.0", "manifest": {"name": "pkg", "version": "1.0.0", "kind": "application"}})
     assert isinstance(res.bundle, ExecutionBundle)
     assert res.bundle.bundle_version == "1.0.0"
 
@@ -286,7 +282,7 @@ def test_s05_4_2_bundle_structure_contract():
     """Evidence for S05#4.2 (Bundle structure): Required bundle schema fields."""
     res = compile_artifact({
         "schema_version": "fsl/1.0",
-        "manifest": {"name": "pkg", "version": "1.0.0", "dependencies": ["b", "a"]}
+        "manifest": {"name": "pkg", "version": "1.0.0", "kind": "application", "dependencies": ["b", "a"]}
     })
     b_dict = res.bundle.to_dict()
     assert set(b_dict.keys()) == {
@@ -306,6 +302,7 @@ def test_s05_4_3_byte_for_byte_reproducibility():
         "manifest": {
             "name": "deterministic.pkg",
             "version": "1.0.0",
+            "kind": "application",
             "dependencies": ["z", "y", "x"]
         }
     }

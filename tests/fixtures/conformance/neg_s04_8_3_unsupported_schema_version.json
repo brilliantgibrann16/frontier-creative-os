@@ -1,0 +1,21 @@
+{
+  "fixture_id": "neg_s04_8_3_unsupported_schema_version",
+  "target_clause_ids": [
+    "S04#8.3",
+    "S05#1.2"
+  ],
+  "fixture_type": "negative",
+  "input_payload": {
+    "schema_version": "fsl/2.0-unsupported",
+    "manifest": {
+      "name": "future-version",
+      "version": "1.0.0",
+      "kind": "application"
+    }
+  },
+  "expected_exit_code": 1,
+  "expected_diagnostic_codes": [
+    "S04#8.3"
+  ],
+  "description": "Unsupported schema_version string testing S04#8.3 rejection."
+}

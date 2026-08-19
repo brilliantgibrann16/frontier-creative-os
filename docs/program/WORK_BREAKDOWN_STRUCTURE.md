@@ -126,8 +126,8 @@ only through the amendment path (RFC → recording ADR).*
 - **P12.1** ✅ Harness architecture per the accepted RFC-0004 frame (L-A +
   C-A); implementation-independent by construction (INV-16 — `docs/program/CONFORMANCE_FRAME.md`).
 - **P12.2** ✅ Conformance test harness implementation (`tools/conformance/`, complete via PR #58).
-- **P12.3** Conformance fixture corpus construction (`tests/fixtures/conformance/`, unblocked by P12.2).
-- **P12.4** Official judging execution and claim publication (`docs/conformance/claims/`, unblocked by P12.2/P12.3).
+- **P12.3** ✅ Conformance fixture corpus construction (`tests/fixtures/conformance/`, complete via PR #59).
+- **P12.4** Official judging execution and claim publication (`docs/conformance/claims/`, unblocked by P12.3).
 - **P12.5** ⛔ Conformance levels — Blocked-by: future work per ADR-0004
   (RFC-0004 frame only).
 

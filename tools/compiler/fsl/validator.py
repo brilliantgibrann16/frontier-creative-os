@@ -86,7 +86,7 @@ def evaluate_artifact_validity(data: dict[str, Any]) -> ValidationOutcome:
                 )
             )
 
-        # S04#6.2: Validity closure of manifest version
+        # S04#6.2: Validity closure of manifest version and kind
         version = manifest.get("version")
         if version is None:
             is_closure_valid = False
@@ -106,6 +106,28 @@ def evaluate_artifact_validity(data: dict[str, Any]) -> ValidationOutcome:
                     clause_id="S04#6.2",
                     message="Manifest 'version' must be a non-empty string.",
                     path="manifest.version",
+                )
+            )
+
+        kind = manifest.get("kind")
+        if kind is None:
+            is_closure_valid = False
+            diagnostics.append(
+                Diagnostic(
+                    code=DiagnosticCode.VALIDATION_ERROR,
+                    clause_id="S04#6.2",
+                    message="Missing required manifest field 'kind'.",
+                    path="manifest.kind",
+                )
+            )
+        elif not isinstance(kind, str) or not kind.strip():
+            is_closure_valid = False
+            diagnostics.append(
+                Diagnostic(
+                    code=DiagnosticCode.VALIDATION_ERROR,
+                    clause_id="S04#6.2",
+                    message="Manifest 'kind' must be a non-empty string.",
+                    path="manifest.kind",
                 )
             )
 

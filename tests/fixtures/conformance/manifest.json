@@ -1,0 +1,80 @@
+{
+  "corpus_version": "1.0.0",
+  "target_specification_version": "fsl/1.0",
+  "governing_clauses": [
+    "S04#5.1",
+    "S04#5.2",
+    "S04#6.1",
+    "S04#6.2",
+    "S04#7.1",
+    "S04#7.2",
+    "S04#7.4",
+    "S04#8.1",
+    "S04#8.3",
+    "S05#1.1",
+    "S05#1.2",
+    "S05#4.1"
+  ],
+  "fixtures": [
+    {
+      "id": "pos_s04_5_1_minimal_valid",
+      "file": "pos_s04_5_1_minimal_valid.json",
+      "type": "positive",
+      "clauses": ["S04#5.1", "S05#1.1"]
+    },
+    {
+      "id": "pos_s04_5_2_self_contained_empty_deps",
+      "file": "pos_s04_5_2_self_contained_empty_deps.json",
+      "type": "positive",
+      "clauses": ["S04#5.2", "S05#4.1"]
+    },
+    {
+      "id": "pos_s04_8_1_json_interchange",
+      "file": "pos_s04_8_1_json_interchange.json",
+      "type": "positive",
+      "clauses": ["S04#8.1", "S05#1.1"]
+    },
+    {
+      "id": "neg_s04_5_1_missing_manifest",
+      "file": "neg_s04_5_1_missing_manifest.json",
+      "type": "negative",
+      "clauses": ["S04#5.1", "S05#1.1"],
+      "expected_diagnostics": ["S04#5.1"]
+    },
+    {
+      "id": "neg_s04_5_2_non_empty_external_dependencies",
+      "file": "neg_s04_5_2_non_empty_external_dependencies.json",
+      "type": "negative",
+      "clauses": ["S04#5.2", "S05#1.1"],
+      "expected_diagnostics": ["S04#5.2"]
+    },
+    {
+      "id": "neg_s04_6_1_missing_manifest_name",
+      "file": "neg_s04_6_1_missing_manifest_name.json",
+      "type": "negative",
+      "clauses": ["S04#6.1", "S05#1.1"],
+      "expected_diagnostics": ["S04#6.1"]
+    },
+    {
+      "id": "neg_s04_6_2_missing_manifest_kind",
+      "file": "neg_s04_6_2_missing_manifest_kind.json",
+      "type": "negative",
+      "clauses": ["S04#6.2", "S05#1.1"],
+      "expected_diagnostics": ["S04#6.2"]
+    },
+    {
+      "id": "neg_s04_8_3_missing_schema_version",
+      "file": "neg_s04_8_3_missing_schema_version.json",
+      "type": "negative",
+      "clauses": ["S04#8.3", "S05#1.2"],
+      "expected_diagnostics": ["S04#8.3"]
+    },
+    {
+      "id": "neg_s04_8_3_unsupported_schema_version",
+      "file": "neg_s04_8_3_unsupported_schema_version.json",
+      "type": "negative",
+      "clauses": ["S04#8.3", "S05#1.2"],
+      "expected_diagnostics": ["S04#8.3"]
+    }
+  ]
+}

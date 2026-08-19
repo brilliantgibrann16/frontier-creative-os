@@ -1,0 +1,16 @@
+{
+  "fixture_id": "neg_s04_5_1_missing_manifest",
+  "target_clause_ids": [
+    "S04#5.1",
+    "S05#1.1"
+  ],
+  "fixture_type": "negative",
+  "input_payload": {
+    "schema_version": "fsl/1.0"
+  },
+  "expected_exit_code": 1,
+  "expected_diagnostic_codes": [
+    "S04#5.1"
+  ],
+  "description": "Missing manifest object in top-level artifact testing S04#5.1 rejection."
+}

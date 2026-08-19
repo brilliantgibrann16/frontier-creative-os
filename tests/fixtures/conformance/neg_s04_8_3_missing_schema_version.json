@@ -1,0 +1,20 @@
+{
+  "fixture_id": "neg_s04_8_3_missing_schema_version",
+  "target_clause_ids": [
+    "S04#8.3",
+    "S05#1.2"
+  ],
+  "fixture_type": "negative",
+  "input_payload": {
+    "manifest": {
+      "name": "missing-version",
+      "version": "1.0.0",
+      "kind": "application"
+    }
+  },
+  "expected_exit_code": 1,
+  "expected_diagnostic_codes": [
+    "S04#8.3"
+  ],
+  "description": "Missing schema_version field testing S04#8.3 rejection."
+}
