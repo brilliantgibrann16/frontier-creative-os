@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 89)
+## `docs/` (files: 90)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -96,6 +96,7 @@
 - `docs/program/IMPLEMENTATION_STRATEGY.md`
 - `docs/program/KNOWLEDGE_SYNC_RUNBOOK.md`
 - `docs/program/MILESTONE_TEMPLATE.md`
+- `docs/program/P04_1_COMPILER_IMPLEMENTATION_PLAN.md`
 - `docs/program/PROGRAM.md`
 - `docs/program/PROGRAM_INDEX.md`
 - `docs/program/RISK_REGISTER.md`
@@ -222,11 +223,12 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 22)
+## `tests/` (files: 23)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
+- `tests/compiler/test_fsl_compiler_skeleton.py`
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
 - `tests/test_check_clause_index.py`
@@ -247,7 +249,7 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 39)
+## `tools/` (files: 47)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
@@ -276,6 +278,14 @@
 - `tools/compiler/fcos/validator.py`
 - `tools/compiler/fcos/version.py`
 - `tools/compiler/fcos/writer.py`
+- `tools/compiler/fsl/__init__.py`
+- `tools/compiler/fsl/api.py`
+- `tools/compiler/fsl/cli.py`
+- `tools/compiler/fsl/diagnostics.py`
+- `tools/compiler/fsl/emitter.py`
+- `tools/compiler/fsl/loader.py`
+- `tools/compiler/fsl/models.py`
+- `tools/compiler/fsl/validator.py`
 - `tools/docs/README.md`
 - `tools/docs/__init__.py`
 - `tools/docs/build_docs.py`
@@ -291,5 +301,5 @@
 
 ## Totals
 
-- Files listed: 242
+- Files listed: 252
 - Top-level groups: 10
