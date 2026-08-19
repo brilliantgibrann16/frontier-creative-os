@@ -53,13 +53,16 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 94)
+## `docs/` (files: 97)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
 - `docs/architecture/baseline.md`
 - `docs/architecture/blueprint.md`
 - `docs/architecture/doctrine.md`
+- `docs/conformance/claims/CLAIM-FSL-1.0-TOOLS.COMPILER.FSL-0.1.0-STAGE1.WB.json`
+- `docs/conformance/claims/CLAIM-FSL-1.0-TOOLS.COMPILER.FSL-0.1.0-STAGE1.WB.report.json`
+- `docs/conformance/claims/README.md`
 - `docs/constitution/01-mission.md`
 - `docs/constitution/02-vision.md`
 - `docs/constitution/03-core-values.md`
@@ -228,13 +231,14 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 38)
+## `tests/` (files: 39)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
 - `tests/compiler/test_conformance_fixture_corpus.py`
 - `tests/compiler/test_conformance_harness.py`
+- `tests/compiler/test_conformance_judge.py`
 - `tests/compiler/test_fsl_compiler_skeleton.py`
 - `tests/compiler/test_fsl_diagnostics_plumbing.py`
 - `tests/compiler/test_fsl_spec_derived_evidence.py`
@@ -269,7 +273,7 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 51)
+## `tools/` (files: 52)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
@@ -308,6 +312,7 @@
 - `tools/compiler/fsl/validator.py`
 - `tools/conformance/__init__.py`
 - `tools/conformance/cli.py`
+- `tools/conformance/judge.py`
 - `tools/conformance/models.py`
 - `tools/conformance/runner.py`
 - `tools/docs/README.md`
@@ -325,5 +330,5 @@
 
 ## Totals
 
-- Files listed: 276
+- Files listed: 281
 - Top-level groups: 10

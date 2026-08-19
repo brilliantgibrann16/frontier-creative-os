@@ -1,0 +1,235 @@
+{
+  "candidate_identifier": "tools.compiler.fsl (built-in)",
+  "clause_evaluations": [
+    {
+      "clause_id": "S04#5.1",
+      "negative_fixtures_count": 1,
+      "passed": true,
+      "passed_fixtures": 2,
+      "positive_fixtures_count": 1,
+      "total_fixtures": 2
+    },
+    {
+      "clause_id": "S04#5.2",
+      "negative_fixtures_count": 1,
+      "passed": true,
+      "passed_fixtures": 2,
+      "positive_fixtures_count": 1,
+      "total_fixtures": 2
+    },
+    {
+      "clause_id": "S04#6.1",
+      "negative_fixtures_count": 1,
+      "passed": true,
+      "passed_fixtures": 1,
+      "positive_fixtures_count": 0,
+      "total_fixtures": 1
+    },
+    {
+      "clause_id": "S04#6.2",
+      "negative_fixtures_count": 1,
+      "passed": true,
+      "passed_fixtures": 1,
+      "positive_fixtures_count": 0,
+      "total_fixtures": 1
+    },
+    {
+      "clause_id": "S04#8.1",
+      "negative_fixtures_count": 0,
+      "passed": true,
+      "passed_fixtures": 1,
+      "positive_fixtures_count": 1,
+      "total_fixtures": 1
+    },
+    {
+      "clause_id": "S04#8.3",
+      "negative_fixtures_count": 2,
+      "passed": true,
+      "passed_fixtures": 2,
+      "positive_fixtures_count": 0,
+      "total_fixtures": 2
+    },
+    {
+      "clause_id": "S05#1.1",
+      "negative_fixtures_count": 4,
+      "passed": true,
+      "passed_fixtures": 6,
+      "positive_fixtures_count": 2,
+      "total_fixtures": 6
+    },
+    {
+      "clause_id": "S05#1.2",
+      "negative_fixtures_count": 2,
+      "passed": true,
+      "passed_fixtures": 2,
+      "positive_fixtures_count": 0,
+      "total_fixtures": 2
+    },
+    {
+      "clause_id": "S05#4.1",
+      "negative_fixtures_count": 0,
+      "passed": true,
+      "passed_fixtures": 1,
+      "positive_fixtures_count": 1,
+      "total_fixtures": 1
+    }
+  ],
+  "clause_totality_achieved": true,
+  "clauses_passed": 9,
+  "fixture_results": [
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#5.1"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_5_1_missing_manifest",
+      "observed_diagnostic_codes": [
+        "S04#5.1"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#5.1",
+        "S05#1.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#5.2"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_5_2_non_empty_external_dependencies",
+      "observed_diagnostic_codes": [
+        "S04#5.2"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#5.2",
+        "S05#1.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#6.1"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_6_1_missing_manifest_name",
+      "observed_diagnostic_codes": [
+        "S04#6.1"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#6.1",
+        "S05#1.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#6.2"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_6_2_missing_manifest_kind",
+      "observed_diagnostic_codes": [
+        "S04#6.2"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#6.2",
+        "S05#1.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#8.3"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_8_3_missing_schema_version",
+      "observed_diagnostic_codes": [
+        "S04#8.3"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#8.3",
+        "S05#1.2"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [
+        "S04#8.3"
+      ],
+      "expected_exit_code": 1,
+      "failure_reasons": [],
+      "fixture_id": "neg_s04_8_3_unsupported_schema_version",
+      "observed_diagnostic_codes": [
+        "S04#8.3"
+      ],
+      "observed_exit_code": 1,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#8.3",
+        "S05#1.2"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [],
+      "expected_exit_code": 0,
+      "failure_reasons": [],
+      "fixture_id": "pos_s04_5_1_minimal_valid",
+      "observed_diagnostic_codes": [],
+      "observed_exit_code": 0,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#5.1",
+        "S05#1.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [],
+      "expected_exit_code": 0,
+      "failure_reasons": [],
+      "fixture_id": "pos_s04_5_2_self_contained_empty_deps",
+      "observed_diagnostic_codes": [],
+      "observed_exit_code": 0,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#5.2",
+        "S05#4.1"
+      ]
+    },
+    {
+      "diagnostics_clause_match": true,
+      "expected_diagnostic_codes": [],
+      "expected_exit_code": 0,
+      "failure_reasons": [],
+      "fixture_id": "pos_s04_8_1_json_interchange",
+      "observed_diagnostic_codes": [],
+      "observed_exit_code": 0,
+      "passed": true,
+      "target_clause_ids": [
+        "S04#8.1",
+        "S05#1.1"
+      ]
+    }
+  ],
+  "harness_version": "1.0.0",
+  "target_spec_version": "fsl/1.0",
+  "total_clauses_tested": 9,
+  "verdict": "CONFORMING"
+}
