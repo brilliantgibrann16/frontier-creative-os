@@ -1,4 +1,4 @@
-"""S13 Conformance Test Harness package.
+"""S13 Conformance Test Harness & Official Judge package.
 
 Adheres strictly to ratified specification S13 (ADR-0015):
 - S13#1.1: Sole judge authority
@@ -9,9 +9,10 @@ Adheres strictly to ratified specification S13 (ADR-0015):
 - S13#2.3: Deterministic harness execution
 - S13#2.4: Reproducible test reporting
 - S13#3.1–S13#3.4: Clause-traced fixtures
-- S13#4.1–S13#4.4: Self-certification claim regime
+- S13#4.1–S13#4.4: Self-certification claim regime and public registry
 """
 
+from tools.conformance.judge import ConformanceJudge, compute_harness_hash
 from tools.conformance.models import (
     ClauseEvaluation,
     ConformanceClaim,
@@ -25,6 +26,8 @@ from tools.conformance.runner import ConformanceHarness
 
 __all__ = [
     "ConformanceHarness",
+    "ConformanceJudge",
+    "compute_harness_hash",
     "TestCaseFixture",
     "FixtureType",
     "FixtureEvaluationResult",

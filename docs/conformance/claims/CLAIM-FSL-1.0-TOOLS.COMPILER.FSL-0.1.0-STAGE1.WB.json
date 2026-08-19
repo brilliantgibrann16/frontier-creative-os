@@ -1,0 +1,11 @@
+{
+  "assertion_date_utc": "2026-08-19T00:00:00Z",
+  "candidate_commit_sha": "688552a926177b9bbfa7a49646b0f3408093d5b0",
+  "candidate_name": "tools.compiler.fsl",
+  "candidate_release_version": "0.1.0-stage1.wb",
+  "claim_id": "CLAIM-FSL-1.0-TOOLS.COMPILER.FSL-0.1.0-STAGE1.WB",
+  "evidence_report_digest_sha256": "9ac2520c49ac774742d5e5432a3d0638d69689c74f1e837860e4a0f4ed1a58f5",
+  "harness_hash_sha256": "290bd09893aadfba7c6d254a34cb8829bef0f633c93ef86a79480a1a2971cb5a",
+  "target_specification_version": "fsl/1.0",
+  "verdict": "CONFORMING"
+}
