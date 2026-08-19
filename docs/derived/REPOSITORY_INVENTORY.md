@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 91)
+## `docs/` (files: 92)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -98,6 +98,7 @@
 - `docs/program/MILESTONE_TEMPLATE.md`
 - `docs/program/P04_1_COMPILER_IMPLEMENTATION_PLAN.md`
 - `docs/program/P04_4_SPEC_DERIVED_TEST_EVIDENCE.md`
+- `docs/program/P04_5_CONFORMANCE_SUBMISSION.md`
 - `docs/program/PROGRAM.md`
 - `docs/program/PROGRAM_INDEX.md`
 - `docs/program/RISK_REGISTER.md`
@@ -305,5 +306,5 @@
 
 ## Totals
 
-- Files listed: 256
+- Files listed: 257
 - Top-level groups: 10
