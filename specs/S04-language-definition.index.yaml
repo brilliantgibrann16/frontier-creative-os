@@ -5,6 +5,8 @@
 # Instantiated per ADR-0011; spec.version 1.0.0 is the current value
 # for the ratified S04 container only (no versioning policy —
 # ADR-0011 decision 2). Checked by tools/checks/check_clause_index.py.
+# Stage 1 W-B entries added per ADR-0013 (2026-08-19); spec.version
+# recorded unchanged — no versioning policy (ADR-0013 decision 4).
 spec:
   id: S04
   version: 1.0.0
@@ -67,5 +69,70 @@ clauses:
   - id: "S04#4.2"
     category: defined
     title: Index schema and audits
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#5.1"
+    category: defined
+    title: Artifact unit
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#5.2"
+    category: defined
+    title: Stage 1 self-containment
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#6.1"
+    category: defined
+    title: Structural validity
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#6.2"
+    category: defined
+    title: Validity closure
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.1"
+    category: defined
+    title: Validation-outcome model
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.2"
+    category: defined
+    title: Violated-clause identification
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.3"
+    category: defined
+    title: Outcome authority
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.4"
+    category: defined
+    title: Outcome determinism
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.5"
+    category: unspecified
+    title: Diagnostic presentation
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#7.6"
+    category: defined
+    title: Validation/conformance boundary
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#8.1"
+    category: defined
+    title: Single interchange form
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#8.2"
+    category: defined
+    title: Interchange-form obligations
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#8.3"
+    category: defined
+    title: Concrete interchange form
     status: ratified
     source: specs/S04-language-definition.md
