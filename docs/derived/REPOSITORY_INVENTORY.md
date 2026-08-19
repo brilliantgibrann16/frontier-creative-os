@@ -223,12 +223,13 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 23)
+## `tests/` (files: 24)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
 - `tests/compiler/.gitkeep`
 - `tests/compiler/test_fsl_compiler_skeleton.py`
+- `tests/compiler/test_fsl_diagnostics_plumbing.py`
 - `tests/specs/.gitkeep`
 - `tests/test_build_docs.py`
 - `tests/test_check_clause_index.py`
@@ -301,5 +302,5 @@
 
 ## Totals
 
-- Files listed: 252
+- Files listed: 253
 - Top-level groups: 10
