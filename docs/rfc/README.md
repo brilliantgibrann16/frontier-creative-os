@@ -44,6 +44,7 @@ through their own RFC → ADR decision.
 | 0017 | Candidate Subsystem: Product UI | — (scope + introduction) | S9 or new | Accepted — scope rule (U-A: S9 engineering tooling only) |
 | 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
 | 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Accepted (ADR-0012)** — D1: Stage 1 entered; D2: scope **W-B** (interchange kernel); D3: type/data model explicitly labeled deferred; D4: deterministic validation outcomes required; clause content travels subsequent S04 amendment cycles |
+| 0020 | S04 Stage 1 W-B Interchange-Kernel Clause Set (amendment proposal) | ADR-0012 follow-up 1 — the Wave 2 W-B clause-drafting cycle | S4 | **Open — In Review** — drafts the twelve-clause W-B kernel with proposal-time identifiers; reserves S04#8.3 for the recorded interchange-format sub-decision (F1), presented without choosing; ratifies nothing (L-8/INV-8) |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -103,3 +104,15 @@ format sub-decision (existing boring format per GL-15/DP-28 versus a
 bespoke form) is recorded for that cycle. The RFC file keeps its
 submission-time `Status: In Review` header per the ADR-0004
 convention.
+
+*Post-disposition note (2026-08-18, later):* **RFC-0020** is the third
+post-set RFC: an amendment proposal under the ratified S04 sequence
+flow (proposal RFC → recording ADR; INV-18), begun under the
+Maintainer's explicit written directive of 2026-08-18, which supplies
+the authorization that ADR-0012 follow-up 1 requires. It drafts the
+twelve-clause Stage 1 W-B kernel with proposal-time identifiers
+(allocated only at ratification, per the RFC-0018 precedent), reserves
+S04#8.3 for the recorded interchange-format sub-decision (F1), and
+presents that decision surface without choosing. Its recommendation is
+labeled and non-binding per convention; nothing in it is ratified by
+its existence (L-8/INV-8).
