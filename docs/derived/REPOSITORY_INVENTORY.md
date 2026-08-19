@@ -23,7 +23,7 @@
 - `CONTRIBUTING.md`
 - `README.md`
 
-## `.github/` (files: 7)
+## `.github/` (files: 8)
 
 - `.github/CODEOWNERS`
 - `.github/ISSUE_TEMPLATE/.gitkeep`
@@ -32,6 +32,7 @@
 - `.github/PULL_REQUEST_TEMPLATE.md`
 - `.github/workflows/.gitkeep`
 - `.github/workflows/ci.yml`
+- `.github/workflows/temp-diag-id-crossref.yml`
 
 ## `assets/` (files: 2)
 
@@ -218,7 +219,7 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 22)
+## `tests/` (files: 23)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
@@ -235,6 +236,7 @@
 - `tests/test_derive_id_crossref.py`
 - `tests/test_derive_navigation.py`
 - `tests/test_derive_repository_inventory.py`
+- `tests/test_diag_id_crossref_probe.py`
 - `tests/test_docs_cli.py`
 - `tests/test_docs_corpus.py`
 - `tests/test_generator.py`
@@ -287,5 +289,5 @@
 
 ## Totals
 
-- Files listed: 238
+- Files listed: 240
 - Top-level groups: 10

@@ -156,7 +156,7 @@ Vocabulary recorded in: Blueprint §2.
 | S2 | `docs/architecture/blueprint.md` (4) |
 | S3 | `docs/architecture/blueprint.md` (5); `docs/rfc/RFC-0015.md` (3) |
 | S4 | `docs/architecture/blueprint.md` (8); `docs/rfc/RFC-0001.md` (2); `docs/rfc/RFC-0005.md` (1); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0009.md` (1); `docs/rfc/RFC-0014.md` (4); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0019.md` (2); `docs/rfc/RFC-0020.md` (1) |
-| S04 | `docs/decisions/ADR-0006.md` (4); `docs/decisions/ADR-0007.md` (7); `docs/decisions/ADR-0008.md` (9); `docs/decisions/ADR-0009.md` (18); `docs/decisions/ADR-0010.md` (17); `docs/decisions/ADR-0011.md` (28); `docs/decisions/ADR-0012.md` (19); `docs/rfc/RFC-0018.md` (21); `docs/rfc/RFC-0019.md` (44); `docs/rfc/RFC-0020.md` (92) |
+| S04 | `docs/decisions/ADR-0006.md` (4); `docs/decisions/ADR-0007.md` (7); `docs/decisions/ADR-0008.md` (9); `docs/decisions/ADR-0009.md` (18); `docs/decisions/ADR-0010.md` (17); `docs/decisions/ADR-0011.md` (28); `docs/decisions/ADR-0012.md` (19); `docs/rfc/RFC-0018.md` (21); `docs/rfc/RFC-0019.md` (44); `docs/rfc/RFC-0020.md` (93) |
 | S5 | `docs/architecture/blueprint.md` (7); `docs/rfc/RFC-0006.md` (1); `docs/rfc/RFC-0012.md` (1) |
 | S05 | `docs/decisions/ADR-0012.md` (1); `docs/rfc/RFC-0019.md` (10); `docs/rfc/RFC-0020.md` (15) |
 | S6 | `docs/architecture/blueprint.md` (4); `docs/rfc/RFC-0012.md` (4) |
