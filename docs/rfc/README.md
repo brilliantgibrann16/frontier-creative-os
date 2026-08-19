@@ -44,7 +44,7 @@ through their own RFC → ADR decision.
 | 0017 | Candidate Subsystem: Product UI | — (scope + introduction) | S9 or new | Accepted — scope rule (U-A: S9 engineering tooling only) |
 | 0018 | S04 Stage 0 Minimal Contract Clause Set (amendment proposal) | P03.3 content gate | S4 | **Accepted (ADR-0011)** — the twelve-clause Stage 0 minimal contract inventory is ratified into S04 through the amendment path |
 | 0019 | S04 Stage 1 Language-Content Scope (Minimum P04 Unlock) | frames the Stage 0 → Stage 1 transition (S04#1.2) and the P04 language-content prerequisite | S4 | **Accepted (ADR-0012)** — D1: Stage 1 entered; D2: scope **W-B** (interchange kernel); D3: type/data model explicitly labeled deferred; D4: deterministic validation outcomes required; clause content travels subsequent S04 amendment cycles |
-| 0020 | S04 Stage 1 W-B Interchange-Kernel Clause Set (amendment proposal) | ADR-0012 follow-up 1 — the Wave 2 W-B clause-drafting cycle | S4 | **Open — In Review** — drafts the twelve-clause W-B kernel with proposal-time identifiers; reserves S04#8.3 for the recorded interchange-format sub-decision (F1), presented without choosing; ratifies nothing (L-8/INV-8) |
+| 0020 | S04 Stage 1 W-B Interchange-Kernel Clause Set (amendment proposal) | ADR-0012 follow-up 1 — the Wave 2 W-B clause-drafting cycle | S4 | **Accepted (ADR-0013)** — F1 decided 2026-08-19: **JSON** (F1-A per GL-15/DP-28); F2 decided path 1 (revise-then-ratify); the revised thirteen-clause W-B kernel (S04#5.1–S04#8.3) is ratified into S04 through the amendment path |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -116,3 +116,18 @@ S04#8.3 for the recorded interchange-format sub-decision (F1), and
 presents that decision surface without choosing. Its recommendation is
 labeled and non-binding per convention; nothing in it is ratified by
 its existence (L-8/INV-8).
+
+*Post-disposition note (2026-08-19):* **ADR-0013** records the
+Maintainer's explicit written decisions of 2026-08-19 on the RFC-0020
+decision surface — F1 = F1-A with **JSON** as the concrete interchange
+form; F2 = sequencing path 1 (revise-then-ratify) — and the acceptance
+of the revised RFC-0020. Per path 1 the RFC was revised in the same
+decision cycle to draft S04#8.3 from the recorded decision; the
+thirteen Stage 1 W-B clauses (S04#5.1–S04#8.3) are ratified into
+`specs/S04-language-definition.md` through the amendment path
+(S04 §Sequence flows, step 2; INV-18), identifiers allocated exactly
+as proposed and frozen (ADR-0009), the sidecar extended (ADR-0010
+schema), and `spec.version` recorded unchanged at 1.0.0 (no versioning
+policy — ADR-0011, Decision 2). The RFC file keeps its submission-time
+`Status: In Review` header per the ADR-0004 convention; its 2026-08-19
+revision is part of the proposal record.
