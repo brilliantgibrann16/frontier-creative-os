@@ -70,6 +70,7 @@ beyond Stage 2 enter S04 only through the amendment path (RFC → recording ADR)
 - **P04.4** ✅ Spec-derived test evidence per clause (with P11 — complete via PR #54).
 - **P04.5** ✅ Conformance submission to P12; iterate to green (`docs/program/P04_5_CONFORMANCE_SUBMISSION.md`).
 - **P04.6** ✅ Stage 2 S2-B realization: Typed Data Model (`S04#9.1`–`S04#9.4`) and Pure Deterministic Expressions (`S04#10.1`–`S04#10.7`) static evaluation per ADR-0016.
+- **P04.7** ✅ Stage 2 spec-derived test evidence per clause (`S04#9.1`–`S04#10.7` in `tests/compiler/test_fsl_spec_derived_evidence.py`).
 
 ## P05 — Runtime (GATED: existence undecided)
 
