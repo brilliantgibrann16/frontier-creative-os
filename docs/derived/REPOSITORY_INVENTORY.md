@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 100)
+## `docs/` (files: 101)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -89,6 +89,7 @@
 - `docs/decisions/ADR-0013.md`
 - `docs/decisions/ADR-0014.md`
 - `docs/decisions/ADR-0015.md`
+- `docs/decisions/ADR-0016.md`
 - `docs/decisions/D01_DECISION_BRIEF.md`
 - `docs/decisions/D01_DECISION_DOSSIER.md`
 - `docs/decisions/D02_DECISION_BRIEF.md`
@@ -335,5 +336,5 @@
 
 ## Totals
 
-- Files listed: 286
+- Files listed: 287
 - Top-level groups: 10

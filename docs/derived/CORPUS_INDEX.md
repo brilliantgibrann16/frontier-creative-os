@@ -47,6 +47,7 @@
 - `docs/decisions/ADR-0013.md` -- ADR-0013 — RFC-0020 Acceptance: Stage 1 W-B Clause-Set Ratification with JSON as the Concrete Interchange Form (F1/F2 Resolution)
 - `docs/decisions/ADR-0014.md` -- ADR-0014 — Ratification of the S05 Compiler Subsystem Boundary Contract Specification
 - `docs/decisions/ADR-0015.md` -- ADR-0015 — Ratification of the S13 Verification & Conformance Subsystem Specification
+- `docs/decisions/ADR-0016.md` -- ADR-0016 — RFC-0023 Acceptance: S04 Stage 2 Capability Transition & Scope Ratification (D1: Enter Stage 2, D2: Scope Package S2-B, D3: Static Evaluation Only, D4: Additive Extension to fsl/1.0)
 
 ## RFCs (dispositions recorded in ADR-0004) (`docs/rfc/`)
 

@@ -7,6 +7,8 @@
 # ADR-0011 decision 2). Checked by tools/checks/check_clause_index.py.
 # Stage 1 W-B entries added per ADR-0013 (2026-08-19); spec.version
 # recorded unchanged — no versioning policy (ADR-0013 decision 4).
+# Stage 2 entries added per ADR-0016 (2026-08-21); spec.version
+# recorded unchanged at 1.0.0 (ADR-0016 decision 4).
 spec:
   id: S04
   version: 1.0.0
@@ -134,5 +136,60 @@ clauses:
   - id: "S04#8.3"
     category: defined
     title: Concrete interchange form
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#9.1"
+    category: defined
+    title: Stage 2 scalar data types
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#9.2"
+    category: defined
+    title: Stage 2 compound data structures
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#9.3"
+    category: defined
+    title: Stage 2 type annotations & declarations
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#9.4"
+    category: defined
+    title: Stage 2 schema validation rules
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.1"
+    category: defined
+    title: Pure expression evaluation model
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.2"
+    category: defined
+    title: Arithmetic & boolean operations
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.3"
+    category: defined
+    title: String & collection operations
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.4"
+    category: defined
+    title: Conditional expressions
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.5"
+    category: defined
+    title: Declarative invariant assertions
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.6"
+    category: defined
+    title: Static evaluation boundary
+    status: ratified
+    source: specs/S04-language-definition.md
+  - id: "S04#10.7"
+    category: defined
+    title: Stage 2 JSON AST expression representation
     status: ratified
     source: specs/S04-language-definition.md

@@ -54,6 +54,7 @@
 | `docs/decisions/ADR-0013.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0018.md`; `docs/rfc/RFC-0019.md`; `docs/rfc/RFC-0020.md` |
 | `docs/decisions/ADR-0014.md` | (none) | `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0013.md`; `docs/rfc/RFC-0021.md` |
 | `docs/decisions/ADR-0015.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/rfc/RFC-0004.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0022.md` |
+| `docs/decisions/ADR-0016.md` | (none) | `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/decisions/ADR-0015.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0018.md`; `docs/rfc/RFC-0019.md`; `docs/rfc/RFC-0020.md`; `docs/rfc/RFC-0023.md` |
 | `docs/rfc/RFC-0001.md` | (none) | `docs/rfc/RFC-0005.md` |
 | `docs/rfc/RFC-0002.md` | (none) | `docs/decisions/ADR-0002.md`; `docs/rfc/RFC-0001.md` |
 | `docs/rfc/RFC-0003.md` | (none) | `docs/decisions/ADR-0003.md` |
@@ -76,7 +77,7 @@
 | `docs/rfc/RFC-0020.md` | (none) | `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0009.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md`; `docs/rfc/RFC-0002.md`; `docs/rfc/RFC-0005.md`; `docs/rfc/RFC-0008.md`; `docs/rfc/RFC-0009.md`; `docs/rfc/RFC-0018.md`; `docs/rfc/RFC-0019.md` |
 | `docs/rfc/RFC-0021.md` | (none) | `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md` |
 | `docs/rfc/RFC-0022.md` | (none) | `docs/decisions/ADR-0004.md`; `docs/decisions/ADR-0010.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/rfc/RFC-0004.md`; `docs/rfc/RFC-0008.md` |
-| `docs/rfc/RFC-0023.md` | (none) | `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/decisions/ADR-0015.md`; `docs/rfc/RFC-0001.md`; `docs/rfc/RFC-0007.md`; `docs/rfc/RFC-0012.md`; `docs/rfc/RFC-0019.md` |
+| `docs/rfc/RFC-0023.md` | (none) | `docs/decisions/ADR-0006.md`; `docs/decisions/ADR-0007.md`; `docs/decisions/ADR-0008.md`; `docs/decisions/ADR-0011.md`; `docs/decisions/ADR-0012.md`; `docs/decisions/ADR-0013.md`; `docs/decisions/ADR-0014.md`; `docs/decisions/ADR-0015.md`; `docs/decisions/ADR-0016.md`; `docs/rfc/RFC-0001.md`; `docs/rfc/RFC-0007.md`; `docs/rfc/RFC-0012.md`; `docs/rfc/RFC-0019.md` |
 
 ## Governance reference graph (ADR / RFC files)
 
@@ -99,6 +100,7 @@ flowchart LR
   ADR0013["ADR-0013"]
   ADR0014["ADR-0014"]
   ADR0015["ADR-0015"]
+  ADR0016["ADR-0016"]
   RFC0001["RFC-0001"]
   RFC0002["RFC-0002"]
   RFC0003["RFC-0003"]
@@ -211,6 +213,24 @@ flowchart LR
   ADR0015 --> RFC0004
   ADR0015 --> RFC0008
   ADR0015 --> RFC0022
+  ADR0016 --> ADR0006
+  ADR0016 --> ADR0007
+  ADR0016 --> ADR0008
+  ADR0016 --> ADR0009
+  ADR0016 --> ADR0010
+  ADR0016 --> ADR0011
+  ADR0016 --> ADR0012
+  ADR0016 --> ADR0013
+  ADR0016 --> ADR0014
+  ADR0016 --> ADR0015
+  ADR0016 --> RFC0002
+  ADR0016 --> RFC0005
+  ADR0016 --> RFC0008
+  ADR0016 --> RFC0009
+  ADR0016 --> RFC0018
+  ADR0016 --> RFC0019
+  ADR0016 --> RFC0020
+  ADR0016 --> RFC0023
   RFC0001 --> RFC0005
   RFC0002 --> ADR0002
   RFC0002 --> RFC0001
@@ -298,6 +318,7 @@ flowchart LR
   RFC0023 --> ADR0013
   RFC0023 --> ADR0014
   RFC0023 --> ADR0015
+  RFC0023 --> ADR0016
   RFC0023 --> RFC0001
   RFC0023 --> RFC0007
   RFC0023 --> RFC0012

@@ -51,11 +51,12 @@ unless noted.
 - **P03.6** Update `specs/` TODO(blocked-by…) markers that the acceptance
   ADR discharges (spec-editing work, done inside this program).
 
-*Status (2026-08-19): P03.1–P03.6 are all executed — the per-package record
-lives in `docs/program/S04_CHARTER.md` §7. The Stage 0 scope (ADR-0011)
-and the Stage 1 W-B interchange kernel scope (ADR-0012, ADR-0013; 13 clauses
-ratified) are complete; language-content clauses beyond Stage 1 enter S04
-only through the amendment path (RFC → recording ADR).*
+*Status (2026-08-21): P03.1–P03.6 are all executed — the per-package record
+lives in `docs/program/S04_CHARTER.md` §7. The Stage 0 scope (ADR-0011),
+the Stage 1 W-B interchange kernel scope (ADR-0012, ADR-0013; 13 clauses
+ratified), and the Stage 2 typed data model + pure expressions scope
+(ADR-0016; 11 clauses ratified) are complete; language-content clauses
+beyond Stage 2 enter S04 only through the amendment path (RFC → recording ADR).*
 
 ## P04 — Compiler (ACTIVE — G-SPEC(S04/S05) MET)
 

@@ -158,7 +158,7 @@ Stage 1 W-B clause set ratification (RFC-0020 → ADR-0013):
 | --- | --- | --- |
 | P03.1 | **Executed (ADR-0009)** | The Maintainer decided the container ratification explicitly on 2026-08-12; ADR-0009 pins it to main b879605535305a98ea3b945db10dadb55c8153e2 (S04 blob 8db4d5f2), container-only, with the clause-numbering freeze now binding — G-SPEC(S04) met container-only |
 | P03.2 | **Executed (PR #37)** | The N-B + N-C scheme text is recorded in `specs/S04-language-definition.md` on the grandfathered document ID `S04` with N-C clause-ID layering and no namespace token (ADR-0008); authored and merged by the Maintainer |
-| P03.3 | **Executed (ADR-0011, ADR-0012, ADR-0013)** | The Stage 0 contract inventory (12 clauses, S04#1.1–S04#4.2) was ratified via ADR-0011. Stage 1 was entered under the W-B interchange-kernel scope via ADR-0012. The 13 Stage 1 W-B clauses (S04#5.1–S04#8.3) with JSON concrete interchange form were ratified via ADR-0013 (2026-08-19). Language content beyond Stage 1 W-B remains future content entering only through the amendment path |
+| P03.3 | **Executed (ADR-0011, ADR-0012, ADR-0013, ADR-0016)** | The Stage 0 contract inventory (12 clauses, S04#1.1–S04#4.2) was ratified via ADR-0011. Stage 1 was entered under the W-B interchange-kernel scope via ADR-0012. The 13 Stage 1 W-B clauses (S04#5.1–S04#8.3) with JSON concrete interchange form were ratified via ADR-0013 (2026-08-19). Stage 2 was entered and ratified via ADR-0016 (2026-08-21; 11 clauses S04#9.1–S04#10.7, Scope Package S2-B). Language content beyond Stage 2 remains future content entering only through the amendment path |
 | P03.4 | **Executed (ADR-0010)** | The Maintainer decided the concrete M-B schema explicitly on 2026-08-12; ADR-0010 records the per-spec YAML sidecar model (`specs/<spec>.index.yaml`), the five-field clause schema, the four-category vocabulary from the ratified S04 Data model, derived-hygiene status (OQ3), the sidecar location (OQ2), and the narrow mechanical audit set (OQ1); the drift checker and the S04 sidecar instantiation were queued ADR-0010 follow-ups at decision time and were discharged by ADR-0011 (2026-08-12), and updated with 13 Stage 1 clauses by ADR-0013 |
 | P03.5 | **Executed (Maintainer decision 2026-08-13)** | The Maintainer decided gate integration explicitly on 2026-08-13, resolving the exact decision surface ADR-0011 (Decision 8) left open: `check_clause_index.py` joined the documentation-gates job in `.github/workflows/ci.yml` alongside the link and ID checks (`python tools/checks/check_clause_index.py`); the RFC-0011 E-A baseline gates are unchanged, the checker stays read-only and derived-hygiene (prose authoritative), and the required-checks branch protection remains the Maintainer console action (G-CI, P01 exit) |
 | P03.6 | Executed (reopens per decision) | ADR-0006/0007-discharged markers updated in PR #35; the ADR-0008-discharged marker (S04 §Data model assignment TODO) was updated in the merged P03.2 specification PR (#37) |
@@ -187,6 +187,10 @@ ADR-0012 (2026-08-18; RFC-0019 accepted: D1 enter Stage 1, D2 W-B scope,
 D3 type model deferred, D4 determinism required). The Stage 1 W-B
 interchange-kernel clause set was ratified via ADR-0013 (2026-08-19;
 RFC-0020 accepted: F1 JSON concrete interchange form, F2 revise-then-ratify;
-13 clauses S04#5.1–S04#8.3 ratified). Remaining Maintainer decisions:
-language content beyond Stage 1 W-B (amendment path); when first needed,
+13 clauses S04#5.1–S04#8.3 ratified). The Stage 2 entry and scope decisions
+were recorded as ADR-0016 (2026-08-21; RFC-0023 accepted: D1 enter Stage 2 now,
+D2 Package S2-B typed data model + pure deterministic expressions, D3 static
+evaluation only, D4 additive extension to `fsl/1.0`; 11 clauses
+S04#9.1–S04#10.7 ratified). Remaining Maintainer decisions:
+language content beyond Stage 2 (amendment path); when first needed,
 the first concrete namespace token; RFC-0002 OQ2 remains open.

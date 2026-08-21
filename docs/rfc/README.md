@@ -47,6 +47,7 @@ through their own RFC → ADR decision.
 | 0020 | S04 Stage 1 W-B Interchange-Kernel Clause Set (amendment proposal) | ADR-0012 follow-up 1 — the Wave 2 W-B clause-drafting cycle | S4 | **Accepted (ADR-0013)** — F1 decided 2026-08-19: **JSON** (F1-A per GL-15/DP-28); F2 decided path 1 (revise-then-ratify); the revised thirteen-clause W-B kernel (S04#5.1–S04#8.3) is ratified into S04 through the amendment path |
 | 0021 | S05 Compiler Subsystem Boundary Contract Specification | ADR-0013 follow-up 2 — S05 compiler-boundary contract drafting cycle | S5 | **Accepted (ADR-0014)** — establishes input acceptance, diagnostics, invocation, and Stage 1 output emission contracts ratified into S05 (S05#1.1–S05#4.3) |
 | 0022 | S13 Verification & Conformance Subsystem Specification | G-SPEC(S13), B-08, G-CONF, P12 | S13 | **Accepted (ADR-0015)** — establishes sole judge harness boundary, dual-corpus fixtures, and binary self-certification claim regime (15 clauses `S13#1.1`–`S13#4.4`) |
+| 0023 | S04 Stage 2 Capability Transition & Scope Framing | frames Stage 1 → Stage 2 transition (S04#1.2) and Stage 2 scope | S4 | **Accepted (ADR-0016)** — D1: Stage 2 entered (D1-A); D2: Package S2-B (typed data model + pure expressions); D3: static evaluation only (D3-A); D4: additive extension to `fsl/1.0` (D4-A); 11 Stage 2 clauses ratified into S04 (`S04#9.1`–`S04#10.7`) |
 
 Dependency order: RFC-0001 (D-01) is the controlling decision; RFC-0005,
 0007, 0008, 0009, 0012 and parts of 0004 cannot be *decided* before it,
@@ -154,18 +155,21 @@ clause-traced fixture corpus (`S13#3.x`), and self-certification claim regime
 with sidecar `specs/S13-verification-conformance.index.yaml`, discharging
 `G-SPEC(S13)`.
 
-*Post-submission note (2026-08-19):* **RFC-0023** is the sixth post-set
-RFC: the S04 Stage 2 Capability-Stage Transition and Scope Framing proposal.
-It defines the decision surface for Stage 2 entry following the complete
-realization and S13 conformance self-certification of Stage 1 W-B
-(PR #51–PR #60, gate `G-CONF` MET). Submitted for Maintainer review.
+*Post-disposition note (2026-08-21):* **RFC-0023** is the sixth post-set
+RFC: the S04 Stage 2 Capability Transition and Scope Framing proposal.
+Accepted and recorded by **ADR-0016** per the Maintainer's explicit written
+decisions of 2026-08-21 (D1 = D1-A Enter Stage 2 now; D2 = Package S2-B Typed
+Data Model + Pure Expressions; D3 = D3-A Static evaluation only; D4 = D4-A
+Additive extension within `schema_version: "fsl/1.0"`). Eleven Stage 2
+clauses (`S04#9.1`–`S04#10.7`) ratified into `specs/S04-language-definition.md`
+with sidecar `specs/S04-language-definition.index.yaml`.
 
-## Current RFC state summary (post-RFC-0023 submission)
+## Current RFC state summary (post-ADR-0016 acceptance)
 
 - 23 total RFCs (0001–0023).
-- 19 accepted (0001–0004, 0006–0012, 0017–0022; 0005/0009 interim rules in force).
+- 20 accepted (0001–0004, 0006–0012, 0017–0023; 0005/0009 interim rules in force).
 - 2 rejected (0013, 0016).
-- 3 open / in review (0014, 0015, 0023).
+- 2 open / in review (0014, 0015).
 - 0 withdrawn.
 
 

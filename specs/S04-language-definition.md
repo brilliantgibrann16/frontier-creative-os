@@ -1,6 +1,6 @@
 # S4 — Language Definition Subsystem Specification
 
-**Status:** Ratified (container: ADR-0009; Stage 0 contract clause set: ADR-0011; Stage 1 W-B clause set: ADR-0013) · **Subsystem:** S4 (Blueprint §2, "Empty by design") · **Date:** 2026-08-02
+**Status:** Ratified (container: ADR-0009; Stage 0 contract clause set: ADR-0011; Stage 1 W-B clause set: ADR-0013; Stage 2 clause set: ADR-0016) · **Subsystem:** S4 (Blueprint §2, "Empty by design") · **Date:** 2026-08-02
 
 ## Scope
 
@@ -16,13 +16,14 @@ authoring, tools consuming, AI systems doing both symmetrically
 (ADR-0007, Q1). Success criteria: the Article 1 metric instantiated by
 the Article 10 goals, indexed to phases and capability stages
 (ADR-0007, Q2). Clause content: the Stage 0 **minimal contract inventory** is
-ratified per-clause (ADR-0011; §Stage 0 clause set below), and the
+ratified per-clause (ADR-0011; §Stage 0 clause set below), the
 Stage 1 **W-B interchange kernel** is ratified per-clause (ADR-0012,
-D1/D2; ADR-0013; §Stage 1 clause set below). Language content beyond
-the ratified Stage 0 and Stage 1 inventories — syntax, grammar,
-execution-facing semantics, and the explicitly deferred type/data
-model (ADR-0012, D3) — remains **BLOCKED** and enters only through the
-amendment path (RFC → ADR).
+D1/D2; ADR-0013; §Stage 1 clause set below), and the Stage 2 **typed data model
+and pure deterministic expressions** are ratified per-clause (ADR-0016;
+§Stage 2 clause set below). Language content beyond the ratified Stage 0,
+Stage 1, and Stage 2 inventories — execution-facing runtime semantics and
+dedicated human surface syntax (rejected/deferred under S2-B) — remains
+**BLOCKED** and enters only through the amendment path (RFC → ADR).
 
 ## Responsibilities
 
@@ -333,6 +334,90 @@ clause below has status **ratified** and is indexed in
   its own amendment cycle. Source: Maintainer F1 decision, 2026-08-19
   (F1-A per GL-15/DP-28); ADR-0012, D2/D3; recording ADR-0013.
 
+## Stage 2 clause set (Typed Data Model & Pure Expressions)
+
+Ratified per-clause by ADR-0016 (2026-08-21) through the amendment
+path (proposal RFC-0023 → recording ADR — §Sequence flows, step 2;
+INV-18). Scope per ADR-0016, Decision 2 (Package S2-B): typed data
+model core and pure deterministic expressions. Evaluation is static-only
+(ADR-0016, Decision 3); interchange remains concrete JSON within
+`schema_version: "fsl/1.0"` (ADR-0016, Decision 4); dedicated surface
+syntax (S2-C) is deferred. Clause declarations follow the ratified
+convention (ADR-0011, Decision 5); clauses are listed in clause-ID
+order; every clause below has status **ratified** and is indexed in
+`specs/S04-language-definition.index.yaml` (ADR-0010).
+
+- **S04#9.1 — Stage 2 scalar data types.** Category: defined. Stage 2
+  FSL defines four primitive scalar data types: `string` (UTF-8 text
+  sequences), `integer` (finite signed whole numbers), `float` (finite
+  IEEE 754 floating-point numbers), and `boolean` (`true` or `false`).
+  Scalar values map directly to JSON primitive values in the concrete
+  interchange syntax. Source: ADR-0016, Decision 2.
+
+- **S04#9.2 — Stage 2 compound data structures.** Category: defined.
+  Stage 2 FSL defines three structured compound types: `record` (a
+  finite set of named, typed fields), `list` (an ordered homogeneous or
+  heterogeneous sequence of elements), and `map` (a key-value
+  dictionary with string keys). Compound values map directly to JSON
+  objects and arrays in the concrete interchange syntax. Source:
+  ADR-0016, Decision 2.
+
+- **S04#9.3 — Stage 2 type annotations & declarations.** Category:
+  defined. FSL artifact declarations may specify explicit type
+  annotations for fields, parameters, and properties using declared
+  scalar and compound type identifiers. Source: ADR-0016, Decision 2.
+
+- **S04#9.4 — Stage 2 schema validation rules.** Category: defined. An
+  artifact is structurally valid under Stage 2 if all field and
+  property values conform strictly to their declared scalar or compound
+  types. A type constraint violation constitutes a validation failure
+  and yields a rejected validation outcome per S04#7.1. Source:
+  ADR-0016, Decision 2.
+
+- **S04#10.1 — Pure expression evaluation model.** Category: defined.
+  Stage 2 expressions are side-effect-free, deterministic, and total
+  (terminating) functional computations over literal values and artifact
+  properties. Expression evaluation never mutates artifact state or
+  performs external I/O. Source: ADR-0016, Decision 2; Doctrine GL-15.
+
+- **S04#10.2 — Arithmetic & boolean operations.** Category: defined.
+  Stage 2 supports standard pure arithmetic operators (`+`, `-`, `*`,
+  `/`, `%` with division-by-zero yielding validation failure), boolean
+  logic operators (`and`, `or`, `not`), and relational comparison
+  operators (`==`, `!=`, `<`, `<=`, `>`, `>=`). Source: ADR-0016,
+  Decision 2.
+
+- **S04#10.3 — String & collection operations.** Category: defined.
+  Stage 2 supports pure string concatenation and length operations,
+  list element indexing and sequence length queries, and map key-value
+  lookups. Out-of-bounds indexing or missing required keys yield
+  validation failure. Source: ADR-0016, Decision 2.
+
+- **S04#10.4 — Conditional expressions.** Category: defined. Stage 2
+  supports conditional branching expressions of the form
+  `if <condition> then <consequent> else <alternate>`, where the
+  condition evaluates to boolean, and exactly one branch is evaluated
+  deterministically. Source: ADR-0016, Decision 2.
+
+- **S04#10.5 — Declarative invariant assertions.** Category: defined.
+  FSL declarations may attach declarative invariant assertions
+  expressed as boolean expressions. An invariant evaluating to `false`
+  yields a rejected validation outcome per S04#7.1 citing S04#10.5.
+  Source: ADR-0016, Decision 2.
+
+- **S04#10.6 — Static evaluation boundary.** Category: defined.
+  Stage 2 expression evaluation is performed strictly at compile and
+  validation time (static constraint checking, constant folding, and
+  declarative invariant validation). Runtime evaluation semantics remain
+  deferred and S06 runtime behavior is not defined by this clause.
+  Source: ADR-0016, Decision 3.
+
+- **S04#10.7 — Stage 2 JSON AST expression representation.** Category:
+  defined. Stage 2 expressions are represented as structured JSON AST
+  nodes within the concrete interchange syntax under
+  `schema_version: "fsl/1.0"`. Dedicated surface syntax is deferred per
+  Package S2-B. Source: ADR-0016, Decisions 2, 4.
+
 ## Traceability
 
 | Requirement source | Anchor |
@@ -344,3 +429,4 @@ clause below has status **ratified** and is indexed in
 | Clause IDs / index | RFC-0002 N-B + N-C; ADR-0004; ADR-0008; namespace registry via recording ADRs; S04 freeze point at container ratification |
 | Stage 0 contract inventory | RFC-0018; ADR-0011 (Maintainer directive, 2026-08-12) |
 | Stage 1 W-B interchange kernel | RFC-0019; ADR-0012 (D1–D4); RFC-0020 (revised); ADR-0013 (Maintainer F1/F2 decisions, 2026-08-19) |
+| Stage 2 Typed Data Model & Pure Expressions | RFC-0023; ADR-0016 (Maintainer D1–D4 decisions, 2026-08-21) |
