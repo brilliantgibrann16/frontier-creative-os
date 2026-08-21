@@ -174,6 +174,182 @@ def test_s04_8_3_concrete_json_interchange_syntax():
 
 
 # ==============================================================================
+# S04 Stage 2 Typed Data Model & Pure Expressions Evidence (S04#9.1–S04#10.7)
+# ==============================================================================
+
+
+def test_s04_9_1_scalar_data_types_evidence():
+    """Evidence for S04#9.1 (Scalar data types): string, integer, float, boolean enumeration."""
+    from tools.compiler.fsl.types import is_scalar_type
+
+    assert is_scalar_type("string")
+    assert is_scalar_type("integer")
+    assert is_scalar_type("float")
+    assert is_scalar_type("boolean")
+    assert not is_scalar_type("unknown_type")
+
+
+def test_s04_9_2_compound_data_structures_evidence():
+    """Evidence for S04#9.2 (Compound data structures): record, list, map structures."""
+    from tools.compiler.fsl.types import is_compound_type, validate_type_annotation
+
+    assert is_compound_type("record")
+    assert is_compound_type("list")
+    assert is_compound_type("map")
+    assert not is_compound_type("set")
+
+    # Map key constraint per S04#9.2
+    diags_map = validate_type_annotation({"type": "map", "key_type": "integer", "value_type": "string"}, "config")
+    assert len(diags_map) == 1
+    assert diags_map[0].clause_id == "S04#9.2"
+
+
+def test_s04_9_3_type_annotations_and_declarations_evidence():
+    """Evidence for S04#9.3 (Type annotations & declarations): validation of type specs."""
+    from tools.compiler.fsl.types import validate_type_annotation
+
+    assert not validate_type_annotation("string", "field")
+    assert not validate_type_annotation({"type": "list", "element_type": "integer"}, "field")
+    assert not validate_type_annotation({"type": "map", "key_type": "string", "value_type": "boolean"}, "field")
+    assert not validate_type_annotation({"type": "record", "fields": {"id": "integer"}}, "field")
+
+    # Invalid type spec structure
+    diags = validate_type_annotation(12345, "field")
+    assert len(diags) == 1
+    assert diags[0].clause_id == "S04#9.3"
+
+
+def test_s04_9_4_schema_validation_rules_evidence():
+    """Evidence for S04#9.4 (Schema validation rules): checking values against declared types."""
+    artifact = {
+        "schema_version": "fsl/1.0",
+        "manifest": {"name": "typed-service", "version": "1.0.0", "kind": "service"},
+        "declarations": {"timeout": "integer", "tags": {"type": "list", "element_type": "string"}},
+        "properties": {"timeout": "not_an_int", "tags": ["prod", 123]},
+    }
+    outcome = evaluate_artifact_validity(artifact)
+    assert outcome.status == ValidationStatus.REJECTED
+    assert "S04#9.4" in outcome.violated_clauses
+
+
+def test_s04_10_1_pure_expression_evaluation_model_evidence():
+    """Evidence for S04#10.1 (Pure expression evaluation model): deterministic, terminating evaluation."""
+    from tools.compiler.fsl.expressions import evaluate_static_expression
+
+    val, diags = evaluate_static_expression({"kind": "binary_op", "op": "+", "left": 10, "right": 20})
+    assert val == 30
+    assert not diags
+
+
+def test_s04_10_2_arithmetic_and_boolean_operations_evidence():
+    """Evidence for S04#10.2 (Arithmetic & boolean operations): operators and zero-division checks."""
+    from tools.compiler.fsl.expressions import evaluate_static_expression
+
+    # Arithmetic
+    val, diags = evaluate_static_expression({"kind": "binary_op", "op": "*", "left": 6, "right": 7})
+    assert val == 42 and not diags
+
+    # Division by zero diagnostic
+    val_zero, diags_zero = evaluate_static_expression({"kind": "binary_op", "op": "/", "left": 10, "right": 0})
+    assert val_zero is None
+    assert any(d.clause_id == "S04#10.2" for d in diags_zero)
+
+    # Boolean logic
+    val_bool, diags_bool = evaluate_static_expression({"kind": "unary_op", "op": "not", "operand": False})
+    assert val_bool is True and not diags_bool
+
+
+def test_s04_10_3_string_and_collection_operations_evidence():
+    """Evidence for S04#10.3 (String & collection operations): concat, length, index, lookup."""
+    from tools.compiler.fsl.expressions import evaluate_static_expression
+
+    val_cat, diags_cat = evaluate_static_expression({"kind": "concat", "left": "Hello, ", "right": "World!"})
+    assert val_cat == "Hello, World!" and not diags_cat
+
+    val_len, diags_len = evaluate_static_expression({"kind": "length", "operand": [10, 20, 30]})
+    assert val_len == 3 and not diags_len
+
+    val_idx, diags_idx = evaluate_static_expression({"kind": "index", "target": ["first", "second"], "index": 1})
+    assert val_idx == "second" and not diags_idx
+
+    val_lookup, diags_lookup = evaluate_static_expression({"kind": "lookup", "target": {"env": "prod"}, "key": "env"})
+    assert val_lookup == "prod" and not diags_lookup
+
+
+def test_s04_10_4_conditional_expressions_evidence():
+    """Evidence for S04#10.4 (Conditional expressions): if / then / else evaluation."""
+    from tools.compiler.fsl.expressions import evaluate_static_expression
+
+    val, diags = evaluate_static_expression({
+        "kind": "conditional",
+        "condition": {"kind": "binary_op", "op": ">", "left": 5, "right": 3},
+        "then": "yes",
+        "else": "no"
+    })
+    assert val == "yes"
+    assert not diags
+
+
+def test_s04_10_5_declarative_invariant_assertions_evidence():
+    """Evidence for S04#10.5 (Declarative invariant assertions): asserting boolean conditions on artifact."""
+    artifact = {
+        "schema_version": "fsl/1.0",
+        "manifest": {"name": "app", "version": "1.0.0", "kind": "application"},
+        "declarations": {"replicas": "integer"},
+        "properties": {"replicas": 0},
+        "invariants": [
+            {
+                "name": "at_least_one_replica",
+                "expr": {"kind": "binary_op", "op": ">=", "left": {"kind": "ref", "name": "replicas"}, "right": 1}
+            }
+        ]
+    }
+    outcome = evaluate_artifact_validity(artifact)
+    assert outcome.status == ValidationStatus.REJECTED
+    assert "S04#10.5" in outcome.violated_clauses
+
+
+def test_s04_10_6_static_evaluation_boundary_evidence():
+    """Evidence for S04#10.6 (Static evaluation boundary): all evaluations occur at compile/validation time."""
+    artifact = {
+        "schema_version": "fsl/1.0",
+        "manifest": {"name": "static-app", "version": "1.0.0", "kind": "application"},
+        "declarations": {"max_size": "integer"},
+        "properties": {"max_size": 1024},
+        "invariants": [
+            {
+                "name": "valid_size",
+                "expr": {"kind": "binary_op", "op": ">", "left": {"kind": "ref", "name": "max_size"}, "right": 0}
+            }
+        ]
+    }
+    res = compile_artifact(artifact)
+    assert res.success
+    assert res.outcome.status == ValidationStatus.ACCEPTED
+    assert res.bundle is not None
+
+
+def test_s04_10_7_stage2_json_ast_expression_representation_evidence():
+    """Evidence for S04#10.7 (Stage 2 JSON AST expression representation): AST schema adherence."""
+    from tools.compiler.fsl.expressions import evaluate_static_expression
+
+    valid_ast = {
+        "kind": "binary_op",
+        "op": "+",
+        "left": {"kind": "literal", "value": 1},
+        "right": {"kind": "literal", "value": 2}
+    }
+    val, diags = evaluate_static_expression(valid_ast)
+    assert val == 3 and not diags
+
+    invalid_ast = {"kind": "unsupported_kind"}
+    val_inv, diags_inv = evaluate_static_expression(invalid_ast)
+    assert val_inv is None
+    assert len(diags_inv) == 1
+    assert diags_inv[0].clause_id == "S04#10.7"
+
+
+# ==============================================================================
 # S05 Compiler Boundary Clause-Traced Evidence Tests (S05#1.1–S05#4.3)
 # ==============================================================================
 
