@@ -39,7 +39,7 @@ def evaluate_static_expression(
 
 
 def _eval_node(node: Any, ctx: dict[str, Any], path: str) -> Any:
-    # 1. Raw literal primitives (for convenience or direct values)
+    # 1. Raw literal primitives or collections (for convenience or direct values)
     if isinstance(node, (int, float, str, bool)):
         if isinstance(node, float) and (math.isnan(node) or math.isinf(node)):
             raise EvaluationError(
@@ -51,6 +51,9 @@ def _eval_node(node: Any, ctx: dict[str, Any], path: str) -> Any:
                 )
             )
         return node
+
+    if isinstance(node, list):
+        return [_eval_node(elem, ctx, f"{path}[{i}]") for i, elem in enumerate(node)]
 
     if not isinstance(node, dict):
         raise EvaluationError(
@@ -65,14 +68,8 @@ def _eval_node(node: Any, ctx: dict[str, Any], path: str) -> Any:
     # 2. JSON AST Nodes per S04#10.7
     kind = node.get("kind")
     if not kind or not isinstance(kind, str):
-        raise EvaluationError(
-            Diagnostic(
-                code=DiagnosticCode.VALIDATION_ERROR,
-                clause_id="S04#10.7",
-                message="Expression node missing required 'kind' string field.",
-                path=f"{path}.kind" if path else "kind",
-            )
-        )
+        # Plain dictionary treated as raw map literal
+        return {k: _eval_node(v, ctx, f"{path}.{k}") for k, v in node.items()}
 
     if kind == "literal":
         if "value" not in node:
