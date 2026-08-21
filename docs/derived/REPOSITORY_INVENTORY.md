@@ -53,7 +53,7 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 98)
+## `docs/` (files: 100)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
@@ -91,6 +91,8 @@
 - `docs/decisions/ADR-0015.md`
 - `docs/decisions/D01_DECISION_BRIEF.md`
 - `docs/decisions/D01_DECISION_DOSSIER.md`
+- `docs/decisions/D02_DECISION_BRIEF.md`
+- `docs/decisions/D02_DECISION_DOSSIER.md`
 - `docs/engineering/WP15_Engineering_Specification_Standard.md`
 - `docs/program/AGENT_CONTRIBUTION_CONVENTIONS.md`
 - `docs/program/CONFORMANCE_FRAME.md`
@@ -333,5 +335,5 @@
 
 ## Totals
 
-- Files listed: 284
+- Files listed: 286
 - Top-level groups: 10
