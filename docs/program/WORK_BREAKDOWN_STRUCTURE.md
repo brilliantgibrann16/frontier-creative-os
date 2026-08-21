@@ -69,6 +69,7 @@ beyond Stage 2 enter S04 only through the amendment path (RFC → recording ADR)
   clause IDs it realizes (INV-17 — complete via PR #53).
 - **P04.4** ✅ Spec-derived test evidence per clause (with P11 — complete via PR #54).
 - **P04.5** ✅ Conformance submission to P12; iterate to green (`docs/program/P04_5_CONFORMANCE_SUBMISSION.md`).
+- **P04.6** ✅ Stage 2 S2-B realization: Typed Data Model (`S04#9.1`–`S04#9.4`) and Pure Deterministic Expressions (`S04#10.1`–`S04#10.7`) static evaluation per ADR-0016.
 
 ## P05 — Runtime (GATED: existence undecided)
 

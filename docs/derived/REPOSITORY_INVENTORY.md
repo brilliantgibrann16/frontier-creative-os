@@ -235,7 +235,7 @@
 - `specs/fcos/runtime/002_execution_engine.md`
 - `specs/fcos/runtime/003_repository_model.md`
 
-## `tests/` (files: 40)
+## `tests/` (files: 42)
 
 - `tests/__init__.py`
 - `tests/artifacts/.gitkeep`
@@ -247,6 +247,8 @@
 - `tests/compiler/test_fsl_diagnostics_plumbing.py`
 - `tests/compiler/test_fsl_spec_derived_evidence.py`
 - `tests/compiler/test_fsl_stage1_wb_realization.py`
+- `tests/compiler/test_fsl_stage2_pure_expressions.py`
+- `tests/compiler/test_fsl_stage2_typed_data_model.py`
 - `tests/fixtures/conformance/manifest.json`
 - `tests/fixtures/conformance/neg_s04_5_1_missing_manifest.json`
 - `tests/fixtures/conformance/neg_s04_5_2_non_empty_external_dependencies.json`
@@ -278,7 +280,7 @@
 - `tests/test_semantic.py`
 - `tests/test_validator.py`
 
-## `tools/` (files: 53)
+## `tools/` (files: 55)
 
 - `tools/checks/README.md`
 - `tools/checks/__init__.py`
@@ -313,8 +315,10 @@
 - `tools/compiler/fsl/cli.py`
 - `tools/compiler/fsl/diagnostics.py`
 - `tools/compiler/fsl/emitter.py`
+- `tools/compiler/fsl/expressions.py`
 - `tools/compiler/fsl/loader.py`
 - `tools/compiler/fsl/models.py`
+- `tools/compiler/fsl/types.py`
 - `tools/compiler/fsl/validator.py`
 - `tools/conformance/__init__.py`
 - `tools/conformance/cli.py`
@@ -336,5 +340,5 @@
 
 ## Totals
 
-- Files listed: 287
+- Files listed: 291
 - Top-level groups: 10
