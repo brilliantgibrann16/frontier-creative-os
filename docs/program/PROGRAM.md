@@ -482,9 +482,12 @@ never to be filled by invention.
   only (L-2); behavior claims valid only if traceable to a ratified clause
   (Blueprint §9).
 - **Scope now:** documentation generation over the ratified corpus
-  (constitution, architecture, ADRs, RFC dispositions). **Behavior
-  documentation is Blocked-by: existence of ratified clauses (P03).**
-- **Deliverables:** derivation pipeline conventions; generated doc set.
+  (constitution, architecture, ADRs, RFC dispositions). **P13.3 delivers
+  Stage 2 behavior and architecture guidance (`docs/architecture/stage2_behavior.md`)
+  derived from ratified clauses `S04#9.1`–`S04#10.7` and ADR-0016. Behavior
+  documentation beyond Stage 2 remains Blocked-by: future stage amendments.**
+- **Deliverables:** derivation pipeline conventions; generated doc set;
+  Stage 2 behavior and architecture guide.
 - **Dependencies:** P01 (link checks); P03 for behavior docs.
 - **Required RFCs / ADRs:** none new. **Required Specifications:** S14 (In
   Review) obligations inform design.

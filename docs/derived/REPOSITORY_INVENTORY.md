@@ -53,13 +53,14 @@
 - `build/prompts/review_prompt.md`
 - `build/reports/.gitkeep`
 
-## `docs/` (files: 101)
+## `docs/` (files: 102)
 
 - `docs/.gitkeep`
 - `docs/architecture/README.md`
 - `docs/architecture/baseline.md`
 - `docs/architecture/blueprint.md`
 - `docs/architecture/doctrine.md`
+- `docs/architecture/stage2_behavior.md`
 - `docs/conformance/claims/CLAIM-FSL-1.0-TOOLS.COMPILER.FSL-0.1.0-STAGE1.WB.json`
 - `docs/conformance/claims/CLAIM-FSL-1.0-TOOLS.COMPILER.FSL-0.1.0-STAGE1.WB.report.json`
 - `docs/conformance/claims/README.md`
@@ -340,5 +341,5 @@
 
 ## Totals
 
-- Files listed: 291
+- Files listed: 292
 - Top-level groups: 10

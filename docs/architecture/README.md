@@ -11,6 +11,7 @@ in the artifact hierarchy.
 | [`baseline.md`](./baseline.md) | Architecture Baseline — structure, boundaries, and law (WHAT) | Normative (rank 2, beneath the Constitution) |
 | [`blueprint.md`](./blueprint.md) | Master System Blueprint — whole-system description (WHAT IT IS) | Descriptive only |
 | [`doctrine.md`](./doctrine.md) | Universal Engineering Doctrine — axioms and rationale (WHY) | Explanatory only |
+| [`stage2_behavior.md`](./stage2_behavior.md) | FSL Stage 2 Behavior & Architecture Guide (P13.3) | Informative / Explanatory Reference |
 
 ## Precedence
 

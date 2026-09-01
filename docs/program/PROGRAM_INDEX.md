@@ -40,7 +40,7 @@
 | P10 | Package Manager | S11 | **DEFERRED** | packaging decision at/after RFC-0001 acceptance | B-03 |
 | P11 | Testing Infrastructure | S12 | **ACTIVE** | none | — |
 | P12 | Verification & Conformance | S13 | PARTIALLY GATED | frame now; full scope needs P03 index | B-07, B-08 |
-| P13 | Documentation System | S14 | **ACTIVE (frame)** | none; behavior docs need P03 | B-01 (behavior docs) |
+| P13 | Documentation System | S14 | **ACTIVE (frame; P13.3 Stage-2 behavior guide complete)** | none; behavior docs need P03 | B-01 (behavior docs beyond Stage 2) |
 | P14 | Release Infrastructure | S15 | GATED | G-CI (Article 9) | B-04, B-05 |
 | P15 | AI Layer | S16 | **STANDING** | none | — |
 

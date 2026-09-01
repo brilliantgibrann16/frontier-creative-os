@@ -76,3 +76,23 @@
 - 14. Future Unknowns
 - 15. Invariants and Derivation Map
 - 16. Consistency and Completeness
+
+## `docs/architecture/stage2_behavior.md` -- FSL Stage 2 Behavior & Architecture Guide
+
+- 1. Overview & Capability Model
+  - 1.1 Non-Normative Boundary
+  - 1.2 Explicit Non-Scope & Invariants
+- 2. Typed Data Model Core (`S04#9.1`–`S04#9.4`)
+  - 2.1 Scalar Data Types (`S04#9.1`)
+  - 2.2 Compound Data Structures (`S04#9.2`)
+  - 2.3 Type Annotations & Declarations (`S04#9.3`)
+  - 2.4 Schema Validation Rules (`S04#9.4`)
+- 3. Pure Deterministic Expressions (`S04#10.1`–`S04#10.7`)
+  - 3.1 Pure Evaluation Model (`S04#10.1`)
+  - 3.2 Operator Catalog (`S04#10.2`, `S04#10.3`)
+  - 3.3 Conditional Branching (`S04#10.4`)
+  - 3.4 Declarative Invariants (`S04#10.5`)
+- 4. Static-Only Evaluation Boundary (`S04#10.6`)
+- 5. Concrete Interchange Syntax (`S04#10.7`)
+- 6. Conformance & Verification Boundary
+- 7. Traceability Index

@@ -140,10 +140,10 @@ beyond Stage 2 enter S04 only through the amendment path (RFC → recording ADR)
   (constitution, architecture, ADRs, dispositions).
 - **P13.2** Traceability lint: behavior claims must carry clause refs
   (with P01).
-- **P13.3** ⛔ Behavior documentation — the Stage 1 W-B clause set is
-  ratified (ADR-0013), providing the artifact-model and JSON interchange
-  kernel specifications; documentation of semantics beyond Stage 1 W-B
-  remains Blocked-by: future stage amendments.
+- **P13.3** ✅ Behavior documentation — Stage 1 W-B (`S04#5.1`–`S04#8.3`, ADR-0013)
+  and Stage 2 S2-B Typed Data Model & Pure Deterministic Expressions (`S04#9.1`–`S04#10.7`,
+  ADR-0016) behavioral and architecture guide delivered (`docs/architecture/stage2_behavior.md`).
+  Documentation of semantics beyond Stage 2 remains Blocked-by: future stage amendments.
 
 ## P14 — Release Infrastructure (GATED: Article 9)
 
