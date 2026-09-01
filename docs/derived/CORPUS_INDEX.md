@@ -29,6 +29,7 @@
 - `docs/architecture/baseline.md` -- Frontier Creative OS — Architecture Baseline
 - `docs/architecture/blueprint.md` -- Frontier Creative OS — Master System Blueprint
 - `docs/architecture/doctrine.md` -- Frontier Creative OS — Universal Engineering Doctrine
+- `docs/architecture/stage2_behavior.md` -- FSL Stage 2 Behavior & Architecture Guide
 
 ## Decision records (ADRs) (`docs/decisions/`)
 

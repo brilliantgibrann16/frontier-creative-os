@@ -38,10 +38,10 @@ Vocabulary recorded in: `docs/decisions/`.
 | ADR-0010 | `docs/decisions/ADR-0010.md` (1); `docs/decisions/ADR-0011.md` (12); `docs/decisions/ADR-0012.md` (1); `docs/decisions/ADR-0013.md` (4); `docs/decisions/ADR-0014.md` (1); `docs/decisions/ADR-0015.md` (2); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0018.md` (6); `docs/rfc/RFC-0019.md` (4); `docs/rfc/RFC-0020.md` (5); `docs/rfc/RFC-0022.md` (1) |
 | ADR-0011 | `docs/decisions/ADR-0011.md` (2); `docs/decisions/ADR-0012.md` (2); `docs/decisions/ADR-0013.md` (6); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0019.md` (6); `docs/rfc/RFC-0020.md` (4); `docs/rfc/RFC-0022.md` (2); `docs/rfc/RFC-0023.md` (2) |
 | ADR-0012 | `docs/decisions/ADR-0012.md` (2); `docs/decisions/ADR-0013.md` (7); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0020.md` (27); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0023.md` (2) |
-| ADR-0013 | `docs/decisions/ADR-0013.md` (3); `docs/decisions/ADR-0014.md` (1); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0020.md` (4); `docs/rfc/RFC-0021.md` (2); `docs/rfc/RFC-0022.md` (2); `docs/rfc/RFC-0023.md` (3) |
-| ADR-0014 | `docs/decisions/ADR-0014.md` (1); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0022.md` (2); `docs/rfc/RFC-0023.md` (2) |
-| ADR-0015 | `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0023.md` (2) |
-| ADR-0016 | `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0023.md` (4) |
+| ADR-0013 | `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0013.md` (3); `docs/decisions/ADR-0014.md` (1); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0020.md` (4); `docs/rfc/RFC-0021.md` (2); `docs/rfc/RFC-0022.md` (2); `docs/rfc/RFC-0023.md` (3) |
+| ADR-0014 | `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0014.md` (1); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0022.md` (2); `docs/rfc/RFC-0023.md` (2) |
+| ADR-0015 | `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0015.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0023.md` (2) |
+| ADR-0016 | `docs/architecture/stage2_behavior.md` (5); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0023.md` (4) |
 
 ## RFCs
 
@@ -71,7 +71,7 @@ Vocabulary recorded in: `docs/rfc/`.
 | RFC-0020 | `docs/decisions/ADR-0013.md` (12); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0020.md` (2) |
 | RFC-0021 | `docs/decisions/ADR-0014.md` (5); `docs/rfc/RFC-0021.md` (1) |
 | RFC-0022 | `docs/decisions/ADR-0015.md` (4); `docs/rfc/RFC-0022.md` (2) |
-| RFC-0023 | `docs/decisions/ADR-0016.md` (7); `docs/rfc/RFC-0023.md` (1) |
+| RFC-0023 | `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0016.md` (7); `docs/rfc/RFC-0023.md` (1) |
 
 ## Architectural principles (P-)
 
@@ -92,7 +92,7 @@ Vocabulary recorded in: Baseline §5.
 | Identifier | Occurrences |
 | --- | --- |
 | L-1 | `docs/architecture/baseline.md` (1); `docs/architecture/blueprint.md` (1); `docs/decisions/ADR-0002.md` (1); `docs/rfc/RFC-0018.md` (1) |
-| L-2 | `docs/architecture/baseline.md` (2); `docs/architecture/blueprint.md` (2); `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0007.md` (3); `docs/rfc/RFC-0001.md` (1); `docs/rfc/RFC-0006.md` (2); `docs/rfc/RFC-0009.md` (1); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0017.md` (2); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0020.md` (1); `docs/rfc/RFC-0022.md` (1) |
+| L-2 | `docs/architecture/baseline.md` (2); `docs/architecture/blueprint.md` (2); `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0007.md` (3); `docs/rfc/RFC-0001.md` (1); `docs/rfc/RFC-0006.md` (2); `docs/rfc/RFC-0009.md` (1); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0017.md` (2); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0020.md` (1); `docs/rfc/RFC-0022.md` (1) |
 | L-3 | `docs/architecture/baseline.md` (2); `docs/decisions/ADR-0006.md` (2); `docs/decisions/ADR-0007.md` (2); `docs/rfc/RFC-0006.md` (3); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0019.md` (2); `docs/rfc/RFC-0020.md` (2); `docs/rfc/RFC-0023.md` (1) |
 | L-4 | `docs/architecture/baseline.md` (2); `docs/architecture/blueprint.md` (2); `docs/decisions/ADR-0015.md` (1); `docs/rfc/RFC-0022.md` (2) |
 | L-5 | `docs/architecture/baseline.md` (2); `docs/architecture/blueprint.md` (2); `docs/architecture/doctrine.md` (1); `docs/decisions/ADR-0003.md` (1) |
@@ -160,22 +160,22 @@ Vocabulary recorded in: Blueprint §2.
 | Identifier | Occurrences |
 | --- | --- |
 | S1 | `docs/architecture/blueprint.md` (4); `docs/rfc/RFC-0010.md` (1); `docs/rfc/RFC-0013.md` (3); `docs/rfc/RFC-0015.md` (1); `docs/rfc/RFC-0016.md` (1) |
-| S2 | `docs/architecture/blueprint.md` (4); `docs/decisions/ADR-0016.md` (4); `docs/rfc/RFC-0023.md` (10) |
+| S2 | `docs/architecture/blueprint.md` (4); `docs/architecture/stage2_behavior.md` (3); `docs/decisions/ADR-0016.md` (4); `docs/rfc/RFC-0023.md` (10) |
 | S3 | `docs/architecture/blueprint.md` (5); `docs/rfc/RFC-0015.md` (3) |
 | S4 | `docs/architecture/blueprint.md` (8); `docs/rfc/RFC-0001.md` (2); `docs/rfc/RFC-0005.md` (1); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0009.md` (1); `docs/rfc/RFC-0014.md` (4); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0019.md` (2); `docs/rfc/RFC-0020.md` (1); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0023.md` (1) |
-| S04 | `docs/decisions/ADR-0006.md` (4); `docs/decisions/ADR-0007.md` (7); `docs/decisions/ADR-0008.md` (9); `docs/decisions/ADR-0009.md` (18); `docs/decisions/ADR-0010.md` (17); `docs/decisions/ADR-0011.md` (28); `docs/decisions/ADR-0012.md` (19); `docs/decisions/ADR-0013.md` (31); `docs/decisions/ADR-0014.md` (6); `docs/decisions/ADR-0015.md` (3); `docs/decisions/ADR-0016.md` (22); `docs/rfc/RFC-0018.md` (21); `docs/rfc/RFC-0019.md` (44); `docs/rfc/RFC-0020.md` (99); `docs/rfc/RFC-0021.md` (24); `docs/rfc/RFC-0022.md` (8); `docs/rfc/RFC-0023.md` (25) |
+| S04 | `docs/architecture/stage2_behavior.md` (46); `docs/decisions/ADR-0006.md` (4); `docs/decisions/ADR-0007.md` (7); `docs/decisions/ADR-0008.md` (9); `docs/decisions/ADR-0009.md` (18); `docs/decisions/ADR-0010.md` (17); `docs/decisions/ADR-0011.md` (28); `docs/decisions/ADR-0012.md` (19); `docs/decisions/ADR-0013.md` (31); `docs/decisions/ADR-0014.md` (6); `docs/decisions/ADR-0015.md` (3); `docs/decisions/ADR-0016.md` (22); `docs/rfc/RFC-0018.md` (21); `docs/rfc/RFC-0019.md` (44); `docs/rfc/RFC-0020.md` (99); `docs/rfc/RFC-0021.md` (24); `docs/rfc/RFC-0022.md` (8); `docs/rfc/RFC-0023.md` (25) |
 | S5 | `docs/architecture/blueprint.md` (7); `docs/rfc/RFC-0006.md` (1); `docs/rfc/RFC-0012.md` (1) |
-| S05 | `docs/decisions/ADR-0012.md` (1); `docs/decisions/ADR-0013.md` (5); `docs/decisions/ADR-0014.md` (31); `docs/decisions/ADR-0015.md` (2); `docs/decisions/ADR-0016.md` (2); `docs/rfc/RFC-0019.md` (10); `docs/rfc/RFC-0020.md` (15); `docs/rfc/RFC-0021.md` (21); `docs/rfc/RFC-0022.md` (7); `docs/rfc/RFC-0023.md` (5) |
+| S05 | `docs/architecture/stage2_behavior.md` (2); `docs/decisions/ADR-0012.md` (1); `docs/decisions/ADR-0013.md` (5); `docs/decisions/ADR-0014.md` (31); `docs/decisions/ADR-0015.md` (2); `docs/decisions/ADR-0016.md` (2); `docs/rfc/RFC-0019.md` (10); `docs/rfc/RFC-0020.md` (15); `docs/rfc/RFC-0021.md` (21); `docs/rfc/RFC-0022.md` (7); `docs/rfc/RFC-0023.md` (5) |
 | S6 | `docs/architecture/blueprint.md` (4); `docs/rfc/RFC-0012.md` (4) |
-| S06 | `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0016.md` (3); `docs/rfc/RFC-0019.md` (2); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0022.md` (1); `docs/rfc/RFC-0023.md` (4) |
+| S06 | `docs/architecture/stage2_behavior.md` (4); `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0016.md` (3); `docs/rfc/RFC-0019.md` (2); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0022.md` (1); `docs/rfc/RFC-0023.md` (4) |
 | S7 | `docs/architecture/blueprint.md` (4) |
 | S8 | `docs/architecture/blueprint.md` (2) |
 | S9 | `docs/architecture/blueprint.md` (2); `docs/decisions/ADR-0004.md` (1); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0013.md` (1); `docs/rfc/RFC-0017.md` (8) |
 | S10 | `docs/architecture/blueprint.md` (3) |
 | S11 | `docs/architecture/baseline.md` (6); `docs/architecture/blueprint.md` (3); `docs/decisions/ADR-0006.md` (4); `docs/rfc/RFC-0007.md` (4); `docs/rfc/RFC-0014.md` (1); `docs/rfc/RFC-0021.md` (1) |
 | S12 | `docs/architecture/blueprint.md` (4); `docs/rfc/RFC-0011.md` (1) |
-| S13 | `docs/architecture/blueprint.md` (7); `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0012.md` (1); `docs/decisions/ADR-0013.md` (2); `docs/decisions/ADR-0015.md` (26); `docs/decisions/ADR-0016.md` (3); `docs/rfc/RFC-0004.md` (1); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0019.md` (11); `docs/rfc/RFC-0020.md` (12); `docs/rfc/RFC-0022.md` (53); `docs/rfc/RFC-0023.md` (6) |
-| S14 | `docs/architecture/blueprint.md` (5); `docs/rfc/RFC-0015.md` (2) |
+| S13 | `docs/architecture/blueprint.md` (7); `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0006.md` (1); `docs/decisions/ADR-0012.md` (1); `docs/decisions/ADR-0013.md` (2); `docs/decisions/ADR-0015.md` (26); `docs/decisions/ADR-0016.md` (3); `docs/rfc/RFC-0004.md` (1); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0012.md` (1); `docs/rfc/RFC-0019.md` (11); `docs/rfc/RFC-0020.md` (12); `docs/rfc/RFC-0022.md` (53); `docs/rfc/RFC-0023.md` (6) |
+| S14 | `docs/architecture/blueprint.md` (5); `docs/architecture/stage2_behavior.md` (2); `docs/rfc/RFC-0015.md` (2) |
 | S15 | `docs/architecture/blueprint.md` (6); `docs/rfc/RFC-0005.md` (1); `docs/rfc/RFC-0011.md` (1) |
 | S16 | `docs/architecture/blueprint.md` (3); `docs/rfc/RFC-0013.md` (3); `docs/rfc/RFC-0015.md` (4); `docs/rfc/RFC-0016.md` (2) |
 
@@ -198,7 +198,7 @@ Vocabulary recorded in: Doctrine §1.
 
 | Identifier | Occurrences |
 | --- | --- |
-| AX-1 | `docs/architecture/doctrine.md` (8); `docs/decisions/ADR-0010.md` (1); `docs/decisions/ADR-0013.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0003.md` (2); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0020.md` (2) |
+| AX-1 | `docs/architecture/doctrine.md` (8); `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0010.md` (1); `docs/decisions/ADR-0013.md` (1); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0003.md` (2); `docs/rfc/RFC-0008.md` (1); `docs/rfc/RFC-0018.md` (1); `docs/rfc/RFC-0020.md` (2) |
 | AX-2 | `docs/architecture/doctrine.md` (5) |
 | AX-3 | `docs/architecture/doctrine.md` (5); `docs/rfc/RFC-0006.md` (2) |
 | AX-4 | `docs/architecture/doctrine.md` (5) |
@@ -213,7 +213,7 @@ Vocabulary recorded in: Doctrine.
 
 | Identifier | Occurrences |
 | --- | --- |
-| DP-2 | `docs/architecture/doctrine.md` (1) |
+| DP-2 | `docs/architecture/doctrine.md` (1); `docs/architecture/stage2_behavior.md` (1) |
 | DP-3 | `docs/architecture/doctrine.md` (1) |
 | DP-4 | `docs/architecture/doctrine.md` (1) |
 | DP-5 | `docs/architecture/doctrine.md` (1) |
@@ -304,7 +304,7 @@ Vocabulary recorded in: Doctrine.
 | GL-12 | `docs/architecture/doctrine.md` (1) |
 | GL-13 | `docs/architecture/doctrine.md` (1) |
 | GL-14 | `docs/architecture/doctrine.md` (1) |
-| GL-15 | `docs/architecture/doctrine.md` (1); `docs/decisions/ADR-0012.md` (2); `docs/decisions/ADR-0013.md` (3); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0019.md` (4); `docs/rfc/RFC-0020.md` (5); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0023.md` (2) |
+| GL-15 | `docs/architecture/doctrine.md` (1); `docs/architecture/stage2_behavior.md` (1); `docs/decisions/ADR-0012.md` (2); `docs/decisions/ADR-0013.md` (3); `docs/decisions/ADR-0016.md` (1); `docs/rfc/RFC-0019.md` (4); `docs/rfc/RFC-0020.md` (5); `docs/rfc/RFC-0021.md` (1); `docs/rfc/RFC-0023.md` (2) |
 | GL-16 | `docs/architecture/doctrine.md` (1) |
 | GL-17 | `docs/architecture/doctrine.md` (1) |
 
