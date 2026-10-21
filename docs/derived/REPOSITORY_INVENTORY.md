@@ -17,10 +17,11 @@
 - Paths carry no meaning here: a listing is not a status, an endorsement, or an authority statement.
 - Excluded from the walk: `.git/`, `__pycache__/`, `.pytest_cache/`, `*.pyc`, and the output area `docs/derived/` (self-listing would break idempotent regeneration).
 
-## (repository root) (files: 3)
+## (repository root) (files: 4)
 
 - `.gitignore`
 - `CONTRIBUTING.md`
+- `LICENSE`
 - `README.md`
 
 ## `.github/` (files: 7)
@@ -341,5 +342,5 @@
 
 ## Totals
 
-- Files listed: 292
+- Files listed: 293
 - Top-level groups: 10
