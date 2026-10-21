@@ -66,3 +66,8 @@ engineering knowledge base.
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the full contributor guide;
 the required PR contents are encoded in the pull request template.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
